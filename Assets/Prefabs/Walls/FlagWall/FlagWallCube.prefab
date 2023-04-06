@@ -12,11 +12,13 @@ GameObject:
   - component: {fileID: 3316262537480670730}
   - component: {fileID: 3316262537480670733}
   - component: {fileID: 3316262537480670732}
-  - component: {fileID: 3316262537480670734}
-  - component: {fileID: 3316262537480670721}
+  - component: {fileID: 6040191731953280322}
+  - component: {fileID: 2043065281}
+  - component: {fileID: 2043065285}
+  - component: {fileID: 2043065286}
   m_Layer: 7
   m_Name: FlagWallCube
-  m_TagString: Walls
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,7 +100,54 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3316262537480670734
+--- !u!114 &6040191731953280322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316262537480670723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c709137eb998c324a9769653a23689d6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _target: {fileID: 3847487758015353623}
+  _prefab: {fileID: 207258456241310772, guid: 1cf6ed104890c16498fd20712ba35343, type: 3}
+  _alternativePrefab: {fileID: 0}
+--- !u!114 &2043065281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316262537480670723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08570b8736db4a4a80836aa43317345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - _id: Die
+    _clip: {fileID: 8300000, guid: 2829bd76d8ddad043a1e634beb6169ec, type: 3}
+--- !u!114 &2043065285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316262537480670723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 162b99186cefc264ba846f7f86eecb74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collision: {fileID: 2043065286}
+  _reducer: {fileID: 0}
+  _wall: {fileID: 0}
+  _play: {fileID: 2043065281}
+  _spawn: {fileID: 6040191731953280322}
+--- !u!114 &2043065286
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,47 +161,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stages:
   - _tag: Bullet
-    _action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 725122941367314519}
-          m_TargetAssemblyTypeName: Skripts.Components.SpawnComponent, Assembly-CSharp
-          m_MethodName: SpawnPrefab
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 3316262537480670723}
-          m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
-          m_MethodName: SetActive
-          m_Mode: 6
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &3316262537480670721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3316262537480670723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 0}
-  _objectToActive: {fileID: 3316262537480670723}
 --- !u!1 &5097422009629474310
 GameObject:
   m_ObjectHideFlags: 0
@@ -162,9 +170,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3847487758015353623}
-  - component: {fileID: 725122941367314519}
   m_Layer: 7
-  m_Name: Explosion
+  m_Name: ExplosionPosition
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -184,18 +191,3 @@ Transform:
   m_Father: {fileID: 3316262537480670731}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!114 &725122941367314519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5097422009629474310}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c709137eb998c324a9769653a23689d6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _target: {fileID: 3847487758015353623}
-  _prefab: {fileID: 207258456241310772, guid: 1cf6ed104890c16498fd20712ba35343, type: 3}
-  _alternativePrefab: {fileID: 0}

@@ -12,11 +12,10 @@ GameObject:
   - component: {fileID: 763948496111107325}
   - component: {fileID: 763948496111107322}
   - component: {fileID: 8046561346386995542}
-  - component: {fileID: 763948496111107321}
-  - component: {fileID: 763948496111107302}
   - component: {fileID: 8655935450903917816}
+  - component: {fileID: 68156714}
   m_Layer: 0
-  m_Name: HP
+  m_Name: HealthRegenBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -98,33 +97,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 4.0000005, y: 4, z: 1.0000005}
   m_Center: {x: 0, y: 0, z: 0.00000005960466}
---- !u!114 &763948496111107321
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763948496111107303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ccfba0fae78f5e24ebe0c6c36fef46bf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _heal: 1
---- !u!114 &763948496111107302
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 763948496111107303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 763948496111107303}
-  _objectToActive: {fileID: 0}
 --- !u!114 &8655935450903917816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -141,42 +113,17 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 763948496111107321}
-        m_TargetAssemblyTypeName: Skripts.Components.HealComponent, Assembly-CSharp
-        m_MethodName: ApplyHeal
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8046561346386995542}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 763948496111107302}
-        m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &68156714
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763948496111107303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b260e35097f024db24fd1bf816b051, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _trigger: {fileID: 8655935450903917816}
+  _healthRegen: 1

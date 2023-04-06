@@ -109,7 +109,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677678477872094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -1.79}
   m_LocalScale: {x: 1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -126,7 +126,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 2, z: 30}
+  m_Size: {x: 0.2, y: 2, z: 23}
   m_Center: {x: 0, y: 1, z: 14}
 --- !u!114 &1248197167
 MonoBehaviour:
@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
+  _tag: Player
   _layer:
     serializedVersion: 2
     m_Bits: 4096
@@ -175,12 +175,10 @@ GameObject:
   - component: {fileID: 3427677678494261328}
   - component: {fileID: 3427677678494261329}
   - component: {fileID: 3427677678494261334}
+  - component: {fileID: 6611289143397274156}
   - component: {fileID: 3427677678494261342}
-  - component: {fileID: 3427677678494261335}
   - component: {fileID: 3427677678494261341}
   - component: {fileID: 3427677678494261340}
-  - component: {fileID: 3427677678494261343}
-  - component: {fileID: 174857465}
   - component: {fileID: 767110519638470807}
   m_Layer: 13
   m_Name: Enemy
@@ -293,6 +291,25 @@ Rigidbody:
   m_Interpolate: 1
   m_Constraints: 116
   m_CollisionDetection: 0
+--- !u!114 &6611289143397274156
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3427677678494261332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7120d6f475eaeee40a895b089d04b81d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _speed: 3000
+  _rotationSpeed: 110
+  _attackCooldown:
+    _value: 5
+  _healthArmor: {fileID: 3427677678494261342}
+  _attack: {fileID: 3427677678963179475}
+  _explosion: {fileID: 1832362961995473975}
 --- !u!114 &3427677678494261342
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -307,73 +324,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 1
   _armor: 0
-  _onHPDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  _onArmorDamage:
-    m_PersistentCalls:
-      m_Calls: []
-  _onDie:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1832362961995473975}
-        m_TargetAssemblyTypeName: Skripts.Components.SpawnComponent, Assembly-CSharp
-        m_MethodName: SpawnPrefab
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3427677678494261343}
-        m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3427677678494261335}
-        m_TargetAssemblyTypeName: Skripts.Creatures.Mobs.Creature, Assembly-CSharp
-        m_MethodName: OnDie
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _onChange:
-    m_PersistentCalls:
-      m_Calls: []
-  _checkDamageBuff: 0
---- !u!114 &3427677678494261335
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427677678494261332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3db73df2f24405b4daf12100a6c6f127, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _speed: 3000
-  _rotationspeed: 100
-  _spawnProjectilePosition: {fileID: 3427677678963179473}
-  _attackCooldown:
-    _value: 5
-  _attack: {fileID: 3427677678963179475}
 --- !u!114 &3427677678494261341
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -405,34 +355,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _obstacleCheck: {fileID: 9196209307578745477}
-  _creature: {fileID: 3427677678494261335}
+  _creature: {fileID: 6611289143397274156}
   _direction: 1
---- !u!114 &3427677678494261343
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427677678494261332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 3427677678494261332}
---- !u!114 &174857465
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427677678494261332}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 203c5b3ffe9b01445a9a791c567c0ae3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sceneName: Level 2
 --- !u!114 &767110519638470807
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677678638401609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: 0}
+  m_LocalPosition: {x: 0.6, y: 0, z: -1.79}
   m_LocalScale: {x: 1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -493,7 +417,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 2, z: 30}
+  m_Size: {x: 0.5, y: 2, z: 23}
   m_Center: {x: 0, y: 1, z: 14}
 --- !u!114 &3427677678638401611
 MonoBehaviour:
@@ -666,7 +590,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677679173719951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: 0}
+  m_LocalPosition: {x: -0.6, y: 0, z: -1.79}
   m_LocalScale: {x: 1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -683,7 +607,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.5, y: 2, z: 30}
+  m_Size: {x: 0.5, y: 2, z: 23}
   m_Center: {x: 0, y: 1, z: 14}
 --- !u!114 &3427677679173719945
 MonoBehaviour:
@@ -765,21 +689,6 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3427677678494261341}
-        m_TargetAssemblyTypeName: Skripts.Creatures.Mobs.MobAI, Assembly-CSharp
-        m_MethodName: InVision
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &6937587439521055192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -813,21 +722,6 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3427677678494261341}
-        m_TargetAssemblyTypeName: Skripts.Creatures.Mobs.MobAI, Assembly-CSharp
-        m_MethodName: InVision
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!1 &3427677679633040605
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,61 +1,55 @@
-using UnityEngine.Events;
-using UnityEngine;
-using System;
-
 namespace Scripts.Components.HealthArmor
 {
+    using UnityEngine;
+    using System;
+
     public class HealthArmorComponent : MonoBehaviour
     {
-        [SerializeField] private int _health;
-        [SerializeField] private int _armor;
+        [SerializeField] private int _health = 1;
+        [SerializeField] private int _armor = 0;
 
-        [SerializeField] private UnityEvent _onHPDamage;
-        [SerializeField] private UnityEvent _onArmorDamage;
-        [SerializeField] private UnityEvent _onDie;
-        [SerializeField] private HealthChangeEvent _onChange;
+        private bool _damageBuff = false;
 
-        [HideInInspector]
-        public bool _checkDamageBuff = false;
+        public bool DamageBuff { get => _damageBuff; set => _damageBuff = value; }
 
-        private int _damageValue;
-        private bool _checkDamageFlag = false;
-        private bool _checkFlag = false;
+        public event Action OnHpDamage = default;
+        public event Action<int> OnArmorDamage = default;
+        public event Action OnDie = default;
+        public event Action<int> OnHpChange = default;
 
-        public void ApplyDamage(int damage)
+        public void ModifyHealth(int value)
         {
-            _damageValue = damage;
-
-            if (_checkDamageBuff)
+            if (_armor > 0)
             {
-                ApplyBuffDamage();
+                ModifyArmor(value);
+            }
+            else if (_armor == 0)
+            {
+                var health = _health;
+                health += value;
+
+                _health = Mathf.Clamp(health, 0, 3);
+
+                OnHpChange?.Invoke(_health);
+                OnHpDamage?.Invoke();
             }
 
-            if (!_checkDamageBuff)
+            if (_health <= 0)
             {
-                if (_armor > 0)
-                {
-                    _armor -= _damageValue;
-                    _onArmorDamage?.Invoke();
-                }
-                else if (_armor == 0)
-                {
-                    _health -= _damageValue;
-                    _onChange?.Invoke(_health);
-                    _onHPDamage?.Invoke();
-                }
-
-                if (_health <= 0)
-                {
-                    _onDie?.Invoke();
-                }
+                OnDie?.Invoke();
             }
         }
 
-        public void ApplyHeal(int healValue)
+        public void ModifyArmor(int value)
         {
-            _health += healValue;
-            _onChange?.Invoke(_health);
+            var armor = _armor;
+            armor += value;
+
+            _armor = Mathf.Clamp(armor, 0, 3);
+
+            OnArmorDamage?.Invoke(_armor);
         }
+
 
         public void ApplyArmor(int armorValue)
         {
@@ -67,64 +61,9 @@ namespace Scripts.Components.HealthArmor
             _armor = _usualArmor;
         }
 
-        public void DamageBuff()
-        {
-            _damageValue += 1;
-            //_checkDamageBuff = true;
-        }
-
-        public void RemoveDamageBuff()
-        {
-            _damageValue -= 1;
-            //_checkDamageBuff = false;
-        }
-
-        private void ApplyBuffDamage()
-        {
-            if (_armor == 0 && _checkDamageFlag)
-            {
-                _health -= _damageValue;
-                _onChange?.Invoke(_health);
-            }
-
-            if (_armor == 1)
-            {
-                _armor -= 1;
-                _health -= 1;
-                _onChange?.Invoke(_health);
-                _checkDamageFlag = true;
-            }
-
-            if (_armor == 2 && _checkFlag)
-            {
-                _armor -= _damageValue;
-                _checkDamageFlag = true;
-                _checkFlag = false;
-                _onHPDamage?.Invoke();
-            }
-
-            if (_armor > 2)
-            {
-                _armor -= _damageValue;
-                _checkFlag = true;
-                _checkDamageFlag = false;
-                _onArmorDamage?.Invoke();
-            }
-
-            if (_health <= 0)
-            {
-                _onDie?.Invoke();
-            }
-        }
-
         public void SetHealth(int health)
         {
             _health = health;
-        }
-
-        [Serializable]
-        public class HealthChangeEvent : UnityEvent<int>
-        {
         }
     }
 }

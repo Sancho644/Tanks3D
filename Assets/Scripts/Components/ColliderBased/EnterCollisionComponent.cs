@@ -1,12 +1,13 @@
-using UnityEngine.Events;
-using UnityEngine;
-using System;
-
 namespace Scripts.Components.ColliderBased
 {
+    using UnityEngine;
+    using System;
+
     public class EnterCollisionComponent : MonoBehaviour
     {
-        [SerializeField] private CollisionStages[] _stages;
+        [SerializeField] private CollisionStages[] _stages = default;
+
+        public event Action<string, GameObject> OnAction = default;
 
         private void OnCollisionEnter(Collision other)
         {
@@ -14,7 +15,7 @@ namespace Scripts.Components.ColliderBased
             {
                 if (other.gameObject.CompareTag(stage.Tag))
                 {
-                    stage.Action?.Invoke(other.gameObject);
+                    OnAction?.Invoke(stage.Tag, other.gameObject);
                     return;
                 }
             }
@@ -24,15 +25,8 @@ namespace Scripts.Components.ColliderBased
         public class CollisionStages
         {
             [SerializeField] private string _tag;
-            [SerializeField] private EnterEvent _action;
 
             public string Tag => _tag;
-            public EnterEvent Action => _action;
         }
-    }
-
-    [Serializable]
-    public class EnterEvent : UnityEvent<GameObject>
-    {
     }
 }

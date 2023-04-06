@@ -11,11 +11,12 @@ GameObject:
   - component: {fileID: 3316262537480670731}
   - component: {fileID: 3316262537480670732}
   - component: {fileID: 3316262537480670734}
-  - component: {fileID: 3316262537480670721}
   - component: {fileID: 6620969612044214795}
+  - component: {fileID: 7161739303000295921}
+  - component: {fileID: 1561255534410270168}
   m_Layer: 7
   m_Name: BrickWallCube
-  m_TagString: Walls
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,58 +64,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stages:
   - _tag: Bullet
-    _action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 725122941367314519}
-          m_TargetAssemblyTypeName: Skripts.Components.SpawnComponent, Assembly-CSharp
-          m_MethodName: SpawnPrefab
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 6620969612044214795}
-          m_TargetAssemblyTypeName: Skripts.Components.WallColliderReducer, Assembly-CSharp
-          m_MethodName: GetReduce
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
-        - m_Target: {fileID: 8112666955296998636}
-          m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-          m_MethodName: DestroyObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 1
-          m_CallState: 2
---- !u!114 &3316262537480670721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3316262537480670723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 3316262537480670723}
 --- !u!114 &6620969612044214795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -130,21 +79,38 @@ MonoBehaviour:
   _time: 2
   _size: 0.9
   _box: {fileID: 3316262537480670732}
-  _onComplete:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 3316262537480670721}
-        m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+--- !u!114 &7161739303000295921
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316262537480670723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0924cd4f5253d9b429f6a4f7e60def18, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _collision: {fileID: 3316262537480670734}
+  _reducer: {fileID: 6620969612044214795}
+  _wall: {fileID: 3781504313987720327}
+  _play: {fileID: 1561255534410270168}
+  _spawn: {fileID: 725122941367314519}
+--- !u!114 &1561255534410270168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3316262537480670723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08570b8736db4a4a80836aa43317345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - _id: Die
+    _clip: {fileID: 8300000, guid: 2829bd76d8ddad043a1e634beb6169ec, type: 3}
 --- !u!1 &3781504313987720327
 GameObject:
   m_ObjectHideFlags: 0

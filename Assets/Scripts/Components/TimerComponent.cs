@@ -1,8 +1,9 @@
-using UnityEngine;
-using UnityEngine.Events;
-
 namespace Scripts.Components
 {
+    using UnityEngine;
+    using UnityEngine.Events;
+
+    //NOTE: удалить
     public class TimerComponent : MonoBehaviour
     {
         [SerializeField] private float _timer;

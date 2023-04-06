@@ -1,18 +1,18 @@
-﻿using Scripts.Model.Data.Properties;
-using UnityEngine;
-
-namespace Scripts.Model.Data
+﻿namespace Scripts.Model.Data
 {
+    using Scripts.Model.Data.Properties;
+    using UnityEngine;
+
     [CreateAssetMenu(menuName = "Data/GameSettings", fileName = "GameSettings")]
     public class GameSettings : ScriptableObject
     {
-        [SerializeField] private FloatPersistentProperty _music;
-        [SerializeField] private FloatPersistentProperty _sfx;
+        [SerializeField] private FloatPersistentProperty _music = default;
+        [SerializeField] private FloatPersistentProperty _sfx = default;
 
         public FloatPersistentProperty Music => _music;
         public FloatPersistentProperty Sfx => _sfx;
 
-        private static GameSettings _instance;
+        private static GameSettings _instance = default;
         public static GameSettings I => _instance == null ? LoadGameSetting() : _instance;
 
         private static GameSettings LoadGameSetting()
@@ -31,8 +31,8 @@ namespace Scripts.Model.Data
             Music.Validate();
             Sfx.Validate();
         }
-
     }
+
     public enum SoundSetting
     {
         Music,

@@ -1,7 +1,8 @@
-using UnityEngine;
-
 namespace Scripts.Components
 {
+    using UnityEngine;
+    
+    //NOTE: переделать.
     public class StartFlagTimerComponent : MonoBehaviour
     {
         public void StartTimer()

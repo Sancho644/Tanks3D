@@ -1,14 +1,19 @@
-using UnityEngine;
-using Scripts.Creatures.Mobs;
-using Scripts.Components.Model;
-using Scripts.Components.HealthArmor;
-
 namespace Scripts.Creatures.Player
 {
-    public class Player : Creature
+    using UnityEngine;
+    using Scripts.Creatures.Mobs;
+    using Scripts.Components.Model;
+    using Scripts.Components.LevelManagement;
+    using Scripts.Components;
+
+    public class Player : BaseCreature
     {
-        private GameSession _session;
-        private bool _checkDamageBuff;
+        [SerializeField] private ReloadLevelComponent _reload = default;
+        [SerializeField] private Cooldown _buffDamageCooldown = default;
+
+        private GameSession _session = default;
+        private bool _damageBuff = false;
+        private bool _check = false;
 
         protected override void Awake()
         {
@@ -17,10 +22,20 @@ namespace Scripts.Creatures.Player
 
         private void Start()
         {
-            _session = FindObjectOfType<GameSession>();
-            var health = GetComponent<HealthArmorComponent>();
+            _session = GameSession.Instance;
 
-            health.SetHealth(_session.Data.Hp);
+            _healthArmor.SetHealth(_session.Data.Hp);
+
+            _healthArmor.OnDie += OnPlayerDie;
+            _healthArmor.OnArmorDamage += OnTakeArmorDamage;
+            _healthArmor.OnHpDamage += OnTakeHealthDamage;
+            _healthArmor.OnHpChange += OnHealthChanged;
+        }
+
+        private void OnPlayerDie()
+        {
+            _sounds.Play("Die");
+            _reload.Reload();
         }
 
         public void OnHealthChanged(int currentHealth)
@@ -33,44 +48,63 @@ namespace Scripts.Creatures.Player
             _vertical = Input.GetAxis("Vertical");
             _horizontal = Input.GetAxis("Horizontal");
 
-            Fire();
+            if (_check)
+            {
+                DisableDamageBuff();
+            }
+
+            if (Input.GetButtonDown("FireProjectilePlayerOne"))
+            {
+                Fire();
+            }
         }
 
         public override void Fire()
         {
-            if (Input.GetButtonDown("FireProjectilePlayerOne"))
+            if (_damageBuff)
             {
-                if (_checkDamageBuff)
+                if (_attackCooldown.IsReady)
                 {
-                    _attack.SpawnAlternativePrefab();
+                    _attackCooldown.Reset();
+                    _attack.AlternativeSpawn();
                     _sounds.Play("Fire");
                 }
-                else
-                {
-                    base.Fire();
-                }
+            }
+            else
+            {
+                base.Fire();
             }
         }
 
         public void EnableDamageBuff()
         {
-            _checkDamageBuff = true;
-        }
-        
-        public void DisableDamageBuff()
-        {
-            _checkDamageBuff = false;
+            _damageBuff = true;
+            _buffDamageCooldown.Reset();
         }
 
-        protected override void TakeHPDamage()
+        private void DisableDamageBuff()
         {
-            base.TakeHPDamage();
-            _sounds.Play("HitDamege");
+            if (_buffDamageCooldown.IsReady)
+            {
+                _damageBuff = false;
+            }
         }
 
-        protected override void TakeArmorDamage()
+        protected override void OnTakeHealthDamage()
         {
-            base.TakeArmorDamage();
+            base.OnTakeHealthDamage();
+        }
+
+        private void OnTakeArmorDamage(int currentArmor)
+        {
+            _session.Data.Armor = currentArmor;
+        }
+
+        private void OnDestroy()
+        {
+            _healthArmor.OnDie -= OnPlayerDie;
+            _healthArmor.OnArmorDamage -= OnTakeArmorDamage;
+            _healthArmor.OnHpDamage -= OnTakeHealthDamage;
         }
     }
 }

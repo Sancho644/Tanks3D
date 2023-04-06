@@ -2,15 +2,15 @@ namespace Scripts.Components.HealthArmor
 {
     using UnityEngine;
 
-    public class SetArmorComponent : MonoBehaviour
+    public class ModifyHealthArmor : MonoBehaviour
     {
-        [SerializeField] private int _armor = 0;
+        [SerializeField] private int _healthDelta = 1;
 
-        public void ApplyArmor(GameObject target)
+        public void Apply(GameObject target)
         {
             if (target.TryGetComponent<HealthArmorComponent>(out HealthArmorComponent healthArmor))
             {
-                healthArmor.ApplyArmor(_armor);
+                healthArmor.ModifyHealth(_healthDelta);
             }
         }
     }

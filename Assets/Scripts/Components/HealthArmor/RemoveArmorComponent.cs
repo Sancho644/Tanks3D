@@ -1,15 +1,17 @@
-using UnityEngine;
-
 namespace Scripts.Components.HealthArmor
 {
+    using UnityEngine;
+
     public class RemoveArmorComponent : MonoBehaviour
     {
-        [SerializeField] private int _usualArmor;
+        [SerializeField] private int _usualArmor = 0;
 
         public void DisabbleArmorBuff(GameObject target)
         {
-            var healthComponent = target.GetComponent<HealthArmorComponent>();
-            healthComponent.DisabbleArmorBuff(_usualArmor);
+            if (target.TryGetComponent<HealthArmorComponent>(out HealthArmorComponent healthArmor))
+            {
+                healthArmor.DisabbleArmorBuff(_usualArmor);
+            }
         }
     }
 }

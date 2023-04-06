@@ -1,18 +1,18 @@
-using Scripts.Components.Model;
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
 namespace Scripts.Components.LevelManagement
 {
+    using Scripts.Components.Model;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+
     public class ReloadLevelComponent : MonoBehaviour
     {
         public void Reload()
         {
-            var session = FindObjectOfType<GameSession>();
-            Destroy(session);
+            var session = GameSession.Instance;
+            session.LoadLastSave();
 
             var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);
+            SceneManager.LoadScene(scene.name);            
         }
     }
 }

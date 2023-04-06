@@ -1,18 +1,18 @@
-using Scripts.Components.ColliderBased;
-using Scripts.Components.GoBased;
-using System.Collections;
-using UnityEngine;
-
 namespace Scripts.Creatures.Mobs
 {
+    using Scripts.Components.ColliderBased;
+    using Scripts.Components.GoBased;
+    using System.Collections;
+    using UnityEngine;
+
     public class Patrol : MonoBehaviour
     {
-        [SerializeField] private Checker _obstacleCheck;
-        [SerializeField] private Creature _creature;
-        [SerializeField] private int _direction;
+        [SerializeField] private Checker _obstacleCheck = default;
+        [SerializeField] private Enemy _creature = default;
+        [SerializeField] private int _direction = 1;
 
-        private Coroutine _coroutine;
-        private int _randValue;
+        private Coroutine _coroutine = default;
+        private int _randValue = 1;
 
         public IEnumerator DoPatrol()
         {
@@ -22,8 +22,6 @@ namespace Scripts.Creatures.Mobs
 
                 if (_obstacleCheck.IsTochingLayer)
                 {
-                    _creature.VerticalMovement(0);
-                    _creature.HorizontalMovement(0);
                     TryStop();
 
                     break;
@@ -41,6 +39,9 @@ namespace Scripts.Creatures.Mobs
 
         private void TryStop()
         {
+            _creature.VerticalMovement(0);
+            _creature.HorizontalMovement(0);
+
             if (_coroutine != null)
                 StopCoroutine(_coroutine);
             _coroutine = null;
@@ -52,7 +53,7 @@ namespace Scripts.Creatures.Mobs
             var time = Time.time + randomTime;
             _randValue = RandomNumbers.RandomWithTwoNumber(-1, 1);
 
-            while (true)
+            while (enabled)
             {
                 if (time >= Time.time)
                     _creature.HorizontalMovement(_randValue);

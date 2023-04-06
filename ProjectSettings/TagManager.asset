@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Bullet
   - Walls
-  - PlayerOne
   - Flag
   - Enemy
   - Trash
@@ -14,6 +13,8 @@ TagManager:
   - SfxAudioSource
   - MainUICanvas
   - MusicAudioSource
+  - FlagWall
+  - Obstacle
   layers:
   - Default
   - TransparentFX

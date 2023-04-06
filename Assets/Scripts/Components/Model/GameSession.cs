@@ -1,12 +1,18 @@
-using UnityEngine;
-using UnityEngine.SceneManagement;
-
 namespace Scripts.Components.Model
 {
+    using System;
+    using UnityEngine;
+    using UnityEngine.SceneManagement;
+
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private PlayerData _data;
+        [SerializeField] private PlayerData _data = default;
+
+        private const string HUD = "Hud";
+        private PlayerData _save;
+
         public PlayerData Data => _data;
+        public static GameSession Instance { get; private set; }
 
         private void Awake()
         {
@@ -18,13 +24,15 @@ namespace Scripts.Components.Model
             }
             else
             {
+                Save();
                 DontDestroyOnLoad(this);
+                Instance = this;
             }
         }
 
         private void LoadHud()
         {
-            SceneManager.LoadScene("Hud", LoadSceneMode.Additive);
+            SceneManager.LoadScene(HUD, LoadSceneMode.Additive);
         }
 
         private bool IsSessionExit()
@@ -37,6 +45,22 @@ namespace Scripts.Components.Model
             }
 
             return false;
+        }
+
+        public void Save()
+        {
+            _save = _data.Clone();
+        }
+
+        public void LoadLastSave()
+        {
+            _data = _save.Clone();
+        }
+
+        private void OnDestroy()
+        {
+            if (Instance == null)
+                Instance = null;
         }
     }
 }

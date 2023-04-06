@@ -13,8 +13,7 @@ GameObject:
   - component: {fileID: 3296969965874183291}
   - component: {fileID: 3296969965874183290}
   - component: {fileID: 3232796905829181659}
-  - component: {fileID: 3296969965874183295}
-  - component: {fileID: 1446356068232133050}
+  - component: {fileID: 303767603}
   m_Layer: 0
   m_Name: DamageBuff
   m_TagString: Untagged
@@ -114,46 +113,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1446356068232133050}
-        m_TargetAssemblyTypeName: Skripts.Components.StartTimerComponent, Assembly-CSharp
-        m_MethodName: StartTimer
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3296969965874183290}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 3296969965874183295}
-        m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &3296969965874183295
+--- !u!114 &303767603
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,19 +122,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 3296969965874183294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
+  m_Script: {fileID: 11500000, guid: 347029c2211d00944aa8f787f71ac0dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 3296969965874183294}
---- !u!114 &1446356068232133050
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3296969965874183294}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9f4acaa2713988147848078c33d45b09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  _trigger: {fileID: 3232796905829181659}
+  _session: {fileID: 0}

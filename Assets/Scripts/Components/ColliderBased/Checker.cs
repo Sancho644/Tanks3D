@@ -1,8 +1,8 @@
-using UnityEngine;
-
 namespace Scripts.Components.ColliderBased
 {
-    public class Checker : ColliderCheck
+    using UnityEngine;
+
+    public class Checker : BaseColliderCheck
     {
         private void OnTriggerStay(Collider other)
         {

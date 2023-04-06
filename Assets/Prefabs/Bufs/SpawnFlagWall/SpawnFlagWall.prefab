@@ -11,10 +11,9 @@ GameObject:
   - component: {fileID: 1135895042669898951}
   - component: {fileID: 1135895042669898950}
   - component: {fileID: 1135895042669898949}
-  - component: {fileID: 1135895042669898947}
-  - component: {fileID: 1135895042669898938}
-  - component: {fileID: -855807222615479640}
   - component: {fileID: 6548288522106313782}
+  - component: {fileID: 1135895042669898947}
+  - component: {fileID: 1481805762}
   m_Layer: 0
   m_Name: SpawnFlagWall
   m_TagString: Untagged
@@ -86,6 +85,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6548288522106313782
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1135895042669898945}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.0044269604, y: 0.032144096, z: 0.029231358}
+  m_Center: {x: 0.0000000012417635, y: -0.00016341508, z: 0.0006225214}
 --- !u!114 &1135895042669898947
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -102,46 +114,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
-  _action:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -855807222615479640}
-        m_TargetAssemblyTypeName: Skripts.Components.SpawnFlagWallComponent, Assembly-CSharp
-        m_MethodName: Spawn
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6548288522106313782}
-        m_TargetAssemblyTypeName: UnityEngine.Collider, UnityEngine
-        m_MethodName: set_enabled
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 1135895042669898938}
-        m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-        m_MethodName: DestroyObject
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
---- !u!114 &1135895042669898938
+--- !u!114 &1481805762
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -150,36 +123,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1135895042669898945}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
+  m_Script: {fileID: 11500000, guid: a52b3f244f0b9594bbff6213b9207592, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 1135895042669898945}
-  _objectToActive: {fileID: 0}
---- !u!114 &-855807222615479640
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135895042669898945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d87934ed74017a418dce27d0f17f4a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!65 &6548288522106313782
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1135895042669898945}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.0044269604, y: 0.032144096, z: 0.029231358}
-  m_Center: {x: 0.0000000012417635, y: -0.00016341508, z: 0.0006225214}
+  _trigger: {fileID: 1135895042669898947}
 --- !u!1 &6992420383220304365
 GameObject:
   m_ObjectHideFlags: 0

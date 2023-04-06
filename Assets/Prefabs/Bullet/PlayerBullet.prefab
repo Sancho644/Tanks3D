@@ -14,11 +14,10 @@ GameObject:
   - component: {fileID: 6261095326610083749}
   - component: {fileID: 7220679137410215302}
   - component: {fileID: 2683163863420564868}
-  - component: {fileID: -1265467639231358088}
   - component: {fileID: 2433405262365330072}
   - component: {fileID: -4326618932721547175}
   m_Layer: 11
-  m_Name: Bullet
+  m_Name: PlayerBullet
   m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -129,107 +128,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _stages:
-  - _tag: Flag
-    _action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2433405262365330072}
-          m_TargetAssemblyTypeName: Skripts.Components.DamageComponent, Assembly-CSharp
-          m_MethodName: ApplyDamage
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: -1265467639231358088}
-          m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-          m_MethodName: DestroyObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - _tag: Walls
-    _action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -1265467639231358088}
-          m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-          m_MethodName: DestroyObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - _tag: Enemy
-    _action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 2433405262365330072}
-          m_TargetAssemblyTypeName: Skripts.Components.DamageComponent, Assembly-CSharp
-          m_MethodName: ApplyDamage
-          m_Mode: 0
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-        - m_Target: {fileID: -1265467639231358088}
-          m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-          m_MethodName: DestroyObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
   - _tag: Bullet
-    _action:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: -1265467639231358088}
-          m_TargetAssemblyTypeName: Skripts.Components.DestroyObjectComponent, Assembly-CSharp
-          m_MethodName: DestroyObject
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
---- !u!114 &-1265467639231358088
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2903535195204954660}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 2903535195204954660}
+  - _tag: Obstacle
+  - _tag: Player
 --- !u!114 &2433405262365330072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -242,7 +144,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9788a600c685db4f90d857bdb4e7dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damageValue: 1
+  _healthDelta: -1
 --- !u!114 &-4326618932721547175
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -257,3 +159,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _prefab: {fileID: 2903535195204954660}
   _speed: 0.5
+  _collision: {fileID: 2683163863420564868}
+  _modify: {fileID: 2433405262365330072}

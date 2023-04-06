@@ -1,17 +1,15 @@
-﻿using System.Collections;
-using UnityEngine;
-using UnityEngine.Events;
-
-namespace Scripts.Components
+﻿namespace Scripts.Components
 {
+    using System.Collections;
+    using UnityEngine;
+
     public class WallColliderReducer : MonoBehaviour
     {
-        [SerializeField] private float _time;
-        [SerializeField] private float _size;
-        [SerializeField] private BoxCollider _box;
-        [SerializeField] private UnityEvent _onComplete;
+        [SerializeField] private float _time = 1f;
+        [SerializeField] private float _size = 2f;
+        [SerializeField] private BoxCollider _box = default;
 
-        public void GetReduce()
+        public void Reduce()
         {
             StartCoroutine(ReduceCollision());
         }
@@ -30,7 +28,7 @@ namespace Scripts.Components
                 yield return null;
             }
 
-            _onComplete?.Invoke();
+            Destroy(gameObject);
         }
     }
 }

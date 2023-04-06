@@ -16,13 +16,13 @@ namespace Scripts.Creatures.Mobs
 
         private int _rotationDirection = 1;
         private IEnumerator _current;
-        private Creature _creature;
+        private BaseCreature _creature;
         private Patrol _patrol;
         private bool _isDead;
 
         private void Awake()
         {
-            _creature = GetComponent<Creature>();
+            _creature = GetComponent<BaseCreature>();
             _patrol = GetComponent<Patrol>();
         }
 

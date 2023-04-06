@@ -1,17 +1,17 @@
-﻿using Scripts.Model.Data;
-using Scripts.Model.Data.Properties;
-using System;
-using UnityEngine;
-
-namespace Scripts.Components.Audio
+﻿namespace Scripts.Components.Audio
 {
+    using Scripts.Model.Data;
+    using Scripts.Model.Data.Properties;
+    using System;
+    using UnityEngine;
+
     [RequireComponent(typeof(AudioSource))]
     public class AudioSettingsComponent : MonoBehaviour
     {
-        [SerializeField] private SoundSetting _mode;
+        [SerializeField] private SoundSetting _mode = default;
 
-        private FloatPersistentProperty _model;
-        private AudioSource _source;
+        private FloatPersistentProperty _model = default;
+        private AudioSource _source = default;
 
         private void Start()
         {
