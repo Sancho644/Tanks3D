@@ -64,6 +64,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stages:
   - _tag: Bullet
+    _layer:
+      serializedVersion: 2
+      m_Bits: 2048
+  _isTouchingLayer: 0
 --- !u!114 &6620969612044214795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,7 +81,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _time: 2
-  _size: 0.9
+  _size: 1
+  _deltaSize: 0.0065
   _box: {fileID: 3316262537480670732}
 --- !u!114 &7161739303000295921
 MonoBehaviour:

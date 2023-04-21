@@ -14,7 +14,7 @@ namespace Scripts.Creatures.Mobs
         [SerializeField] protected HealthArmorComponent _healthArmor = default;
         [SerializeField] protected SpawnComponent _attack = default;
 
-        protected float _vertical = 0f;
+        public float _vertical = 0f;
         protected float _horizontal = 0f;
         protected Rigidbody _rigidbody = default;
         protected PlaySoundsComponent _sounds = default;

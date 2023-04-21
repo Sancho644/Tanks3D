@@ -1,22 +1,32 @@
 namespace Scripts.Components.ColliderBased
 {
+    using System;
     using UnityEngine;
 
     public class Checker : BaseColliderCheck
     {
+        public event Action<GameObject> OnEnterCheck = default;
+
         private void OnTriggerStay(Collider other)
         {
-            if (other.gameObject.IsInLayer(_layer))
+            foreach (var stage in _stages)
             {
-                _isTouchingLayer = true;
+                if (other.gameObject.IsInLayer(stage.Layer))
+                {
+                    _isTouchingLayer = true;
+                    OnEnterCheck?.Invoke(other.gameObject);
+                }
             }
         }
 
         private void OnTriggerExit(Collider other)
         {
-            if (other.gameObject.IsInLayer(_layer))
+            foreach (var stage in _stages)
             {
-                _isTouchingLayer = false;
+                if (other.gameObject.IsInLayer(stage.Layer))
+                {
+                    _isTouchingLayer = false;
+                }
             }
         }
     }

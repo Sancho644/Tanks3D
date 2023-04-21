@@ -13,7 +13,7 @@ namespace Scripts.Components.HealthArmor
         public bool DamageBuff { get => _damageBuff; set => _damageBuff = value; }
 
         public event Action OnHpDamage = default;
-        public event Action<int> OnArmorDamage = default;
+        public event Action<int> OnArmorChange = default;
         public event Action OnDie = default;
         public event Action<int> OnHpChange = default;
 
@@ -25,13 +25,16 @@ namespace Scripts.Components.HealthArmor
             }
             else if (_armor == 0)
             {
-                var health = _health;
-                health += value;
+                _health += value;
 
-                _health = Mathf.Clamp(health, 0, 3);
+                _health = Mathf.Clamp(_health, 0, 3);
 
                 OnHpChange?.Invoke(_health);
-                OnHpDamage?.Invoke();
+
+                if (value < 0)
+                {
+                    OnHpDamage?.Invoke();
+                }
             }
 
             if (_health <= 0)
@@ -42,12 +45,11 @@ namespace Scripts.Components.HealthArmor
 
         public void ModifyArmor(int value)
         {
-            var armor = _armor;
-            armor += value;
+            _armor += value;
 
-            _armor = Mathf.Clamp(armor, 0, 3);
+            _armor = Mathf.Clamp(_armor, 0, 3);
 
-            OnArmorDamage?.Invoke(_armor);
+            OnArmorChange?.Invoke(_armor);
         }
 
 

@@ -13,7 +13,6 @@ namespace Scripts.Creatures.Player
 
         private GameSession _session = default;
         private bool _damageBuff = false;
-        private bool _check = false;
 
         protected override void Awake()
         {
@@ -24,10 +23,10 @@ namespace Scripts.Creatures.Player
         {
             _session = GameSession.Instance;
 
-            _healthArmor.SetHealth(_session.Data.Hp);
+            _healthArmor.SetHealth(_session.Data.Health.Value);
 
             _healthArmor.OnDie += OnPlayerDie;
-            _healthArmor.OnArmorDamage += OnTakeArmorDamage;
+            _healthArmor.OnArmorChange += OnTakeArmorDamage;
             _healthArmor.OnHpDamage += OnTakeHealthDamage;
             _healthArmor.OnHpChange += OnHealthChanged;
         }
@@ -40,7 +39,7 @@ namespace Scripts.Creatures.Player
 
         public void OnHealthChanged(int currentHealth)
         {
-            _session.Data.Hp = currentHealth;
+            _session.Data.Health.Value = currentHealth;
         }
 
         private void Update()
@@ -48,7 +47,7 @@ namespace Scripts.Creatures.Player
             _vertical = Input.GetAxis("Vertical");
             _horizontal = Input.GetAxis("Horizontal");
 
-            if (_check)
+            if (_damageBuff && _buffDamageCooldown.IsReady)
             {
                 DisableDamageBuff();
             }
@@ -61,16 +60,13 @@ namespace Scripts.Creatures.Player
 
         public override void Fire()
         {
-            if (_damageBuff)
+            if (_damageBuff && _attackCooldown.IsReady)
             {
-                if (_attackCooldown.IsReady)
-                {
-                    _attackCooldown.Reset();
-                    _attack.AlternativeSpawn();
-                    _sounds.Play("Fire");
-                }
+                _attackCooldown.Reset();
+                _attack.AlternativeSpawn();
+                _sounds.Play("Fire");
             }
-            else
+            else if(_buffDamageCooldown.IsReady)
             {
                 base.Fire();
             }
@@ -84,10 +80,7 @@ namespace Scripts.Creatures.Player
 
         private void DisableDamageBuff()
         {
-            if (_buffDamageCooldown.IsReady)
-            {
-                _damageBuff = false;
-            }
+            _damageBuff = false;
         }
 
         protected override void OnTakeHealthDamage()
@@ -97,14 +90,15 @@ namespace Scripts.Creatures.Player
 
         private void OnTakeArmorDamage(int currentArmor)
         {
-            _session.Data.Armor = currentArmor;
+            _session.Data.Armor.Value = currentArmor;
         }
 
         private void OnDestroy()
         {
             _healthArmor.OnDie -= OnPlayerDie;
-            _healthArmor.OnArmorDamage -= OnTakeArmorDamage;
+            _healthArmor.OnArmorChange -= OnTakeArmorDamage;
             _healthArmor.OnHpDamage -= OnTakeHealthDamage;
+            _healthArmor.OnHpChange -= OnHealthChanged;
         }
     }
 }

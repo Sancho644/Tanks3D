@@ -7,6 +7,7 @@
     {
         [SerializeField] private float _time = 1f;
         [SerializeField] private float _size = 2f;
+        [SerializeField] private float _deltaSize = 0.006f;
         [SerializeField] private BoxCollider _box = default;
 
         public void Reduce()
@@ -23,7 +24,7 @@
 
                 time += Time.deltaTime;
                 _box.size = new Vector3(_size, _size, _size);
-                _size -= 0.01f;
+                _size -= _deltaSize;
 
                 yield return null;
             }

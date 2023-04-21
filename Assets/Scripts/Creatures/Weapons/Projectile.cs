@@ -10,6 +10,7 @@ namespace Scripts.Creatures.Weapons
         [SerializeField] private float _speed = 0.5f;
         [SerializeField] private EnterCollisionComponent _collision = default;
         [SerializeField] private ModifyHealthArmor _modify = default;
+        [SerializeField] private bool _isEnemyBullet = false;
 
         private Rigidbody Rigidbody = default;
 
@@ -27,17 +28,34 @@ namespace Scripts.Creatures.Weapons
 
         private void OnCollisionAction(string tag, GameObject go)
         {
-            if (tag == "Player" || tag == "Enemy" || tag == "Flag")
+            if (tag == "Player" || tag == "Flag")
             {
-                _modify.Apply(go);
-
-                Destroy(gameObject);
+                AddDamage(go);
             }
 
             if (tag == "Obstacle" || tag == "Bullet")
             {
                 Destroy(gameObject);
             }
+
+            if (tag == "Enemy")
+            {
+                if (_isEnemyBullet)
+                {
+                    Destroy(gameObject);
+
+                    return;
+                }
+
+                AddDamage(go);
+            }
+        }
+
+        private void AddDamage(GameObject go)
+        {
+            _modify.Apply(go);
+
+            Destroy(gameObject);
         }
 
         private void OnDestroy()

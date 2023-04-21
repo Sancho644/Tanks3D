@@ -278,8 +278,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _data:
-    Hp: 3
-    Armor: 3
+    Health:
+      _value: 3
+    Armor:
+      _value: 0
 --- !u!4 &267947458
 Transform:
   m_ObjectHideFlags: 0

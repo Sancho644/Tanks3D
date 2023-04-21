@@ -9,21 +9,19 @@ namespace Scripts.Creatures.Mobs
     {
         [SerializeField] private Checker _obstacleCheck = default;
         [SerializeField] private Enemy _creature = default;
-        [SerializeField] private int _direction = 1;
+        [SerializeField] private float _direction = 1f;
 
-        private Coroutine _coroutine = default;
-        private int _randValue = 1;
+        private IEnumerator _current = default;
+        private bool _isTurning = false;
 
         public IEnumerator DoPatrol()
         {
-            while (enabled)
+            while (!_obstacleCheck.IsTochingLayer && !_isTurning)
             {
                 _creature.Fire();
 
                 if (_obstacleCheck.IsTochingLayer)
                 {
-                    TryStop();
-
                     break;
                 }
                 else
@@ -34,37 +32,54 @@ namespace Scripts.Creatures.Mobs
                 yield return null;
             }
 
-            _coroutine = StartCoroutine(RandomRotate());
+            StartState(RandomRotate());
         }
 
-        private void TryStop()
+        public void TryStop()
         {
-            _creature.VerticalMovement(0);
-            _creature.HorizontalMovement(0);
+            _creature.VerticalMovement(0f);
+            _creature.HorizontalMovement(0f);
 
-            if (_coroutine != null)
-                StopCoroutine(_coroutine);
-            _coroutine = null;
+            if (_current != null)
+                StopCoroutine(_current);
+            _current = null;
         }
 
         private IEnumerator RandomRotate()
         {
+            _isTurning = true;
             var randomTime = Random.Range(0.1f, 1.5f);
             var time = Time.time + randomTime;
-            _randValue = RandomNumbers.RandomWithTwoNumber(-1, 1);
+            float randValue = RandomNumbers.RandomWithTwoNumber(-1f, 1f);
 
             while (enabled)
             {
                 if (time >= Time.time)
-                    _creature.HorizontalMovement(_randValue);
-                else                  
+                    _creature.HorizontalMovement(randValue);
+                else
                     break;
 
                 yield return null;
             }
 
-            TryStop();
-            _coroutine = StartCoroutine(DoPatrol());
+            _isTurning = false;
+
+            StartState(DoPatrol());
+        }       
+        
+        private void StartState(IEnumerator coroutine)
+        {
+            _creature.VerticalMovement(0f);
+            _creature.HorizontalMovement(0f);
+
+            if (_current != null)
+            {
+                StopCoroutine(_current);
+            }
+
+            _current = coroutine;
+
+            StartCoroutine(coroutine);
         }
     }
 }

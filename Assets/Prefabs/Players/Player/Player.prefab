@@ -269,6 +269,7 @@ MonoBehaviour:
     _value: 1
   _healthArmor: {fileID: 1921992612132958462}
   _attack: {fileID: 688420955}
+  _vertical: 0
   _reload: {fileID: 1921992612132958463}
   _buffDamageCooldown:
     _value: 5
@@ -444,7 +445,7 @@ GameObject:
   - component: {fileID: 3987281106275734941}
   m_Layer: 12
   m_Name: FirePoint
-  m_TagString: Flag
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -3,10 +3,8 @@ namespace Scripts.Components.ColliderBased
     using UnityEngine;
     using System;
 
-    public class EnterCollisionComponent : MonoBehaviour
+    public class EnterCollisionComponent : BaseColliderCheck
     {
-        [SerializeField] private CollisionStages[] _stages = default;
-
         public event Action<string, GameObject> OnAction = default;
 
         private void OnCollisionEnter(Collision other)
@@ -15,18 +13,16 @@ namespace Scripts.Components.ColliderBased
             {
                 if (other.gameObject.CompareTag(stage.Tag))
                 {
+                    _isTouchingLayer = true;
                     OnAction?.Invoke(stage.Tag, other.gameObject);
                     return;
                 }
             }
         }
 
-        [Serializable]
-        public class CollisionStages
+        private void OnCollisionExit(Collision collision)
         {
-            [SerializeField] private string _tag;
-
-            public string Tag => _tag;
+            _isTouchingLayer = false;
         }
     }
 }

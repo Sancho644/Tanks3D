@@ -93,7 +93,6 @@ GameObject:
   - component: {fileID: 3427677678477872091}
   - component: {fileID: 3427677678477872088}
   - component: {fileID: 1248197167}
-  - component: {fileID: 4530706696608771754}
   m_Layer: 9
   m_Name: AttackRange
   m_TagString: Untagged
@@ -109,7 +108,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677678477872094}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -1.79}
+  m_LocalPosition: {x: 0, y: 0, z: -0.63}
   m_LocalScale: {x: 1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -126,7 +125,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.2, y: 2, z: 23}
+  m_Size: {x: 0.45, y: 2, z: 23}
   m_Center: {x: 0, y: 1, z: 14}
 --- !u!114 &1248197167
 MonoBehaviour:
@@ -140,27 +139,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: Player
-  _layer:
-    serializedVersion: 2
-    m_Bits: 4096
-  _isTouchingLayer: 0
---- !u!114 &4530706696608771754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427677678477872094}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Flag
-  _layer:
-    serializedVersion: 2
-    m_Bits: 0
+  _stages:
+  - _tag: 
+    _layer:
+      serializedVersion: 2
+      m_Bits: 4096
   _isTouchingLayer: 0
 --- !u!1 &3427677678494261332
 GameObject:
@@ -309,6 +292,7 @@ MonoBehaviour:
     _value: 5
   _healthArmor: {fileID: 3427677678494261342}
   _attack: {fileID: 3427677678963179475}
+  _vertical: 0
   _explosion: {fileID: 1832362961995473975}
 --- !u!114 &3427677678494261342
 MonoBehaviour:
@@ -336,7 +320,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 766c3e1c01dd41a4ca370d8d5c26d140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vision: {fileID: 6937587439521055192}
+  _vision: {fileID: 917932436}
   _canAttack: {fileID: 1248197167}
   _leftTrigger: {fileID: 3427677679173719945}
   _rightTrigger: {fileID: 3427677678638401611}
@@ -354,7 +338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ac60ba35ade51540925984b17d71349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _obstacleCheck: {fileID: 9196209307578745477}
+  _obstacleCheck: {fileID: 8734001507282374995}
   _creature: {fileID: 6611289143397274156}
   _direction: 1
 --- !u!114 &767110519638470807
@@ -400,7 +384,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677678638401609}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6, y: 0, z: -1.79}
+  m_LocalPosition: {x: 1.1, y: 0, z: -0.63}
   m_LocalScale: {x: 1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -431,10 +415,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 256
+  _stages:
+  - _tag: Player
+    _layer:
+      serializedVersion: 2
+      m_Bits: 256
   _isTouchingLayer: 0
 --- !u!1 &3427677678963179473
 GameObject:
@@ -590,7 +575,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677679173719951}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.6, y: 0, z: -1.79}
+  m_LocalPosition: {x: -1.1, y: 0, z: -0.63}
   m_LocalScale: {x: 1, y: 1, z: 0.35}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -621,10 +606,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 256
+  _stages:
+  - _tag: Player
+    _layer:
+      serializedVersion: 2
+      m_Bits: 256
   _isTouchingLayer: 0
 --- !u!1 &3427677679192641054
 GameObject:
@@ -636,9 +622,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3427677679192641049}
   - component: {fileID: 1423044584}
-  - component: {fileID: 3427677679192641050}
-  - component: {fileID: 6937587439521055192}
-  - component: {fileID: 1566443773567706386}
+  - component: {fileID: 917932436}
   m_Layer: 9
   m_Name: Vision
   m_TagString: Untagged
@@ -673,7 +657,7 @@ SphereCollider:
   serializedVersion: 2
   m_Radius: 6
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &3427677679192641050
+--- !u!114 &917932436
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -689,39 +673,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
---- !u!114 &6937587439521055192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427677679192641054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 256
   _isTouchingLayer: 0
---- !u!114 &1566443773567706386
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3427677679192641054}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8566d4080f3d9e648a71a3b7036398d2, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _tag: Flag
-  _layer:
-    serializedVersion: 2
-    m_Bits: 256
 --- !u!1 &3427677679633040605
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +766,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3427677679636632916}
   - component: {fileID: 4578848888467942769}
-  - component: {fileID: 9196209307578745477}
+  - component: {fileID: 8734001507282374995}
   m_Layer: 0
   m_Name: ObstacleCheck
   m_TagString: Untagged
@@ -830,7 +782,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3427677679636632874}
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.02, y: 0.61, z: 1.162}
+  m_LocalPosition: {x: -0.02, y: 0.61, z: 1.574}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3427677678494261330}
@@ -849,7 +801,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1, z: 1.75}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &9196209307578745477
+--- !u!114 &8734001507282374995
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -861,10 +813,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 415a13a8f53c8d94287a579943003535, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _tag: 
-  _layer:
-    serializedVersion: 2
-    m_Bits: 8320
+  _stages:
+  - _tag: 
+    _layer:
+      serializedVersion: 2
+      m_Bits: 8320
   _isTouchingLayer: 0
 --- !u!1 &3783340145161425671
 GameObject:

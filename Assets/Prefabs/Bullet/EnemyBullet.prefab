@@ -131,6 +131,7 @@ MonoBehaviour:
   - _tag: Player
   - _tag: Obstacle
   - _tag: Bullet
+  - _tag: Enemy
 --- !u!114 &2433405262365330072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160,3 +161,4 @@ MonoBehaviour:
   _speed: 0.5
   _collision: {fileID: 2683163863420564868}
   _modify: {fileID: 2433405262365330072}
+  _isEnemyBullet: 1

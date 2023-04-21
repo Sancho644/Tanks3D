@@ -1,6 +1,5 @@
 namespace Scripts.Components.Model
 {
-    using System;
     using UnityEngine;
     using UnityEngine.SceneManagement;
 
