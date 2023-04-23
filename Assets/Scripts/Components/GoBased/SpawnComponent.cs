@@ -1,13 +1,13 @@
+using UnityEngine;
+using Scripts.Utils;
+
 namespace Scripts.Components.GoBased
 {
-    using UnityEngine;
-    using Scripts.Utils;
-
     public class SpawnComponent : MonoBehaviour
     {
-        [SerializeField] private Transform _target = default;
-        [SerializeField] private GameObject _prefab = default;
-        [SerializeField] private GameObject _alternativePrefab = default;
+        [SerializeField] private Transform _target;
+        [SerializeField] private GameObject _prefab;
+        [SerializeField] private GameObject _alternativePrefab;
 
         public void Spawn()
         {

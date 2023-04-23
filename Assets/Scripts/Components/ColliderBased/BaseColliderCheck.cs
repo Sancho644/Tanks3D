@@ -1,12 +1,12 @@
+using UnityEngine;
+using System;
+
 namespace Scripts.Components.ColliderBased
 {
-    using UnityEngine;
-    using System;
-
     public class BaseColliderCheck : MonoBehaviour
     {
         [SerializeField] protected CollisionStages[] _stages;
-        [SerializeField] protected bool _isTouchingLayer = default;
+        [SerializeField] protected bool _isTouchingLayer;
 
         public bool IsTochingLayer => _isTouchingLayer;
 

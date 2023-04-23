@@ -1,7 +1,7 @@
+using UnityEngine;
+
 namespace Scripts.Components.HealthArmor
 {
-    using UnityEngine;
-
     public class SetArmorComponent : MonoBehaviour
     {
         [SerializeField] private int _armor = 0;

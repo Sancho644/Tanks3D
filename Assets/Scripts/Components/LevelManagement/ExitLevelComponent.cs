@@ -1,12 +1,12 @@
+using Scripts.Components.Model;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace Scripts.Components.LevelManagement
 {
-    using Scripts.Components.Model;
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-
     public class ExitLevelComponent : MonoBehaviour
     {
-        [SerializeField] private string _sceneName = default;
+        [SerializeField] private string _sceneName;
 
         public static ExitLevelComponent Instance { get; private set; }
 

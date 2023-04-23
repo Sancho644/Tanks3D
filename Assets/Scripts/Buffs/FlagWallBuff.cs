@@ -1,15 +1,17 @@
-﻿using Scripts.Creatures.Player;
+﻿using Scripts.Walls;
 using UnityEngine;
 
 namespace Scripts.Buffs
 {
-    public class DamageBuff : BaseBuff
+    public class FlagWallBuff : BaseBuff
     {
         protected override void OnTriggered(GameObject go)
         {
-            if (go.TryGetComponent<Player>(out Player player))
+            var list = FlagWalls.Instance;
+
+            foreach (var objects in list.BrickWalls)
             {
-                player.EnableDamageBuff();
+                objects.SetActive(true);
             }
 
             base.OnTriggered(gameObject);

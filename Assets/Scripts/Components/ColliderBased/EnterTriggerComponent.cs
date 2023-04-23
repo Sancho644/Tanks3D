@@ -1,16 +1,17 @@
+using Scripts.Utils;
+using System;
+using UnityEngine;
+
 namespace Scripts.Components.ColliderBased
 {
-    using System;
-    using UnityEngine;
-
     public class EnterTriggerComponent : MonoBehaviour
     {
-        [SerializeField] protected string _tag = default;
+        [SerializeField] protected string _tag;
         [SerializeField] protected LayerMask _layer = ~0;
-        [SerializeField] protected bool _isTouchingLayer = default;
+        [SerializeField] protected bool _isTouchingLayer;
 
         public bool IsTochingLayer => _isTouchingLayer;
-        public event Action<GameObject> OnEnterTriggered = default;
+        public event Action<GameObject> OnEnterTriggered;
 
         private void OnTriggerEnter(Collider other)
         {

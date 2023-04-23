@@ -1,7 +1,7 @@
+using UnityEngine;
+
 namespace Scripts.Components.HealthArmor
 {
-    using UnityEngine;
-
     public class ModifyHealthArmor : MonoBehaviour
     {
         [SerializeField] private int _healthDelta = 1;

@@ -1,11 +1,12 @@
-﻿namespace Scripts.Creatures.Mobs
-{
-    using Scripts.Components.GoBased;
-    using UnityEngine;
+﻿using Scripts.Components.GoBased;
+using Scripts.Model.Data;
+using UnityEngine;
 
+namespace Scripts.Creatures.Mobs
+{
     public class Enemy : BaseCreature
     {
-        [SerializeField] private SpawnComponent _explosion = default;
+        [SerializeField] private SpawnComponent _explosion;
 
         private void Start()
         {

@@ -1,10 +1,10 @@
+using Scripts.Components.ColliderBased;
+using Scripts.Components.GoBased;
+using System.Collections;
+using UnityEngine;
+
 namespace Scripts.Creatures.Mobs
 {
-    using Scripts.Components.ColliderBased;
-    using Scripts.Components.GoBased;
-    using System.Collections;
-    using UnityEngine;
-
     public class MobAI : MonoBehaviour
     {
         [SerializeField] private EnterTriggerComponent _vision;

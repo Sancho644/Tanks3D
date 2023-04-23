@@ -1,17 +1,17 @@
+using Scripts.Components.ColliderBased;
+using Scripts.Components.GoBased;
+using System.Collections;
+using UnityEngine;
+
 namespace Scripts.Creatures.Mobs
 {
-    using Scripts.Components.ColliderBased;
-    using Scripts.Components.GoBased;
-    using System.Collections;
-    using UnityEngine;
-
     public class Patrol : MonoBehaviour
     {
-        [SerializeField] private Checker _obstacleCheck = default;
-        [SerializeField] private Enemy _creature = default;
+        [SerializeField] private Checker _obstacleCheck;
+        [SerializeField] private Enemy _creature;
         [SerializeField] private float _direction = 1f;
 
-        private IEnumerator _current = default;
+        private IEnumerator _current;
         private bool _isTurning = false;
 
         public IEnumerator DoPatrol()
@@ -65,8 +65,8 @@ namespace Scripts.Creatures.Mobs
             _isTurning = false;
 
             StartState(DoPatrol());
-        }       
-        
+        }
+
         private void StartState(IEnumerator coroutine)
         {
             _creature.VerticalMovement(0f);

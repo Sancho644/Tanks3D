@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3398537217835013950}
   - component: {fileID: 6092584595276232527}
   m_Layer: 0
-  m_Name: TimedFlagArmorBuff
+  m_Name: IronFlagArmorBuff
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

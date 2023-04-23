@@ -8,6 +8,7 @@ namespace Scripts.UI.InGameMenu
     public class InGameMenuWindow : AnimatedWindow
     {
         private float _defaultTimeScale;
+
         protected override void Start()
         {
             base.Start();
@@ -26,7 +27,7 @@ namespace Scripts.UI.InGameMenu
         {
             SceneManager.LoadScene("MainMenu");
 
-            var session = FindObjectOfType<GameSession>();
+            var session = GameSession.Instance;
             Destroy(session.gameObject);
         }
 

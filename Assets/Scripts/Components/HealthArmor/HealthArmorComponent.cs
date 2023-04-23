@@ -1,21 +1,17 @@
+using UnityEngine;
+using System;
+
 namespace Scripts.Components.HealthArmor
 {
-    using UnityEngine;
-    using System;
-
     public class HealthArmorComponent : MonoBehaviour
     {
         [SerializeField] private int _health = 1;
         [SerializeField] private int _armor = 0;
 
-        private bool _damageBuff = false;
-
-        public bool DamageBuff { get => _damageBuff; set => _damageBuff = value; }
-
-        public event Action OnHpDamage = default;
-        public event Action<int> OnArmorChange = default;
-        public event Action OnDie = default;
-        public event Action<int> OnHpChange = default;
+        public event Action OnHpDamage;
+        public event Action<int> OnArmorChange;
+        public event Action OnDie;
+        public event Action<int> OnHpChange;
 
         public void ModifyHealth(int value)
         {

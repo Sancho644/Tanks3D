@@ -144,7 +144,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _collision: {fileID: 2043065286}
   _reducer: {fileID: 0}
-  _wall: {fileID: 0}
+  _wall: {fileID: 3316262537480670723}
   _play: {fileID: 2043065281}
   _spawn: {fileID: 6040191731953280322}
 --- !u!114 &2043065286
@@ -161,6 +161,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _stages:
   - _tag: Bullet
+    _layer:
+      serializedVersion: 2
+      m_Bits: 4294967295
+  _isTouchingLayer: 0
 --- !u!1 &5097422009629474310
 GameObject:
   m_ObjectHideFlags: 0

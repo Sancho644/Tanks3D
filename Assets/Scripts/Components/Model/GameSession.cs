@@ -1,11 +1,11 @@
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 namespace Scripts.Components.Model
 {
-    using UnityEngine;
-    using UnityEngine.SceneManagement;
-
     public class GameSession : MonoBehaviour
     {
-        [SerializeField] private PlayerData _data = default;
+        [SerializeField] private PlayerData _data;
 
         private const string HUD = "Hud";
         private PlayerData _save;

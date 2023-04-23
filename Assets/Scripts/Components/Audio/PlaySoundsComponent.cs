@@ -1,16 +1,16 @@
-﻿namespace Scripts
-{
-    using UnityEngine;
-    using System;
-    using Scripts.Utils;
+﻿using UnityEngine;
+using System;
+using Scripts.Utils;
 
+namespace Scripts.Components.Audio
+{
     public class PlaySoundsComponent : MonoBehaviour
     {
         public const string SfxSourceTag = "SfxAudioSource";
 
-        [SerializeField] private AudioData[] _sounds = default;
+        [SerializeField] private AudioData[] _sounds;
 
-        private AudioSource _source = default;
+        private AudioSource _source;
 
         public void Play(string id)
         {

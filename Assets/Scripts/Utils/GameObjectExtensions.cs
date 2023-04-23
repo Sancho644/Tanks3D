@@ -1,7 +1,7 @@
-namespace Scripts
-{
-    using UnityEngine;
+using UnityEngine;
 
+namespace Scripts.Utils
+{
     public static class GameObjectExtensions
     {
         public static bool IsInLayer(this GameObject go, LayerMask layer)

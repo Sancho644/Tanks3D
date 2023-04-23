@@ -1,8 +1,9 @@
-﻿namespace Scripts.Bufs
-{
-    using UnityEngine;
+﻿using Scripts.Walls;
+using UnityEngine;
 
-    public class IronFlagWallBuff : BaseFlagWallBuff
+namespace Scripts.Buffs
+{
+    public class IronFlagWallBuff : BaseBuff
     {
         protected override void OnTriggered(GameObject go)
         {
@@ -16,7 +17,7 @@
                 }
             }
 
-            Destroy(gameObject);
+            base.OnTriggered(go);
         }
     }
 }

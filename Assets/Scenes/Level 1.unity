@@ -5266,7 +5266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _data:
     Health:
-      _value: 100
+      _value: 3
     Armor:
       _value: 0
 --- !u!4 &1780441007
@@ -6668,7 +6668,7 @@ PrefabInstance:
       objectReference: {fileID: 163853196}
     - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _countOfObjects
-      value: 15
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407491, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Name

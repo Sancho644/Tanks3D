@@ -1,7 +1,7 @@
-﻿namespace Scripts
-{
-    using Components.LevelManagement;
+﻿using Scripts.Components.LevelManagement;
 
+namespace Scripts.Model.Data
+{
     public static class CountOfEnemies
     {
         private static int _count = 0;

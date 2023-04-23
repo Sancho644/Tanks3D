@@ -1,17 +1,17 @@
+using UnityEngine;
+using Scripts.Creatures.Mobs;
+using Scripts.Components.Model;
+using Scripts.Components.LevelManagement;
+using Scripts.Components;
+
 namespace Scripts.Creatures.Player
 {
-    using UnityEngine;
-    using Scripts.Creatures.Mobs;
-    using Scripts.Components.Model;
-    using Scripts.Components.LevelManagement;
-    using Scripts.Components;
-
     public class Player : BaseCreature
     {
-        [SerializeField] private ReloadLevelComponent _reload = default;
-        [SerializeField] private Cooldown _buffDamageCooldown = default;
+        [SerializeField] private ReloadLevelComponent _reload;
+        [SerializeField] private Cooldown _buffDamageCooldown;
 
-        private GameSession _session = default;
+        private GameSession _session;
         private bool _damageBuff = false;
 
         protected override void Awake()

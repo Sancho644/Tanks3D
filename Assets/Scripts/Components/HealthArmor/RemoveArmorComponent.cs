@@ -1,7 +1,7 @@
+using UnityEngine;
+
 namespace Scripts.Components.HealthArmor
 {
-    using UnityEngine;
-
     public class RemoveArmorComponent : MonoBehaviour
     {
         [SerializeField] private int _usualArmor = 0;

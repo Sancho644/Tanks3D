@@ -1,14 +1,14 @@
-﻿namespace Scripts.Components
-{
-    using System.Collections;
-    using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
+namespace Scripts.Walls
+{
     public class WallColliderReducer : MonoBehaviour
     {
         [SerializeField] private float _time = 1f;
         [SerializeField] private float _size = 2f;
         [SerializeField] private float _deltaSize = 0.006f;
-        [SerializeField] private BoxCollider _box = default;
+        [SerializeField] private BoxCollider _box;
 
         public void Reduce()
         {

@@ -1,13 +1,13 @@
-﻿namespace Scripts.Components
-{
-    using Scripts.Components.HealthArmor;
-    using Scripts.Components.LevelManagement;
-    using UnityEngine;
+﻿using Scripts.Components.HealthArmor;
+using Scripts.Components.LevelManagement;
+using UnityEngine;
 
+namespace Scripts.Components
+{
     public class FlagController : MonoBehaviour
     {
-        [SerializeField] private HealthArmorComponent _healthArmor = default;
-        [SerializeField] private ReloadLevelComponent _reload = default;
+        [SerializeField] private HealthArmorComponent _healthArmor;
+        [SerializeField] private ReloadLevelComponent _reload;
 
         private void Start()
         {

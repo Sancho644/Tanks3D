@@ -1,11 +1,11 @@
-﻿namespace Scripts.Bufs
-{
-    using Scripts.Components;
-    using UnityEngine;
+﻿using Scripts.Components;
+using UnityEngine;
 
+namespace Scripts.Walls
+{
     public class IronWallController : MonoBehaviour
     {
-        [SerializeField] private Cooldown _cooldown = default;
+        [SerializeField] private Cooldown _cooldown; 
 
         private bool _check = false;
 

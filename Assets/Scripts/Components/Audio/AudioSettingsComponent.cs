@@ -1,17 +1,17 @@
-﻿namespace Scripts.Components.Audio
-{
-    using Scripts.Model.Data;
-    using Scripts.Model.Data.Properties;
-    using System;
-    using UnityEngine;
+﻿using Scripts.Model.Data;
+using Scripts.Model.Data.Properties;
+using System;
+using UnityEngine;
 
+namespace Scripts.Components.Audio
+{
     [RequireComponent(typeof(AudioSource))]
     public class AudioSettingsComponent : MonoBehaviour
     {
-        [SerializeField] private SoundSetting _mode = default;
+        [SerializeField] private SoundSetting _mode;
 
-        private FloatPersistentProperty _model = default;
-        private AudioSource _source = default;
+        private FloatPersistentProperty _model;
+        private AudioSource _source;
 
         private void Start()
         {
@@ -35,6 +35,8 @@
                     return GameSettings.I.Music;
                 case SoundSetting.Sfx:
                     return GameSettings.I.Sfx;
+                default:
+                    break;
             }
 
             throw new ArgumentException("Undefined mode");

@@ -1,11 +1,12 @@
+using Scripts.Utils;
+using System;
+using UnityEngine;
+
 namespace Scripts.Components.ColliderBased
 {
-    using System;
-    using UnityEngine;
-
     public class Checker : BaseColliderCheck
     {
-        public event Action<GameObject> OnEnterCheck = default;
+        public event Action<GameObject> OnEnterCheck;
 
         private void OnTriggerStay(Collider other)
         {

@@ -1,9 +1,9 @@
-﻿namespace Scripts.Bufs
-{
-    using Scripts.Components.HealthArmor;
-    using UnityEngine;
+﻿using Scripts.Components.HealthArmor;
+using UnityEngine;
 
-    public class HealthRegenBuff : BaseFlagWallBuff
+namespace Scripts.Buffs
+{
+    public class HealthRegenBuff : BaseBuff
     {
         [SerializeField] private int _healthRegen = 1;
 
@@ -12,8 +12,9 @@
             if (go.TryGetComponent<HealthArmorComponent>(out HealthArmorComponent health))
             {
                 health.ModifyHealth(_healthRegen);
-                Destroy(gameObject);
             }
+
+            base.OnTriggered(gameObject);
         }
     }
 }

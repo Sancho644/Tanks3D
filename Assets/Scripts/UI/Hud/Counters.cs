@@ -1,17 +1,17 @@
-﻿namespace Scripts.UI.Hud
-{
-    using Scripts.Components.Model;
-    using Scripts.Utils.Disposables;
-    using UnityEngine;
-    using UnityEngine.UI;
+﻿using Scripts.Components.Model;
+using Scripts.Utils.Disposables;
+using UnityEngine;
+using UnityEngine.UI;
 
+namespace Scripts.UI.Hud
+{
     public class Counters : MonoBehaviour
     {
-        [SerializeField] private Text _health = default;
-        [SerializeField] private Text _armor = default;
+        [SerializeField] private Text _health;
+        [SerializeField] private Text _armor;
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
-        private GameSession _session = default;
+        private GameSession _session;
 
         private void Start()
         {

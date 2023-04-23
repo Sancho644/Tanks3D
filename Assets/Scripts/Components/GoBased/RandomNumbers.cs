@@ -1,7 +1,7 @@
+using UnityEngine;
+
 namespace Scripts.Components.GoBased
 {
-    using UnityEngine;
-
     public static class RandomNumbers
     {
         public static float RandomWithTwoNumber(float first, float second)

@@ -1,23 +1,24 @@
+using UnityEngine;
+using Scripts.Components;
+using Scripts.Components.GoBased;
+using Scripts.Components.HealthArmor;
+using Scripts.Components.Audio;
+
 namespace Scripts.Creatures.Mobs
 {
-    using UnityEngine;
-    using Scripts.Components;
-    using Scripts.Components.GoBased;
-    using Scripts.Components.HealthArmor;
-
     public class BaseCreature : MonoBehaviour
     {
         [SerializeField] private float _speed = 30f;
         [SerializeField] private float _rotationSpeed = 20f;
 
-        [SerializeField] protected Cooldown _attackCooldown = default;
-        [SerializeField] protected HealthArmorComponent _healthArmor = default;
-        [SerializeField] protected SpawnComponent _attack = default;
+        [SerializeField] protected Cooldown _attackCooldown;
+        [SerializeField] protected HealthArmorComponent _healthArmor;
+        [SerializeField] protected SpawnComponent _attack;
 
-        public float _vertical = 0f;
         protected float _horizontal = 0f;
-        protected Rigidbody _rigidbody = default;
-        protected PlaySoundsComponent _sounds = default;
+        protected float _vertical = 0f;
+        protected Rigidbody _rigidbody;
+        protected PlaySoundsComponent _sounds;
 
         protected virtual void Awake()
         {

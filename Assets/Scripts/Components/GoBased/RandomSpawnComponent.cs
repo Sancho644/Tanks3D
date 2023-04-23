@@ -1,24 +1,24 @@
+using Scripts.Utils;
+using System.Collections;
+using UnityEngine;
+
 namespace Scripts.Components.GoBased
 {
-    using Scripts.Utils;
-    using System.Collections;
-    using UnityEngine;
-
     public class RandomSpawnComponent : MonoBehaviour
     {
         [SerializeField] private float _spawnDelay = 1f;
         [SerializeField] private float _destroyDelay = 2f;
         [SerializeField] private float _startSpawnDelay = 1f;
         [SerializeField] private int _countOfObjects = 10;
-        [SerializeField] private bool _destroyObject = default;
-        [SerializeField] private GameObject[] _prefab = default;
-        [SerializeField] private Transform _spawnPoint = default;
-        [SerializeField] private Vector3 _volume = default;
-        [SerializeField] private Vector3 _sizeCollider = default;
+        [SerializeField] private bool _destroyObject;
+        [SerializeField] private GameObject[] _prefab;
+        [SerializeField] private Transform _spawnPoint;
+        [SerializeField] private Vector3 _volume;
+        [SerializeField] private Vector3 _sizeCollider;
 
-        private Collider[] _colliders = default;
-        private bool _checkCollision = default;
-        private GameObject obj = default;
+        private Collider[] _colliders;
+        private bool _checkCollision;
+        private GameObject obj;
 
         public void Awake()
         {

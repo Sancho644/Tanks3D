@@ -1,10 +1,10 @@
+using UnityEngine;
+
 namespace Scripts.Components.GoBased
 {
-    using UnityEngine;
-
     public class DestroyObjectComponent : MonoBehaviour
     {
-        [SerializeField] private GameObject _objectToDestroy = default;
+        [SerializeField] private GameObject _objectToDestroy;
 
         public void DestroyObject()
         {

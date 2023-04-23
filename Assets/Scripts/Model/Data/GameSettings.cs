@@ -1,18 +1,18 @@
-﻿namespace Scripts.Model.Data
-{
-    using Scripts.Model.Data.Properties;
-    using UnityEngine;
+﻿using Scripts.Model.Data.Properties;
+using UnityEngine;
 
+namespace Scripts.Model.Data
+{
     [CreateAssetMenu(menuName = "Data/GameSettings", fileName = "GameSettings")]
     public class GameSettings : ScriptableObject
     {
-        [SerializeField] private FloatPersistentProperty _music = default;
-        [SerializeField] private FloatPersistentProperty _sfx = default;
+        [SerializeField] private FloatPersistentProperty _music;
+        [SerializeField] private FloatPersistentProperty _sfx;
 
         public FloatPersistentProperty Music => _music;
         public FloatPersistentProperty Sfx => _sfx;
 
-        private static GameSettings _instance = default;
+        private static GameSettings _instance;
         public static GameSettings I => _instance == null ? LoadGameSetting() : _instance;
 
         private static GameSettings LoadGameSetting()

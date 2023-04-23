@@ -1,11 +1,11 @@
+using UnityEngine;
+using System;
+
 namespace Scripts.Components.ColliderBased
 {
-    using UnityEngine;
-    using System;
-
     public class EnterCollisionComponent : BaseColliderCheck
     {
-        public event Action<string, GameObject> OnAction = default;
+        public event Action<string, GameObject> OnAction;
 
         private void OnCollisionEnter(Collision other)
         {
