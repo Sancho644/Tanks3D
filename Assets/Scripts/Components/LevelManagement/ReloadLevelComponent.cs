@@ -1,4 +1,5 @@
 using Scripts.Components.Model;
+using Scripts.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -12,7 +13,9 @@ namespace Scripts.Components.LevelManagement
             session.LoadLastSave();
 
             var scene = SceneManager.GetActiveScene();
-            SceneManager.LoadScene(scene.name);            
+            SceneManager.LoadScene(scene.name);
+
+            CountOfEnemies.SetCount(0);
         }
     }
 }

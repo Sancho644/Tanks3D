@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ae5b92916909794a9ec5c9117686172, type: 3}
+  m_Name: LevelOneDef
+  m_EditorClassIdentifier: 
+  _objectsPrefabs:
+  - {fileID: 3427677678494261332, guid: 6e8af801169cad842ada9a286a968dc7, type: 3}
+  - {fileID: 3427677678494261332, guid: fa861f4113818c741bf269979c3cfeef, type: 3}
+  _countOfObjects: 10
+  _objectsInOneTime: 5
+  _spawnDelay: 1
+  _startSpawnDelay: 1

@@ -46,14 +46,7 @@ namespace Scripts.Walls
 
         private void DeactivateCollider(BoxCollider collider)
         {
-            if (collider.enabled)
-            {
-                collider.enabled = false;
-            }
-            else
-            {
-                collider.enabled = true;
-            }
+            collider.enabled = !collider.enabled;
         }
 
         private void Deactivate()

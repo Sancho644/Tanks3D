@@ -396,7 +396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 163853196}
   m_Layer: 0
-  m_Name: TankSpawnCenter
+  m_Name: EnemySpawnCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2576,8 +2576,8 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
-  - component: {fileID: 963194229}
   - component: {fileID: 963194230}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2662,20 +2662,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e600ca74e0cf2040aeea9c9f2c1e258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _spawnDelay: 5
+  _level: {fileID: 11400000, guid: 4c88af2fbc9f151468d54e39b8c1dee7, type: 2}
   _destroyDelay: 15
-  _startSpawnDelay: 5
-  _countOfObjects: 500
   _destroyObject: 1
-  _prefab:
-  - {fileID: 3296969965874183294, guid: d0bd50cbe5b55b1418814dec5ee80241, type: 3}
-  - {fileID: 763948496111107303, guid: 7193db056adf73c46a802ba8efd647f9, type: 3}
-  - {fileID: 8690714742775332770, guid: be8410aa0473e6a48857c40db32f5806, type: 3}
-  - {fileID: 1135895042669898945, guid: b27096a999850d046937b2c13d015be1, type: 3}
-  - {fileID: 3398537217835013947, guid: fb9acae5866c443458aee60d92190118, type: 3}
   _spawnPoint: {fileID: 1065890880}
   _volume: {x: 10, y: 1, z: 10}
   _sizeCollider: {x: 0.5, y: 0.2, z: 0.5}
+  _startOnAwake: 1
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2941,7 +2934,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1065890880}
   m_Layer: 0
-  m_Name: SpawnCenter
+  m_Name: BuffsSpawnCenter
   m_TagString: Untagged
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
@@ -5747,7 +5740,7 @@ Transform:
   m_Children:
   - {fileID: 2009220114}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1899053408
 PrefabInstance:
@@ -5981,7 +5974,7 @@ Transform:
   - {fileID: 1748806278}
   - {fileID: 1758902959}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1998996384 stripped
 Transform:
@@ -6663,12 +6656,24 @@ PrefabInstance:
     m_TransformParent: {fileID: 414869548}
     m_Modifications:
     - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _level
+      value: 
+      objectReference: {fileID: 11400000, guid: da026801435c1134d90427040a344320, type: 2}
+    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _spawnPoint
       value: 
       objectReference: {fileID: 163853196}
     - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _startOnAwake
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _countOfObjects
-      value: 0
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _objectsInOneTime
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407491, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Name
