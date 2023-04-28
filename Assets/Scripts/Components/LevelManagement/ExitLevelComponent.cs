@@ -1,4 +1,4 @@
-using Scripts.Components.Model;
+using Scripts.Model;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -23,7 +23,6 @@ namespace Scripts.Components.LevelManagement
             }
         }
 
-        [ContextMenu("Exit")]
         public void Exit()
         {
             var session = GameSession.Instance;

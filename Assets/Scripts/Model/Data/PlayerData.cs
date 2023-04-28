@@ -2,7 +2,7 @@ using Scripts.Model.Data.Properties;
 using System;
 using UnityEngine;
 
-namespace Scripts.Components.Model
+namespace Scripts.Model.Data
 {
     [Serializable]
     public class PlayerData

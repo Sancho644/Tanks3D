@@ -1,8 +1,8 @@
 using UnityEngine;
 using Scripts.Creatures.Mobs;
-using Scripts.Components.Model;
 using Scripts.Components.LevelManagement;
 using Scripts.Components;
+using Scripts.Model;
 
 namespace Scripts.Creatures.Player
 {

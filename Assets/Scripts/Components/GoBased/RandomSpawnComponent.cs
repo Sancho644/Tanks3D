@@ -9,37 +9,33 @@ namespace Scripts.Components.GoBased
     public class RandomSpawnComponent : MonoBehaviour
     {
         [SerializeField] private BaseLevelDef _level;
-        //[SerializeField] private float _spawnDelay = 1f;
         [SerializeField] private float _destroyDelay = 2f;
-        //[SerializeField] private float _startSpawnDelay = 1f;
-        private int _countOfObjects = 0;
-        //[SerializeField] private int _objectsInOneTime = 10;
         [SerializeField] private bool _destroyObject;
-        //[SerializeField] private GameObject[] _prefab;
+        [SerializeField] private bool _isEnemiesSpawner;
         [SerializeField] private Transform _spawnPoint;
         [SerializeField] private Vector3 _volume;
         [SerializeField] private Vector3 _sizeCollider;
 
+        private int _countOfObjects = 0;
         private Collider[] _colliders;
         private GameObject obj;
         private Coroutine _coroutine;
 
-        public bool _startOnAwake = false;
-
         public void Awake()
         {
-            if (_startOnAwake)
-            {
-                _coroutine = StartCoroutine(StartSpawn());
-            }
-
             _countOfObjects = _level.CountOfObjects;
-            CountOfEnemies.OnModify += OnModifyCount;
+
+            if (_isEnemiesSpawner)
+            {
+                CountOfEnemies.SetTotalEnemies(_countOfObjects);
+                CountOfEnemies.OnModify += OnStartSpawn;
+            }
+            _coroutine = StartCoroutine(StartSpawn());
         }
 
-        private void OnModifyCount()
+        private void OnStartSpawn()
         {
-            if(_coroutine == null)
+            if (_coroutine == null)
             {
                 _coroutine = StartCoroutine(StartSpawn());
             }
@@ -50,11 +46,11 @@ namespace Scripts.Components.GoBased
             yield return new WaitForSeconds(_level.StartSpawnDelay);
 
             while (_countOfObjects > 0)
-            {               
-                if (CountOfEnemies.Count == _level.ObjectsInOneTime)
+            {
+                if (_isEnemiesSpawner && CountOfEnemies.Count == _level.ObjectsInOneTime)
                 {
                     _coroutine = null;
-                    Debug.Log("enemycount");
+
                     yield break;
                 }
 
@@ -95,6 +91,11 @@ namespace Scripts.Components.GoBased
             _colliders = Physics.OverlapBox(position, _sizeCollider);
 
             return _colliders.Length > 0 ? false : true;
+        }
+
+        private void OnDestroy()
+        {
+            CountOfEnemies.OnModify -= OnStartSpawn;
         }
     }
 }

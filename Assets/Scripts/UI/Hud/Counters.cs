@@ -1,4 +1,5 @@
-﻿using Scripts.Components.Model;
+﻿using Scripts.Model;
+using Scripts.Model.Data;
 using Scripts.Utils.Disposables;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +10,7 @@ namespace Scripts.UI.Hud
     {
         [SerializeField] private Text _health;
         [SerializeField] private Text _armor;
+        [SerializeField] private Text _enemies;
 
         private readonly CompositeDisposable _trash = new CompositeDisposable();
         private GameSession _session;
@@ -16,6 +18,10 @@ namespace Scripts.UI.Hud
         private void Start()
         {
             _session = GameSession.Instance;
+            OnCountOfEnemiesChanged();
+
+            _enemies.text = CountOfEnemies.TotalEnemies.ToString();
+            CountOfEnemies.OnModify += OnCountOfEnemiesChanged;
 
             _trash.Retain(_session.Data.Health.SubscribeAndInvoke(OnHealthChanged));
             _trash.Retain(_session.Data.Armor.SubscribeAndInvoke(OnArmorChanged));
@@ -31,8 +37,14 @@ namespace Scripts.UI.Hud
             _armor.text = _session.Data.Armor.Value.ToString();
         }
 
+        private void OnCountOfEnemiesChanged()
+        {
+            _enemies.text = CountOfEnemies.TotalEnemies.ToString();
+        }
+
         private void OnDestroy()
         {
+            CountOfEnemies.OnModify -= OnCountOfEnemiesChanged;
             _trash.Dispose();
         }
     }

@@ -38,7 +38,7 @@ namespace Scripts.Creatures.Mobs
 
             StartState(SetDirectionToTarget());
         }
-
+        //NOTE: попробовать лук ту таргет
         private IEnumerator SetDirectionToTarget()
         {
             float rand = RandomNumbers.RandomWithTwoNumber(-1, 1);

@@ -1,4 +1,4 @@
-using Scripts.Components.Model;
+using Scripts.Model;
 using Scripts.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;

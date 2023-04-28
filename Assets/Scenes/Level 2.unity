@@ -2988,25 +2988,9 @@ PrefabInstance:
     m_TransformParent: {fileID: 1109288226}
     m_Modifications:
     - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _level
-      value: 
-      objectReference: {fileID: 11400000, guid: e769cab9c0d2c80418c02763cd2b0744, type: 2}
-    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _spawnPoint
       value: 
       objectReference: {fileID: 249733753}
-    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _startOnAwake
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _countOfObjects
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _sceneName
-      value: Level 3
-      objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407491, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Name
       value: Ground
@@ -3055,6 +3039,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7246871617888254218, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 804602588}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
 --- !u!4 &928063185 stripped
@@ -6919,10 +6907,10 @@ MonoBehaviour:
   _level: {fileID: 11400000, guid: 4c88af2fbc9f151468d54e39b8c1dee7, type: 2}
   _destroyDelay: 15
   _destroyObject: 1
+  _isEnemiesSpawner: 0
   _spawnPoint: {fileID: 804602588}
   _volume: {x: 10, y: 1, z: 10}
   _sizeCollider: {x: 0.5, y: 0.2, z: 0.5}
-  _startOnAwake: 1
 --- !u!81 &1928441652
 AudioListener:
   m_ObjectHideFlags: 0

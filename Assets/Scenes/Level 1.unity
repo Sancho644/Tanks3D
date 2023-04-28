@@ -2577,7 +2577,6 @@ GameObject:
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
   - component: {fileID: 963194230}
-  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -2650,25 +2649,6 @@ Transform:
   m_Father: {fileID: 1977475928}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &963194229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8e600ca74e0cf2040aeea9c9f2c1e258, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _level: {fileID: 11400000, guid: 4c88af2fbc9f151468d54e39b8c1dee7, type: 2}
-  _destroyDelay: 15
-  _destroyObject: 1
-  _spawnPoint: {fileID: 1065890880}
-  _volume: {x: 10, y: 1, z: 10}
-  _sizeCollider: {x: 0.5, y: 0.2, z: 0.5}
-  _startOnAwake: 1
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6672,8 +6652,16 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _isEnemiesSpawner
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _objectsInOneTime
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _sceneName
+      value: Level 2
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407491, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Name
@@ -6723,6 +6711,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7246871617888254218, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _spawnPoint
+      value: 
+      objectReference: {fileID: 1065890880}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
 --- !u!1001 &2623833231200929725
