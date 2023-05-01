@@ -1,9 +1,9 @@
-﻿using Scripts.Utils;
+﻿using Scripts.UI.LevelsLoader;
+using Scripts.Utils;
 using System;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-namespace Scripts.UI
+namespace Scripts.UI.Windows
 {
     public class MainMenuWindow : AnimatedWindow
     {
@@ -16,13 +16,13 @@ namespace Scripts.UI
 
         public void OnStartGame()
         {
-            SceneManager.LoadScene("Level 1");
-           /* _closeAction = () =>
+            _closeAction = () =>
             {
                 var loader = FindObjectOfType<LevelLoader>();
                 loader.LoadLevel("Level 1");
             };
-            Close();*/
+
+            Close();
         }
 
         public void OnExit()

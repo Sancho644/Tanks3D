@@ -1,6 +1,6 @@
 using Scripts.Model;
+using Scripts.UI.LevelsLoader;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace Scripts.Components.LevelManagement
 {
@@ -27,8 +27,8 @@ namespace Scripts.Components.LevelManagement
         {
             var session = GameSession.Instance;
             session.Save();
-
-            SceneManager.LoadScene(_sceneName);
+            var loader = FindObjectOfType<LevelLoader>();
+            loader.LoadLevel(_sceneName);
         }
     }
 }
