@@ -1,14 +1,14 @@
 using Scripts.Model.Data;
-using Scripts.Model.Definitions.LevelsDefs;
 using Scripts.Utils;
 using System.Collections;
+using Model.Definitions.LevelsDefs;
 using UnityEngine;
 
 namespace Scripts.Components.GoBased
 {
     public class RandomSpawnComponent : MonoBehaviour
     {
-        [SerializeField] private BaseLevelDef _level;
+        [SerializeField] private LevelSettings _level;
         [SerializeField] private float _destroyDelay = 2f;
         [SerializeField] private bool _destroyObject;
         [SerializeField] private bool _isEnemiesSpawner;
@@ -18,7 +18,7 @@ namespace Scripts.Components.GoBased
 
         private int _countOfObjects = 0;
         private Collider[] _colliders;
-        private GameObject obj;
+        private GameObject _obj;
         private Coroutine _coroutine;
 
         public void Awake()
@@ -78,11 +78,11 @@ namespace Scripts.Components.GoBased
             int rand = Random.Range(0, _level.ObjectsPrefabs.Length);
             var rotation = _level.ObjectsPrefabs[rand].transform.rotation;
 
-            obj = SpawnUtils.Spawn(_level.ObjectsPrefabs[rand], position, rotation);
+            _obj = SpawnUtils.Spawn(_level.ObjectsPrefabs[rand], position, rotation);
 
             if (_destroyObject)
             {
-                Destroy(obj, _destroyDelay);
+                Destroy(_obj, _destroyDelay);
             }
         }
 

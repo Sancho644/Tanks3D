@@ -2,7 +2,7 @@
 using Scripts.Model.Data;
 using UnityEngine;
 
-namespace Scripts.Creatures.Mobs
+namespace Creatures.Mobs
 {
     public class Enemy : BaseCreature
     {
@@ -11,6 +11,7 @@ namespace Scripts.Creatures.Mobs
         private void Start()
         {
             _healthArmor.OnDie += OnCreatureDie;
+            _healthArmor.OnHpDamage += OnTakeHealthDamage;
             CountOfEnemies.ModifyCount(1);
         }
 
@@ -26,6 +27,7 @@ namespace Scripts.Creatures.Mobs
         private void OnDestroy()
         {
             _healthArmor.OnDie -= OnCreatureDie;
+            _healthArmor.OnHpDamage -= OnTakeHealthDamage;
         }
     }
 }

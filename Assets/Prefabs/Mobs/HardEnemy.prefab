@@ -357,6 +357,8 @@ MonoBehaviour:
     _clip: {fileID: 8300000, guid: adfaed7ddadabb747a48cb0c8c20f918, type: 3}
   - _id: Die
     _clip: {fileID: 8300000, guid: efbbdcb472e2f1d4ea918b93d4095c70, type: 3}
+  - _id: HitDamage
+    _clip: {fileID: 8300000, guid: 2829bd76d8ddad043a1e634beb6169ec, type: 3}
 --- !u!1 &3427677678638401609
 GameObject:
   m_ObjectHideFlags: 0

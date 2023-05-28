@@ -2,11 +2,11 @@
 {
     public abstract class PersistentProperty<TPropertyType> : ObservableProperty<TPropertyType>
     {
-        protected TPropertyType _stored;
+        private TPropertyType _stored;
 
-        private TPropertyType _defaultValue;
+        private readonly TPropertyType _defaultValue;
 
-        public PersistentProperty(TPropertyType defaultValue)
+        protected PersistentProperty(TPropertyType defaultValue)
         {
             _defaultValue = defaultValue;
         }

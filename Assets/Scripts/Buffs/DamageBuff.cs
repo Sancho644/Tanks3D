@@ -1,7 +1,7 @@
-﻿using Scripts.Creatures.Player;
+﻿using Creatures.Player;
 using UnityEngine;
 
-namespace Scripts.Buffs
+namespace Buffs
 {
     public class DamageBuff : BaseBuff
     {

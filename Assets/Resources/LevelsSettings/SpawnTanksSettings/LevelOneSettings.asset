@@ -9,13 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3a20672d6e3684e488a86b9839d50485, type: 3}
-  m_Name: LevelTwoDef
+  m_Script: {fileID: 11500000, guid: 33b201a5ee8cbdb4487e1347cb02180b, type: 3}
+  m_Name: LevelOneSettings
   m_EditorClassIdentifier: 
   _objectsPrefabs:
   - {fileID: 3427677678494261332, guid: 6e8af801169cad842ada9a286a968dc7, type: 3}
   - {fileID: 3427677678494261332, guid: fa861f4113818c741bf269979c3cfeef, type: 3}
-  _countOfObjects: 50
+  _countOfObjects: 5
   _objectsInOneTime: 5
   _spawnDelay: 1
   _startSpawnDelay: 1

@@ -8,7 +8,7 @@ namespace Scripts.Components.ColliderBased
         [SerializeField] protected CollisionStages[] _stages;
         [SerializeField] protected bool _isTouchingLayer;
 
-        public bool IsTochingLayer => _isTouchingLayer;
+        public bool IsTouchingLayer => _isTouchingLayer;
 
         [Serializable]
         public class CollisionStages

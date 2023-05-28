@@ -12,17 +12,17 @@ namespace Scripts.Creatures.Weapons
         [SerializeField] private ModifyHealthArmor _modify;
         [SerializeField] private bool _isEnemyBullet = false;
 
-        private Rigidbody Rigidbody;
+        private Rigidbody _rigidbody;
 
         private void Start()
         {
-            Rigidbody = GetComponent<Rigidbody>();
+            _rigidbody = GetComponent<Rigidbody>();
 
             _collision.OnAction += OnCollisionAction;
 
-            if (Rigidbody != null)
+            if (_rigidbody != null)
             {
-                Rigidbody.AddForce(_prefab.transform.forward * _speed, ForceMode.Impulse);
+                _rigidbody.AddForce(_prefab.transform.forward * _speed, ForceMode.Impulse);
             }
         }
 

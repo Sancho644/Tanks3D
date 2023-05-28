@@ -54,9 +54,9 @@ namespace Scripts.Components.HealthArmor
             _armor += armorValue;
         }
 
-        public void DisabbleArmorBuff(int _usualArmor)
+        public void DisabbleArmorBuff(int usualArmor)
         {
-            _armor = _usualArmor;
+            _armor = usualArmor;
         }
 
         public void SetHealth(int health)

@@ -9,8 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 654f3681c881a3d48810503a78a1b8e7, type: 3}
-  m_Name: LevelBuffsDef
+  m_Script: {fileID: 11500000, guid: 33b201a5ee8cbdb4487e1347cb02180b, type: 3}
+  m_Name: LevelBuffsSettings
   m_EditorClassIdentifier: 
   _objectsPrefabs:
   - {fileID: 8690714742775332770, guid: be8410aa0473e6a48857c40db32f5806, type: 3}

@@ -1,5 +1,6 @@
 ﻿using Scripts.Components;
 using UnityEngine;
+using Walls;
 
 namespace Scripts.Walls
 {

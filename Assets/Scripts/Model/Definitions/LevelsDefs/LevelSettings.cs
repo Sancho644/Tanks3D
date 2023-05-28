@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Model.Definitions.LevelsDefs
+namespace Model.Definitions.LevelsDefs
 {
-    public class BaseLevelDef : ScriptableObject
+    [CreateAssetMenu(menuName = "Defs/LevelSettings", fileName = "LevelSettings")]
+    public class LevelSettings : ScriptableObject
     {
         [SerializeField] private GameObject[] _objectsPrefabs;
         [SerializeField] private int _countOfObjects = 50;

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8046561346386995542}
   - component: {fileID: 8655935450903917816}
   - component: {fileID: 68156714}
+  - component: {fileID: 1167714653494261869}
   m_Layer: 0
   m_Name: HealthRegenBuff
   m_TagString: Untagged
@@ -113,6 +114,7 @@ MonoBehaviour:
   _layer:
     serializedVersion: 2
     m_Bits: 256
+  _isTouchingLayer: 0
 --- !u!114 &68156714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,3 +129,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: {fileID: 8655935450903917816}
   _healthRegen: 1
+--- !u!114 &1167714653494261869
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 763948496111107303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c08570b8736db4a4a80836aa43317345, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sounds:
+  - _id: Up
+    _clip: {fileID: 8300000, guid: 6094dd26c282a504d8eb85babeeec61a, type: 3}

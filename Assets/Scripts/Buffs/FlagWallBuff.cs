@@ -1,7 +1,8 @@
 ﻿using Scripts.Walls;
 using UnityEngine;
+using Walls;
 
-namespace Scripts.Buffs
+namespace Buffs
 {
     public class FlagWallBuff : BaseBuff
     {

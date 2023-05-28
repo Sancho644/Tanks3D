@@ -1,6 +1,7 @@
 using Scripts.Components.ColliderBased;
 using Scripts.Components.GoBased;
 using System.Collections;
+using Creatures.Mobs;
 using UnityEngine;
 
 namespace Scripts.Creatures.Mobs
@@ -32,35 +33,35 @@ namespace Scripts.Creatures.Mobs
             _vision.OnEnterTriggered += OnInVision;
         }
 
-        public void OnInVision(GameObject go)
+        private void OnInVision(GameObject go)
         {
             _patrol.TryStop();
 
             StartState(SetDirectionToTarget());
         }
-        //NOTE: попробовать лук ту таргет
+        
         private IEnumerator SetDirectionToTarget()
         {
             float rand = RandomNumbers.RandomWithTwoNumber(-1, 1);
 
-            while (_vision.IsTochingLayer)
+            while (_vision.IsTouchingLayer)
             {
-                if (!_leftTrigger.IsTochingLayer && !_rightTrigger.IsTochingLayer)
+                if (!_leftTrigger.IsTouchingLayer && !_rightTrigger.IsTouchingLayer)
                 {
                     _creature.HorizontalMovement(rand);
                 }
 
-                if (_leftTrigger.IsTochingLayer)
+                if (_leftTrigger.IsTouchingLayer)
                 {
                     _creature.HorizontalMovement(-1f);
                 }
 
-                if (_rightTrigger.IsTochingLayer)
+                if (_rightTrigger.IsTouchingLayer)
                 {
                     _creature.HorizontalMovement(1f);
                 }
 
-                if (_canAttack.IsTochingLayer)
+                if (_canAttack.IsTouchingLayer)
                 {
                     StartState(Attack());
                 }
@@ -75,7 +76,7 @@ namespace Scripts.Creatures.Mobs
 
         private IEnumerator Attack()
         {
-            while (_canAttack.IsTochingLayer)
+            while (_canAttack.IsTouchingLayer)
             {
                 _creature.Fire();
 

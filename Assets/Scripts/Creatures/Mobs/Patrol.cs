@@ -1,6 +1,7 @@
 using Scripts.Components.ColliderBased;
 using Scripts.Components.GoBased;
 using System.Collections;
+using Creatures.Mobs;
 using UnityEngine;
 
 namespace Scripts.Creatures.Mobs
@@ -16,11 +17,11 @@ namespace Scripts.Creatures.Mobs
 
         public IEnumerator DoPatrol()
         {
-            while (!_obstacleCheck.IsTochingLayer && !_isTurning)
+            while (!_obstacleCheck.IsTouchingLayer && !_isTurning)
             {
                 _creature.Fire();
 
-                if (_obstacleCheck.IsTochingLayer)
+                if (_obstacleCheck.IsTouchingLayer)
                 {
                     break;
                 }

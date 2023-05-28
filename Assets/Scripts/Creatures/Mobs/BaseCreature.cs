@@ -1,10 +1,10 @@
-using UnityEngine;
 using Scripts.Components;
+using Scripts.Components.Audio;
 using Scripts.Components.GoBased;
 using Scripts.Components.HealthArmor;
-using Scripts.Components.Audio;
+using UnityEngine;
 
-namespace Scripts.Creatures.Mobs
+namespace Creatures.Mobs
 {
     public class BaseCreature : MonoBehaviour
     {
@@ -17,8 +17,9 @@ namespace Scripts.Creatures.Mobs
 
         protected float _horizontal = 0f;
         protected float _vertical = 0f;
-        protected Rigidbody _rigidbody;
         protected PlaySoundsComponent _sounds;
+        
+        private Rigidbody _rigidbody;
 
         protected virtual void Awake()
         {
@@ -52,10 +53,9 @@ namespace Scripts.Creatures.Mobs
             }
         }
 
-        protected virtual void OnTakeHealthDamage()
+        protected void OnTakeHealthDamage()
         {
             _sounds.Play("HitDamage");
-            Debug.Log("-1 HP");
         }
     }
 }

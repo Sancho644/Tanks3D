@@ -1,5 +1,4 @@
-﻿using Scripts.Model.Definitions.LevelsDefs.TanksSpawnDefs;
-using UnityEngine;
+﻿using UnityEngine;
 
 //NOTE: скорее всего удалить
 namespace Scripts.Model.Definitions
@@ -7,9 +6,9 @@ namespace Scripts.Model.Definitions
     [CreateAssetMenu(menuName = "Defs/DefsFacade", fileName = "DefsFacade")]
     public class DefsFacade : ScriptableObject
     {
-        [SerializeField] private LevelOneDef _levelOne;
+        /*[SerializeField] private LevelOneSettings _levelOne;
 
-        public LevelOneDef LevelOne => _levelOne;
+        public LevelOneSettings LevelOne => _levelOne;
 
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;
@@ -17,6 +16,6 @@ namespace Scripts.Model.Definitions
         private static DefsFacade LoadDefs()
         {
             return _instance = Resources.Load<DefsFacade>("DefsFacade");
-        }
+        }*/
     }
 }

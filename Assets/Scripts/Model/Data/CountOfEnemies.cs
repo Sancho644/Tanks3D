@@ -5,9 +5,9 @@ namespace Scripts.Model.Data
 {
     public static class CountOfEnemies
     {
-        private static int _count = 0;
         private static int _totalEnemies = 0;
-        public static int Count => _count;
+        public static int Count { get; private set; } = 0;
+
         public static int TotalEnemies => _totalEnemies;
 
         public static event Action OnModify;
@@ -20,9 +20,9 @@ namespace Scripts.Model.Data
                 OnModify?.Invoke();
             }
 
-            _count += value;
+            Count += value;
 
-            if (_count == 0)
+            if (Count == 0)
             {
                 var exitLevel = ExitLevelComponent.Instance;
                 exitLevel.Exit();
@@ -36,7 +36,7 @@ namespace Scripts.Model.Data
 
         public static void SetCount(int value)
         {
-            _count = value;
+            Count = value;
         }
     }
 }

@@ -1,10 +1,10 @@
-using UnityEngine;
-using Scripts.Creatures.Mobs;
-using Scripts.Components.LevelManagement;
+using Creatures.Mobs;
 using Scripts.Components;
+using Scripts.Components.LevelManagement;
 using Scripts.Model;
+using UnityEngine;
 
-namespace Scripts.Creatures.Player
+namespace Creatures.Player
 {
     public class Player : BaseCreature
     {
@@ -12,12 +12,7 @@ namespace Scripts.Creatures.Player
         [SerializeField] private Cooldown _buffDamageCooldown;
 
         private GameSession _session;
-        private bool _damageBuff = false;
-
-        protected override void Awake()
-        {
-            base.Awake();
-        }
+        private bool _damageBuff;
 
         private void Start()
         {
@@ -37,7 +32,7 @@ namespace Scripts.Creatures.Player
             _reload.Reload();
         }
 
-        public void OnHealthChanged(int currentHealth)
+        private void OnHealthChanged(int currentHealth)
         {
             _session.Data.Health.Value = currentHealth;
         }
@@ -81,11 +76,6 @@ namespace Scripts.Creatures.Player
         private void DisableDamageBuff()
         {
             _damageBuff = false;
-        }
-
-        protected override void OnTakeHealthDamage()
-        {
-            base.OnTakeHealthDamage();
         }
 
         private void OnTakeArmorDamage(int currentArmor)

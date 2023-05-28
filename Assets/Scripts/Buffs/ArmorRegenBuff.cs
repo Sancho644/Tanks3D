@@ -1,7 +1,7 @@
 ﻿using Scripts.Components.HealthArmor;
 using UnityEngine;
 
-namespace Scripts.Buffs
+namespace Buffs
 {
     public class ArmorRegenBuff : BaseBuff
     {

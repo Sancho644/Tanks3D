@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Walls
+namespace Walls
 {
     public class FlagWalls : MonoBehaviour
     {

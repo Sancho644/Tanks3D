@@ -10,7 +10,7 @@ namespace Scripts.Components.ColliderBased
         [SerializeField] protected LayerMask _layer = ~0;
         [SerializeField] protected bool _isTouchingLayer;
 
-        public bool IsTochingLayer => _isTouchingLayer;
+        public bool IsTouchingLayer => _isTouchingLayer;
         public event Action<GameObject> OnEnterTriggered;
 
         private void OnTriggerEnter(Collider other)

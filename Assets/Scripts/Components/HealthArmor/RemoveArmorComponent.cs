@@ -6,7 +6,7 @@ namespace Scripts.Components.HealthArmor
     {
         [SerializeField] private int _usualArmor = 0;
 
-        public void DisabbleArmorBuff(GameObject target)
+        public void DisableArmorBuff(GameObject target)
         {
             if (target.TryGetComponent<HealthArmorComponent>(out HealthArmorComponent healthArmor))
             {

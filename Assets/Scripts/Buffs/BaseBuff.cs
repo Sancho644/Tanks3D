@@ -1,19 +1,24 @@
-﻿using Scripts.Components.ColliderBased;
+﻿using Scripts.Components.Audio;
+using Scripts.Components.ColliderBased;
 using UnityEngine;
 
-namespace Scripts.Buffs
+namespace Buffs
 {
     public class BaseBuff : MonoBehaviour
     {
         [SerializeField] private EnterTriggerComponent _trigger;
+        
+        protected PlaySoundsComponent _sounds;
 
         private void Start()
         {
             _trigger.OnEnterTriggered += OnTriggered;
+            _sounds = GetComponent<PlaySoundsComponent>();
         }
 
         protected virtual void OnTriggered(GameObject go)
         {
+            _sounds.Play("Up");
             Destroy(gameObject);
         }
 
