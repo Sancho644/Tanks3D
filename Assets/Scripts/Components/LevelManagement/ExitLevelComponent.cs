@@ -1,12 +1,15 @@
 using Scripts.Model;
-using Scripts.UI.LevelsLoader;
+using UI.LevelsLoader;
 using UnityEngine;
 
-namespace Scripts.Components.LevelManagement
+namespace Components.LevelManagement
 {
     public class ExitLevelComponent : MonoBehaviour
     {
-        [SerializeField] private string _sceneName;
+        [SerializeField] private string _nextSceneName;
+        [SerializeField] private string _currentSceneName;
+        
+        public string CurrentSceneName => _currentSceneName;
 
         public static ExitLevelComponent Instance { get; private set; }
 
@@ -28,7 +31,7 @@ namespace Scripts.Components.LevelManagement
             var session = GameSession.Instance;
             session.Save();
             var loader = FindObjectOfType<LevelLoader>();
-            loader.LoadLevel(_sceneName);
+            loader.LoadLevel(_nextSceneName);
         }
     }
 }

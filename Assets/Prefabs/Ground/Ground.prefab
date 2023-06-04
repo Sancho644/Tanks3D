@@ -110,11 +110,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e600ca74e0cf2040aeea9c9f2c1e258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: {fileID: 11400000, guid: e769cab9c0d2c80418c02763cd2b0744, type: 2}
+  _level: {fileID: 11400000, guid: 7e1d550965d3e9f479abf98606a8d241, type: 2}
   _destroyDelay: 0
   _destroyObject: 0
   _isEnemiesSpawner: 1
-  _spawnPoint: {fileID: 0}
+  _spawnPoint: {fileID: 2027594717430191777, guid: 94f9863b0882e8345b8e83639eea1728, type: 3}
   _volume: {x: 10, y: 1, z: 5}
   _sizeCollider: {x: 0.5, y: 0, z: 0.5}
 --- !u!114 &85983363
@@ -129,7 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 203c5b3ffe9b01445a9a791c567c0ae3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _sceneName: Level 3
+  _sceneName: Level 2
 --- !u!114 &7246871617888254218
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,10 +142,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8e600ca74e0cf2040aeea9c9f2c1e258, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _level: {fileID: 11400000, guid: 4c88af2fbc9f151468d54e39b8c1dee7, type: 2}
+  _level: {fileID: 11400000, guid: c63b4da810714e4498faa4389eb02b9b, type: 2}
   _destroyDelay: 15
   _destroyObject: 1
   _isEnemiesSpawner: 0
-  _spawnPoint: {fileID: 0}
+  _spawnPoint: {fileID: 8223325471515061602, guid: 211c995ddc5ab8c478db80da35400274, type: 3}
   _volume: {x: 10, y: 1, z: 10}
   _sizeCollider: {x: 0.5, y: 0.2, z: 0.5}

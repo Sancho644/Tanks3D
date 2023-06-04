@@ -1,14 +1,12 @@
-﻿using Scripts.Components.LevelManagement;
-using System;
+﻿using System;
+using Components.LevelManagement;
 
-namespace Scripts.Model.Data
+namespace Model.Data
 {
     public static class CountOfEnemies
     {
-        private static int _totalEnemies = 0;
         public static int Count { get; private set; } = 0;
-
-        public static int TotalEnemies => _totalEnemies;
+        public static int TotalEnemies { get; private set; } = 0;
 
         public static event Action OnModify;
 
@@ -16,7 +14,7 @@ namespace Scripts.Model.Data
         {
             if (value < 0)
             {
-                _totalEnemies += value;
+                TotalEnemies += value;
                 OnModify?.Invoke();
             }
 
@@ -31,7 +29,7 @@ namespace Scripts.Model.Data
 
         public static void SetTotalEnemies(int value)
         {
-            _totalEnemies = value;            
+            TotalEnemies = value;            
         }
 
         public static void SetCount(int value)

@@ -1,4 +1,5 @@
-﻿using Scripts.Model;
+﻿using Model.Data;
+using Scripts.Model;
 using Scripts.Model.Data;
 using Scripts.Utils.Disposables;
 using UnityEngine;

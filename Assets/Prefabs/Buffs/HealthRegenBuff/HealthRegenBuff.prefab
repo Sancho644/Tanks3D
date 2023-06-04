@@ -143,4 +143,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
   - _id: Up
-    _clip: {fileID: 8300000, guid: 6094dd26c282a504d8eb85babeeec61a, type: 3}
+    _clip: {fileID: 8300000, guid: 0262e6a70e4d40c45bdedae55ce182d6, type: 3}

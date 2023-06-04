@@ -1,6 +1,7 @@
 using Scripts.Model.Data;
 using Scripts.Utils;
 using System.Collections;
+using Model.Data;
 using Model.Definitions.LevelsDefs;
 using UnityEngine;
 

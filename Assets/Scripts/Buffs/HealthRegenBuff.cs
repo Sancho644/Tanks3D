@@ -1,4 +1,5 @@
-﻿using Scripts.Components.HealthArmor;
+﻿using Components.HealthArmor;
+using Scripts.Components.HealthArmor;
 using UnityEngine;
 
 namespace Buffs

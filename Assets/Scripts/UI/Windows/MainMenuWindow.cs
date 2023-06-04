@@ -1,9 +1,10 @@
-﻿using Scripts.UI.LevelsLoader;
+﻿using System;
+using Scripts.UI.Windows;
 using Scripts.Utils;
-using System;
+using UI.LevelsLoader;
 using UnityEngine;
 
-namespace Scripts.UI.Windows
+namespace UI.Windows
 {
     public class MainMenuWindow : AnimatedWindow
     {

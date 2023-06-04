@@ -1,18 +1,21 @@
-﻿using Scripts.Utils;
+﻿using Components.LevelManagement;
+using Scripts.Utils;
 using UnityEngine;
+using UnityEngine.UI;
 
-namespace Scripts.UI.Hud
+namespace UI.Hud
 {
     public class HudController : MonoBehaviour
     {
-        //[SerializeField] private ProgressBarWidget _healthBar;
-
+        [SerializeField] private Text _starLevelText;
+        
         //private GameSession _session;
         //private CompositeDisposable _trash = new CompositeDisposable();
 
         private void Start()
         {
-            //_session = FindObjectOfType<GameSession>();
+            var exitLevel = ExitLevelComponent.Instance;
+            _starLevelText.text = exitLevel.CurrentSceneName;
         }
 
         public void OnSettings()

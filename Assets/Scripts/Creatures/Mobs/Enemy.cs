@@ -1,4 +1,5 @@
-﻿using Scripts.Components.GoBased;
+﻿using Model.Data;
+using Scripts.Components.GoBased;
 using Scripts.Model.Data;
 using UnityEngine;
 

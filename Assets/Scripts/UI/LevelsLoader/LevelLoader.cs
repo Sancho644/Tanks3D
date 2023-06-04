@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Scripts.UI.LevelsLoader
+namespace UI.LevelsLoader
 {
     public class LevelLoader : MonoBehaviour
     {
@@ -10,9 +10,9 @@ namespace Scripts.UI.LevelsLoader
         [SerializeField] private float _transitionTime;
 
         private static readonly int Enabled = Animator.StringToHash("Enabled");
-
+        
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
-        static void OnAfterScebeLoad()
+        private static void OnAfterSceneLoad()
         {
             InitLoader();
         }

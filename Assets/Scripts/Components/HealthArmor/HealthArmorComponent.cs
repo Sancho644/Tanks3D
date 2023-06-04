@@ -1,7 +1,7 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
-namespace Scripts.Components.HealthArmor
+namespace Components.HealthArmor
 {
     public class HealthArmorComponent : MonoBehaviour
     {
@@ -54,7 +54,7 @@ namespace Scripts.Components.HealthArmor
             _armor += armorValue;
         }
 
-        public void DisabbleArmorBuff(int usualArmor)
+        public void DisableArmorBuff(int usualArmor)
         {
             _armor = usualArmor;
         }

@@ -1,3 +1,4 @@
+using Components.HealthArmor;
 using UnityEngine;
 
 namespace Scripts.Components.HealthArmor
@@ -10,7 +11,7 @@ namespace Scripts.Components.HealthArmor
         {
             if (target.TryGetComponent<HealthArmorComponent>(out HealthArmorComponent healthArmor))
             {
-                healthArmor.DisabbleArmorBuff(_usualArmor);
+                healthArmor.DisableArmorBuff(_usualArmor);
             }
         }
     }

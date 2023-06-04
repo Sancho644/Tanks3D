@@ -781,36 +781,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3316262537480670731, guid: 97f1809a252a9cf4e9acbc74944927c7, type: 3}
   m_PrefabInstance: {fileID: 234872403}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &249733752
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 249733753}
-  m_Layer: 0
-  m_Name: EnemySpawnCenterPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &249733753
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 249733752}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.115, z: 5}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1109288226}
-  m_RootOrder: 8
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &256881571
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2545,36 +2515,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 3316262537480670731, guid: 97f1809a252a9cf4e9acbc74944927c7, type: 3}
   m_PrefabInstance: {fileID: 801129086}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &804602587
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 804602588}
-  m_Layer: 0
-  m_Name: BuffsSpawnCenterPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &804602588
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 804602587}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 1109288226}
-  m_RootOrder: 7
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &811568868
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2885,14 +2825,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1109288226}
     m_Modifications:
-    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _level
-      value: 
-      objectReference: {fileID: 11400000, guid: 7e1d550965d3e9f479abf98606a8d241, type: 2}
-    - target: {fileID: 85983359, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _spawnPoint
-      value: 
-      objectReference: {fileID: 249733753}
+    - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _nextSceneName
+      value: Level 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _currentSceneName
+      value: Level 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407491, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Name
       value: Ground
@@ -2941,14 +2881,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 7246871617888254218, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _level
-      value: 
-      objectReference: {fileID: 11400000, guid: c63b4da810714e4498faa4389eb02b9b, type: 2}
-    - target: {fileID: 7246871617888254218, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
-      propertyPath: _spawnPoint
-      value: 
-      objectReference: {fileID: 804602588}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
 --- !u!4 &928063185 stripped
@@ -3769,8 +3701,6 @@ Transform:
   - {fileID: 148987149}
   - {fileID: 338711276}
   - {fileID: 928063185}
-  - {fileID: 804602588}
-  - {fileID: 249733753}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

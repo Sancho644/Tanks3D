@@ -1,3 +1,4 @@
+using Components.HealthArmor;
 using UnityEngine;
 
 namespace Scripts.Components.HealthArmor
