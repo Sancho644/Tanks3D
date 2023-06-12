@@ -1,19 +1,14 @@
 ﻿using Scripts.Components;
 using UnityEngine;
-using Walls;
 
-namespace Scripts.Walls
+namespace Walls
 {
     public class IronWallController : MonoBehaviour
     {
+        [SerializeField] private GameObject _cube;
         [SerializeField] private Cooldown _cooldown; 
 
         private bool _check = false;
-
-        private void Start()
-        {
-            gameObject.SetActive(false);
-        }
 
         private void Update()
         {
@@ -25,7 +20,7 @@ namespace Scripts.Walls
 
         public void Activate()
         {
-            gameObject.SetActive(true);
+            _cube.SetActive(true);
             _cooldown.Reset();
             _check = true;
 
@@ -54,7 +49,7 @@ namespace Scripts.Walls
         {
             if (_cooldown.IsReady)
             {
-                gameObject.SetActive(false);
+                _cube.SetActive(false);
                 TakeColliders();
                 _check = false;
             }

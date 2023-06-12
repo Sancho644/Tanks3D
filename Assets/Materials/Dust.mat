@@ -39,7 +39,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 77e0fe81fb95fb643ac3f057371f4962, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -124,7 +124,7 @@ Material:
     - _WorkflowMode: 1
     - _ZWrite: 0
     m_Colors:
-    - _BaseColor: {r: 1, g: 0.76031375, b: 0.2794118, a: 1}
+    - _BaseColor: {r: 0.7735849, g: 0.64458835, b: 0.37584552, a: 1}
     - _Color: {r: 1, g: 0.76031375, b: 0.2794118, a: 1}
     - _EmisColor: {r: 0.1544118, g: 0.1544118, b: 0.1544118, a: 0}
     - _Emission: {r: 0.1102941, g: 0.1102941, b: 0.1102941, a: 0}
