@@ -1,7 +1,7 @@
-﻿namespace Scripts.Components.GoBased
-{
-    using UnityEngine;
+﻿using UnityEngine;
 
+namespace Components.GoBased
+{
     public class DeleteTrashComponent : MonoBehaviour
     {
         [SerializeField] private GameObject _object;

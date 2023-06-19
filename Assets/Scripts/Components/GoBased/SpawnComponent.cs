@@ -1,7 +1,7 @@
-using UnityEngine;
 using Scripts.Utils;
+using UnityEngine;
 
-namespace Scripts.Components.GoBased
+namespace Components.GoBased
 {
     public class SpawnComponent : MonoBehaviour
     {

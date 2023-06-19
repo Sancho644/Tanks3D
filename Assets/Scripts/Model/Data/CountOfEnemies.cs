@@ -5,8 +5,8 @@ namespace Model.Data
 {
     public static class CountOfEnemies
     {
-        public static int Count { get; private set; } = 0;
-        public static int TotalEnemies { get; private set; } = 0;
+        public static int Count { get; private set; }
+        public static int TotalEnemies { get; private set; }
 
         public static event Action OnModify;
 

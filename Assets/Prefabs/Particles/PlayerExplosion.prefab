@@ -4805,7 +4805,7 @@ GameObject:
   - component: {fileID: 1491390114741405915}
   - component: {fileID: -2411641117199701164}
   m_Layer: 0
-  m_Name: TankExplosion
+  m_Name: PlayerExplosion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9599,7 +9599,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: b1bca527618dd924daf76c131f29ed7b, type: 2}
+  - {fileID: 2100000, guid: ed41e0b72f7bdfe4eb170874c365d466, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

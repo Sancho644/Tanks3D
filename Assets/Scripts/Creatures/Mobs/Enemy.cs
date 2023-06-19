@@ -1,6 +1,5 @@
-﻿using Model.Data;
-using Scripts.Components.GoBased;
-using Scripts.Model.Data;
+﻿using Components.GoBased;
+using Model.Data;
 using UnityEngine;
 
 namespace Creatures.Mobs
@@ -13,6 +12,7 @@ namespace Creatures.Mobs
         {
             _healthArmor.OnDie += OnCreatureDie;
             _healthArmor.OnHpDamage += OnTakeHealthDamage;
+            
             CountOfEnemies.ModifyCount(1);
         }
 
@@ -20,8 +20,8 @@ namespace Creatures.Mobs
         {
             _sounds.Play("Die");
             _explosion.Spawn();
+            
             CountOfEnemies.ModifyCount(-1);
-
             Destroy(gameObject);
         }
 

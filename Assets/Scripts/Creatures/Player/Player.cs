@@ -1,15 +1,19 @@
+using System.Collections;
+using Components.GoBased;
 using Creatures.Mobs;
 using Scripts.Components;
-using Scripts.Components.LevelManagement;
 using Scripts.Model;
 using UnityEngine;
+using Utils;
 
 namespace Creatures.Player
 {
     public class Player : BaseCreature
     {
-        [SerializeField] private ReloadLevelComponent _reload;
+        [SerializeField] private float _deathWindowCooldown;
         [SerializeField] private Cooldown _buffDamageCooldown;
+        [SerializeField] private SpawnComponent _explosion;
+        [SerializeField] private GameObject _tankModel;
 
         private GameSession _session;
         private bool _damageBuff;
@@ -29,7 +33,10 @@ namespace Creatures.Player
         private void OnPlayerDie()
         {
             _sounds.Play("Die");
-            _reload.Reload();
+            _explosion.Spawn();
+            _tankModel.gameObject.SetActive(false);
+
+            StartCoroutine(DeathWindow());
         }
 
         private void OnHealthChanged(int currentHealth)
@@ -65,6 +72,16 @@ namespace Creatures.Player
             {
                 base.Fire();
             }
+        }
+
+        private IEnumerator DeathWindow()
+        {
+            yield return new WaitForSeconds(_deathWindowCooldown);
+            
+            WindowUtils.CreateWindow("UI/PlayerDeathWindow");
+            Destroy(gameObject);
+
+            yield return null;
         }
 
         public void EnableDamageBuff()

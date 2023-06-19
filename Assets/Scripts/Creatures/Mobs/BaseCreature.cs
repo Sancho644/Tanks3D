@@ -1,8 +1,7 @@
+using Components.GoBased;
 using Components.HealthArmor;
 using Scripts.Components;
 using Scripts.Components.Audio;
-using Scripts.Components.GoBased;
-using Scripts.Components.HealthArmor;
 using UnityEngine;
 
 namespace Creatures.Mobs
@@ -16,8 +15,8 @@ namespace Creatures.Mobs
         [SerializeField] protected HealthArmorComponent _healthArmor;
         [SerializeField] protected SpawnComponent _attack;
 
-        protected float _horizontal = 0f;
-        protected float _vertical = 0f;
+        protected float _horizontal;
+        protected float _vertical;
         protected PlaySoundsComponent _sounds;
         
         private Rigidbody _rigidbody;

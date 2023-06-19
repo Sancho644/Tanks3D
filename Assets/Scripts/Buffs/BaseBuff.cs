@@ -8,7 +8,7 @@ namespace Buffs
     {
         [SerializeField] private EnterTriggerComponent _trigger;
         
-        protected PlaySoundsComponent _sounds;
+        private PlaySoundsComponent _sounds;
 
         private void Start()
         {

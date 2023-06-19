@@ -3,6 +3,7 @@ using Scripts.UI.Windows;
 using Scripts.Utils;
 using UI.LevelsLoader;
 using UnityEngine;
+using Utils;
 
 namespace UI.Windows
 {

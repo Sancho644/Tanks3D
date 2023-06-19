@@ -1,13 +1,11 @@
 ﻿using Scripts.Model;
 using Scripts.UI.Windows;
-using Scripts.Utils;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-using Utils;
 
 namespace UI.Windows
 {
-    public class InGameMenuWindow : AnimatedWindow
+    public class PlayerDeathWindow : AnimatedWindow
     {
         private float _defaultTimeScale;
 
@@ -18,13 +16,7 @@ namespace UI.Windows
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;
         }
-
-        public void OnShowSettings()
-        {
-            WindowUtils.CreateWindow("UI/SettingsWindow");
-            Close();
-        }
-
+        
         public void OnExit()
         {
             SceneManager.LoadScene("MainMenu");
@@ -32,7 +24,7 @@ namespace UI.Windows
             var session = GameSession.Instance;
             Destroy(session.gameObject);
         }
-
+        
         private void OnDestroy()
         {
             Time.timeScale = _defaultTimeScale;

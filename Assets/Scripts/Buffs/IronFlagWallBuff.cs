@@ -1,5 +1,4 @@
-﻿using Scripts.Walls;
-using UnityEngine;
+﻿using UnityEngine;
 using Walls;
 
 namespace Buffs

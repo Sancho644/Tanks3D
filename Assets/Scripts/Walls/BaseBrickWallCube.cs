@@ -1,4 +1,5 @@
-﻿using Scripts.Components.ColliderBased;
+﻿using Components.GoBased;
+using Scripts.Components.ColliderBased;
 using UnityEngine;
 using Scripts.Components.GoBased;
 using Scripts.Components.Audio;
