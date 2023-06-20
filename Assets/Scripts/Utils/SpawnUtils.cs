@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Utils
+namespace Utils
 {
     public class SpawnUtils : MonoBehaviour
     {
@@ -9,6 +9,7 @@ namespace Scripts.Utils
         public static GameObject Spawn(GameObject prefab, Vector3 position, Quaternion rotation)
         {
             var container = GameObject.Find(ContainerName);
+            
             if (container == null)
                 container = new GameObject(ContainerName);
 

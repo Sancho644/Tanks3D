@@ -1,10 +1,9 @@
-﻿using Components.GoBased;
-using Scripts.Components.ColliderBased;
+﻿using Components.Audio;
+using Components.ColliderBased;
+using Components.GoBased;
 using UnityEngine;
-using Scripts.Components.GoBased;
-using Scripts.Components.Audio;
 
-namespace Scripts.Walls
+namespace Walls
 {
     public class BaseBrickWallCube : MonoBehaviour
     {
@@ -20,7 +19,7 @@ namespace Scripts.Walls
             _collision.OnAction += OnCollisionAction;
         }
 
-        public virtual void OnCollisionAction(string tag, GameObject go)
+        protected virtual void OnCollisionAction(string tag, GameObject go)
         {
             if (tag == "Bullet")
             {
@@ -28,9 +27,10 @@ namespace Scripts.Walls
             }
         }
 
-        public virtual void Action()
+        protected virtual void Action()
         {
             Destroy(_wall);
+            
             _play.Play("Die");
             _spawn.Spawn();
             _reducer.Reduce();

@@ -1,6 +1,4 @@
 ﻿using System;
-using Scripts.UI.Windows;
-using Scripts.Utils;
 using UI.LevelsLoader;
 using UnityEngine;
 using Utils;
@@ -42,7 +40,7 @@ namespace UI.Windows
             Close();
         }
 
-        public override void OnCloseAnimationComplete()
+        protected override void OnCloseAnimationComplete()
         {
             _closeAction?.Invoke();
 

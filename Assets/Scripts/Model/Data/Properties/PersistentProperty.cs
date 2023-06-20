@@ -1,4 +1,4 @@
-﻿namespace Scripts.Model.Data.Properties
+﻿namespace Model.Data.Properties
 {
     public abstract class PersistentProperty<TPropertyType> : ObservableProperty<TPropertyType>
     {

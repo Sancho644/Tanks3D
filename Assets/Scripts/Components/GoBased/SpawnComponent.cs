@@ -1,5 +1,5 @@
-using Scripts.Utils;
 using UnityEngine;
+using Utils;
 
 namespace Components.GoBased
 {

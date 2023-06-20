@@ -1,7 +1,7 @@
-﻿using Scripts.Model.Data.Properties;
+﻿using Model.Data.Properties;
 using UnityEngine;
 
-namespace Scripts.Model.Data
+namespace Model.Data
 {
     [CreateAssetMenu(menuName = "Data/GameSettings", fileName = "GameSettings")]
     public class GameSettings : ScriptableObject

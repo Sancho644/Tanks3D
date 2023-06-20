@@ -1,10 +1,10 @@
 ﻿using UnityEngine;
 
-namespace Scripts.Utils
+namespace Utils
 {
     public class AudioUtils
     {
-        public const string SfxSourceTag = "SfxAudioSource";
+        private const string SfxSourceTag = "SfxAudioSource";
 
         public static AudioSource FindSfxSource()
         {

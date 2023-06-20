@@ -1,9 +1,9 @@
-﻿using Scripts.Model.Data.Properties;
-using Scripts.Utils.Disposables;
+﻿using Model.Data.Properties;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils.Disposables;
 
-namespace Scripts.UI.Widgets
+namespace UI.Widgets
 {
     public class AudioSettingsWidget : MonoBehaviour
     {

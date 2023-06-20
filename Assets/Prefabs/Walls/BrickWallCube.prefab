@@ -127,7 +127,6 @@ GameObject:
   - component: {fileID: 2633676190032160992}
   - component: {fileID: 909885537274182518}
   - component: {fileID: 327139208854932843}
-  - component: {fileID: 8112666955296998636}
   m_Layer: 7
   m_Name: Wall
   m_TagString: Untagged
@@ -198,19 +197,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3781504313987720327}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &8112666955296998636
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3781504313987720327}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 165ecf8986fa1de4db8f195e2e1bdd5c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _objectToDestroy: {fileID: 3781504313987720327}
 --- !u!1 &5097422009629474310
 GameObject:
   m_ObjectHideFlags: 0

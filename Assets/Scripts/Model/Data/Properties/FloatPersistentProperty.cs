@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Scripts.Model.Data.Properties
+namespace Model.Data.Properties
 {
     [Serializable]
     public class FloatPersistentProperty : PrefsPersistentProperty<float>

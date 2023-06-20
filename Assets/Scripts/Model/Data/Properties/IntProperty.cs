@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Scripts.Model.Data.Properties
+namespace Model.Data.Properties
 {
     [Serializable]
     public class IntProperty : ObservableProperty<int>

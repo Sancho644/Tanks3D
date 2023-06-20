@@ -1,7 +1,7 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
-namespace Scripts.Components.ColliderBased
+namespace Components.ColliderBased
 {
     public class EnterCollisionComponent : BaseColliderCheck
     {
@@ -15,6 +15,7 @@ namespace Scripts.Components.ColliderBased
                 {
                     _isTouchingLayer = true;
                     OnAction?.Invoke(stage.Tag, other.gameObject);
+                    
                     return;
                 }
             }

@@ -1,8 +1,8 @@
-using Scripts.Utils;
 using System;
 using UnityEngine;
+using Utils;
 
-namespace Scripts.Components.ColliderBased
+namespace Components.ColliderBased
 {
     public class EnterTriggerComponent : MonoBehaviour
     {

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Scripts.UI.Windows
+namespace UI.Windows
 {
     public class AnimatedWindow : MonoBehaviour
     {
@@ -20,7 +20,7 @@ namespace Scripts.UI.Windows
             _animator.SetTrigger(Hide);
         }
 
-        public virtual void OnCloseAnimationComplete()
+        protected virtual void OnCloseAnimationComplete()
         {
             Destroy(gameObject);
         }

@@ -1,3 +1,4 @@
+using Model;
 using Scripts.Model;
 using UI.LevelsLoader;
 using UnityEngine;
@@ -18,6 +19,7 @@ namespace Components.LevelManagement
             if (Instance == null)
             {
                 Instance = this;
+                
                 return;
             }
             else

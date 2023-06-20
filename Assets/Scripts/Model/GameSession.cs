@@ -1,8 +1,8 @@
-using Scripts.Model.Data;
+using Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Scripts.Model
+namespace Model
 {
     public class GameSession : MonoBehaviour
     {

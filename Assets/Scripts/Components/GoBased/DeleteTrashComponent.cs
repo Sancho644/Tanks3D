@@ -10,9 +10,7 @@ namespace Components.GoBased
         private void Start()
         {
             if(_object != null)
-            {
                 Destroy(_object, _cooldownTime);
-            }
         }
     }
 }

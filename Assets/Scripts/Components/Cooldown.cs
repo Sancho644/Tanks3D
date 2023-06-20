@@ -1,7 +1,7 @@
-using UnityEngine;
 using System;
+using UnityEngine;
 
-namespace Scripts.Components
+namespace Components
 {
     [Serializable]
     public class Cooldown

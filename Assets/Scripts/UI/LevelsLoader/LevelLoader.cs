@@ -35,7 +35,9 @@ namespace UI.LevelsLoader
         private IEnumerator StartAnimation(string sceneName)
         {
             _animator.SetBool(Enabled, true);
+            
             yield return new WaitForSeconds(_transitionTime);
+            
             SceneManager.LoadScene(sceneName);
             _animator.SetBool(Enabled, false);
         }

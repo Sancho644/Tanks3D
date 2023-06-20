@@ -1,9 +1,8 @@
+using Components.ColliderBased;
 using Components.HealthArmor;
-using Scripts.Components.ColliderBased;
-using Scripts.Components.HealthArmor;
 using UnityEngine;
 
-namespace Scripts.Creatures.Weapons
+namespace Creatures.Weapons
 {
     public class Projectile : MonoBehaviour
     {
@@ -22,22 +21,16 @@ namespace Scripts.Creatures.Weapons
             _collision.OnAction += OnCollisionAction;
 
             if (_rigidbody != null)
-            {
                 _rigidbody.AddForce(_prefab.transform.forward * _speed, ForceMode.Impulse);
-            }
         }
 
         private void OnCollisionAction(string tag, GameObject go)
         {
             if (tag == "Player" || tag == "Flag")
-            {
                 AddDamage(go);
-            }
 
             if (tag == "Obstacle" || tag == "Bullet")
-            {
                 Destroy(gameObject);
-            }
 
             if (tag == "Enemy")
             {

@@ -1,7 +1,7 @@
+using Components;
+using Components.Audio;
 using Components.GoBased;
 using Components.HealthArmor;
-using Scripts.Components;
-using Scripts.Components.Audio;
 using UnityEngine;
 
 namespace Creatures.Mobs

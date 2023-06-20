@@ -1,8 +1,8 @@
 using System.Collections;
+using Components;
 using Components.GoBased;
 using Creatures.Mobs;
-using Scripts.Components;
-using Scripts.Model;
+using Model;
 using UnityEngine;
 using Utils;
 

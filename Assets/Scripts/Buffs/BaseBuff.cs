@@ -1,5 +1,5 @@
-﻿using Scripts.Components.Audio;
-using Scripts.Components.ColliderBased;
+﻿using Components.Audio;
+using Components.ColliderBased;
 using UnityEngine;
 
 namespace Buffs

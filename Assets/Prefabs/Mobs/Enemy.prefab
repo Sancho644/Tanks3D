@@ -286,13 +286,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7120d6f475eaeee40a895b089d04b81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 3000
+  _speed: 2000
   _rotationSpeed: 110
   _attackCooldown:
     _value: 5
   _healthArmor: {fileID: 3427677678494261342}
   _attack: {fileID: 3427677678963179475}
-  _vertical: 0
   _explosion: {fileID: 1832362961995473975}
 --- !u!114 &3427677678494261342
 MonoBehaviour:

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace Scripts.Walls
+namespace Walls
 {
     public class WallColliderReducer : MonoBehaviour
     {
@@ -18,6 +18,7 @@ namespace Scripts.Walls
         private IEnumerator ReduceCollision()
         {
             var time = 0f;
+            
             while (time < _time)
             {
                 if (_size <= 0) break;

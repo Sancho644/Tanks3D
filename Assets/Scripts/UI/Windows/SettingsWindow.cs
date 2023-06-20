@@ -1,8 +1,8 @@
-﻿using Scripts.Model.Data;
-using Scripts.UI.Widgets;
+﻿using Model.Data;
+using UI.Widgets;
 using UnityEngine;
 
-namespace Scripts.UI.Windows
+namespace UI.Windows
 {
     public class SettingsWindow : AnimatedWindow
     {

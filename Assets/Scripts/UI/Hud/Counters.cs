@@ -1,11 +1,10 @@
-﻿using Model.Data;
-using Scripts.Model;
-using Scripts.Model.Data;
-using Scripts.Utils.Disposables;
+﻿using Model;
+using Model.Data;
 using UnityEngine;
 using UnityEngine.UI;
+using Utils.Disposables;
 
-namespace Scripts.UI.Hud
+namespace UI.Hud
 {
     public class Counters : MonoBehaviour
     {

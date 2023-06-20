@@ -1,9 +1,8 @@
 ﻿using Components.HealthArmor;
-using Scripts.Components.HealthArmor;
-using Scripts.Components.LevelManagement;
+using Components.LevelManagement;
 using UnityEngine;
 
-namespace Scripts.Components
+namespace Components
 {
     public class FlagController : MonoBehaviour
     {

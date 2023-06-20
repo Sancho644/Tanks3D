@@ -1,11 +1,10 @@
-using Scripts.Model.Data;
-using Scripts.Utils;
 using System.Collections;
 using Model.Data;
 using Model.Definitions.LevelsDefs;
 using UnityEngine;
+using Utils;
 
-namespace Scripts.Components.GoBased
+namespace Components.GoBased
 {
     public class RandomSpawnComponent : MonoBehaviour
     {
@@ -31,15 +30,14 @@ namespace Scripts.Components.GoBased
                 CountOfEnemies.SetTotalEnemies(_countOfObjects);
                 CountOfEnemies.OnModify += OnStartSpawn;
             }
+
             _coroutine = StartCoroutine(StartSpawn());
         }
 
         private void OnStartSpawn()
         {
             if (_coroutine == null)
-            {
                 _coroutine = StartCoroutine(StartSpawn());
-            }
         }
 
         private IEnumerator StartSpawn()
@@ -55,9 +53,10 @@ namespace Scripts.Components.GoBased
                     yield break;
                 }
 
-                var position = new Vector3(Random.Range(_spawnPoint.position.x - _volume.x, _spawnPoint.position.x + _volume.x),
-                _spawnPoint.position.y,
-                Random.Range(_spawnPoint.position.z - _volume.z, _spawnPoint.position.z + _volume.z));
+                var position = new Vector3(
+                    Random.Range(_spawnPoint.position.x - _volume.x, _spawnPoint.position.x + _volume.x),
+                    _spawnPoint.position.y,
+                    Random.Range(_spawnPoint.position.z - _volume.z, _spawnPoint.position.z + _volume.z));
 
                 if (CheckSpawnPoint(position))
                 {
@@ -76,22 +75,20 @@ namespace Scripts.Components.GoBased
 
         private void Spawn(Vector3 position)
         {
-            int rand = Random.Range(0, _level.ObjectsPrefabs.Length);
+            var rand = Random.Range(0, _level.ObjectsPrefabs.Length);
             var rotation = _level.ObjectsPrefabs[rand].transform.rotation;
 
             _obj = SpawnUtils.Spawn(_level.ObjectsPrefabs[rand], position, rotation);
 
             if (_destroyObject)
-            {
                 Destroy(_obj, _destroyDelay);
-            }
         }
 
         private bool CheckSpawnPoint(Vector3 position)
         {
             _colliders = Physics.OverlapBox(position, _sizeCollider);
 
-            return _colliders.Length > 0 ? false : true;
+            return _colliders.Length <= 0;
         }
 
         private void OnDestroy()

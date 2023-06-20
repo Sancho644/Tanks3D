@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System;
-using Scripts.Utils;
+﻿using System;
+using UnityEngine;
+using Utils;
 
-namespace Scripts.Components.Audio
+namespace Components.Audio
 {
     public class PlaySoundsComponent : MonoBehaviour
     {
@@ -22,6 +22,7 @@ namespace Scripts.Components.Audio
                     _source = AudioUtils.FindSfxSource();
 
                 _source.PlayOneShot(audioData.Clip);
+                
                 break;
             }
         }
@@ -29,8 +30,8 @@ namespace Scripts.Components.Audio
         [Serializable]
         public class AudioData
         {
-            [SerializeField] private string _id = default;
-            [SerializeField] private AudioClip _clip = default;
+            [SerializeField] private string _id;
+            [SerializeField] private AudioClip _clip;
 
             public string Id => _id;
             public AudioClip Clip => _clip;

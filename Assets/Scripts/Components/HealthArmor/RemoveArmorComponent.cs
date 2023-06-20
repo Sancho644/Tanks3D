@@ -1,7 +1,6 @@
-using Components.HealthArmor;
 using UnityEngine;
 
-namespace Scripts.Components.HealthArmor
+namespace Components.HealthArmor
 {
     public class RemoveArmorComponent : MonoBehaviour
     {

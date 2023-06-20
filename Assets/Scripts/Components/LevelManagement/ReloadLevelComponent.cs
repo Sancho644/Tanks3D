@@ -1,10 +1,10 @@
+using Model;
 using Model.Data;
 using Scripts.Model;
-using Scripts.Model.Data;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace Scripts.Components.LevelManagement
+namespace Components.LevelManagement
 {
     public class ReloadLevelComponent : MonoBehaviour
     {

@@ -1,10 +1,9 @@
-using Scripts.Components.ColliderBased;
-using Scripts.Components.GoBased;
 using System.Collections;
-using Creatures.Mobs;
+using Components.ColliderBased;
+using Scripts.Components.GoBased;
 using UnityEngine;
 
-namespace Scripts.Creatures.Mobs
+namespace Creatures.Mobs
 {
     public class Patrol : MonoBehaviour
     {
@@ -13,7 +12,7 @@ namespace Scripts.Creatures.Mobs
         [SerializeField] private float _direction = 1f;
 
         private IEnumerator _current;
-        private bool _isTurning = false;
+        private bool _isTurning;
 
         public IEnumerator DoPatrol()
         {
@@ -43,15 +42,17 @@ namespace Scripts.Creatures.Mobs
 
             if (_current != null)
                 StopCoroutine(_current);
+            
             _current = null;
         }
 
         private IEnumerator RandomRotate()
         {
-            _isTurning = true;
             var randomTime = Random.Range(0.1f, 1.5f);
             var time = Time.time + randomTime;
-            float randValue = RandomNumbers.RandomWithTwoNumber(-1f, 1f);
+            var randValue = RandomNumbers.RandomWithTwoNumber(-1f, 1f);
+            
+            _isTurning = true;
 
             while (enabled)
             {
@@ -74,9 +75,7 @@ namespace Scripts.Creatures.Mobs
             _creature.HorizontalMovement(0f);
 
             if (_current != null)
-            {
                 StopCoroutine(_current);
-            }
 
             _current = coroutine;
 

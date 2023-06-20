@@ -1,4 +1,5 @@
-﻿using Scripts.Components;
+﻿using Components;
+using Scripts.Components;
 using UnityEngine;
 
 namespace Walls

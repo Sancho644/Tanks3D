@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using System;
-using Scripts.Utils.Disposables;
+﻿using System;
+using UnityEngine;
+using Utils.Disposables;
 
-namespace Scripts.Model.Data.Properties
+namespace Model.Data.Properties
 {
     public class ObservableProperty<TPropertyType>
     {
@@ -23,6 +23,7 @@ namespace Scripts.Model.Data.Properties
             OnChanged += call;
             var dispose = new ActionDisposable(() => OnChanged -= call);
             call(_value, _value);
+            
             return dispose;
         }
 

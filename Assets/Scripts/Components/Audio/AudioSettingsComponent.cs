@@ -1,9 +1,9 @@
-﻿using Scripts.Model.Data;
-using Scripts.Model.Data.Properties;
-using System;
+﻿using System;
+using Model.Data;
+using Model.Data.Properties;
 using UnityEngine;
 
-namespace Scripts.Components.Audio
+namespace Components.Audio
 {
     [RequireComponent(typeof(AudioSource))]
     public class AudioSettingsComponent : MonoBehaviour
@@ -16,9 +16,10 @@ namespace Scripts.Components.Audio
         private void Start()
         {
             _source = GetComponent<AudioSource>();
-
             _model = FindProperty();
+            
             _model.OnChanged += OnSoundSettingsChanged;
+            
             OnSoundSettingsChanged(_model.Value, _model.Value);
         }
 
@@ -29,17 +30,12 @@ namespace Scripts.Components.Audio
 
         private FloatPersistentProperty FindProperty()
         {
-            switch (_mode)
+            return _mode switch
             {
-                case SoundSetting.Music:
-                    return GameSettings.I.Music;
-                case SoundSetting.Sfx:
-                    return GameSettings.I.Sfx;
-                default:
-                    break;
-            }
-
-            throw new ArgumentException("Undefined mode");
+                SoundSetting.Music => GameSettings.I.Music,
+                SoundSetting.Sfx => GameSettings.I.Sfx,
+                _ => throw new ArgumentException("Undefined mode")
+            };
         }
 
         private void OnDestroy()

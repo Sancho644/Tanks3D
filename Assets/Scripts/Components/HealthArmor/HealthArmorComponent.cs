@@ -15,6 +15,8 @@ namespace Components.HealthArmor
 
         public void ModifyHealth(int value)
         {
+            Debug.Log($"armor {_armor}");
+            Debug.Log($"health {_health}");
             if (_armor > 0)
             {
                 ModifyArmor(value);
@@ -24,7 +26,9 @@ namespace Components.HealthArmor
                 _health += value;
 
                 _health = Mathf.Clamp(_health, 0, 3);
-
+                Debug.Log(value);
+                Debug.Log(_health);
+                Debug.Log("health");
                 OnHpChange?.Invoke(_health);
 
                 if (value < 0)
@@ -42,7 +46,9 @@ namespace Components.HealthArmor
         public void ModifyArmor(int value)
         {
             _armor += value;
-
+            Debug.Log(value);
+            Debug.Log(_armor);
+            Debug.Log("armor");
             _armor = Mathf.Clamp(_armor, 0, 3);
 
             OnArmorChange?.Invoke(_armor);
