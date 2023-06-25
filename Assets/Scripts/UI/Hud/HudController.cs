@@ -1,4 +1,4 @@
-﻿using Components.LevelManagement;
+﻿using Model;
 using UnityEngine;
 using UnityEngine.UI;
 using Utils;
@@ -9,10 +9,13 @@ namespace UI.Hud
     {
         [SerializeField] private Text _starLevelText;
 
+        private GameSession _session;
+
         private void Start()
         {
-            var exitLevel = ExitLevelComponent.Instance;
-            _starLevelText.text = exitLevel.CurrentSceneName;
+            _session = GameSession.Instance;
+
+            _starLevelText.text = _session.Data.CurrentLevel.Value;
         }
 
         public void OnSettings()

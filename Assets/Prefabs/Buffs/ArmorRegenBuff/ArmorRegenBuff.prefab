@@ -128,6 +128,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 8690714742775332782}
+  _scoreValue: 100
   _armorRegen: 1
 --- !u!114 &7670361990187208076
 MonoBehaviour:

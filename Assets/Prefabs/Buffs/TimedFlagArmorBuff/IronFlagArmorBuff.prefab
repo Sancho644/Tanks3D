@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _trigger: {fileID: 3398537217835013950}
+  _scoreValue: 150
 --- !u!114 &3169097610854451259
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -17,7 +17,6 @@ namespace Walls
             if (Instance == null)
             {
                 Instance = this;
-                return;
             }
             else
             {

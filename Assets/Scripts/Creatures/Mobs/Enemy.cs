@@ -1,5 +1,7 @@
 ﻿using Components.GoBased;
+using Model;
 using Model.Data;
+using UI.Hud;
 using UnityEngine;
 
 namespace Creatures.Mobs
@@ -7,12 +9,16 @@ namespace Creatures.Mobs
     public class Enemy : BaseCreature
     {
         [SerializeField] private SpawnComponent _explosion;
+        [SerializeField] private int _scoreValue;
+
+        private GameSession _session;
 
         private void Start()
         {
             _healthArmor.OnDie += OnCreatureDie;
             _healthArmor.OnHpDamage += OnTakeHealthDamage;
-            
+            _session = GameSession.Instance;
+
             CountOfEnemies.ModifyCount(1);
         }
 
@@ -22,6 +28,9 @@ namespace Creatures.Mobs
             _explosion.Spawn();
             
             CountOfEnemies.ModifyCount(-1);
+            PlayerScoreController.ModifyScore(_scoreValue);
+            _session.Data.PlayerScore.Value = PlayerScoreController.Score;
+            
             Destroy(gameObject);
         }
 

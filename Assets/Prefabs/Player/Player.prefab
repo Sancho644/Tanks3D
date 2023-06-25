@@ -187,7 +187,6 @@ GameObject:
   - component: {fileID: 1921992612132958401}
   - component: {fileID: 1921992612132958400}
   - component: {fileID: 1921992612132958462}
-  - component: {fileID: 1921992612132958463}
   - component: {fileID: 226175628544116867}
   m_Layer: 8
   m_Name: Player
@@ -257,7 +256,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5a4bad258b426c4fa39bb44b053d915, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2000
+  _speed: 1800
   _rotationSpeed: 110
   _attackCooldown:
     _value: 1
@@ -282,18 +281,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 3
   _armor: 0
---- !u!114 &1921992612132958463
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1921992612132958407}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7934ca876694084084d2f3a3ef2ac46, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &226175628544116867
 MonoBehaviour:
   m_ObjectHideFlags: 0

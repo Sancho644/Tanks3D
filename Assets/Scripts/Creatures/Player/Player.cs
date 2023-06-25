@@ -23,6 +23,7 @@ namespace Creatures.Player
             _session = GameSession.Instance;
 
             _healthArmor.SetHealth(_session.Data.Health.Value);
+            _healthArmor.SetArmor(_session.Data.Armor.Value);
 
             _healthArmor.OnDie += OnPlayerDie;
             _healthArmor.OnArmorChange += OnTakeArmorDamage;

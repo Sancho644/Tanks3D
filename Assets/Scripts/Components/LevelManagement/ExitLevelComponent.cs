@@ -1,26 +1,27 @@
 using Model;
-using Scripts.Model;
 using UI.LevelsLoader;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace Components.LevelManagement
 {
     public class ExitLevelComponent : MonoBehaviour
     {
         [SerializeField] private string _nextSceneName;
-        [SerializeField] private string _currentSceneName;
-        
-        public string CurrentSceneName => _currentSceneName;
 
+        private GameSession _session;
+        
         public static ExitLevelComponent Instance { get; private set; }
 
         private void Awake()
         {
+            _session = GameSession.Instance;
+            var scene = SceneManager.GetActiveScene();
+            _session.Data.CurrentLevel.Value = scene.name;
+            
             if (Instance == null)
             {
                 Instance = this;
-                
-                return;
             }
             else
             {
@@ -30,8 +31,8 @@ namespace Components.LevelManagement
 
         public void Exit()
         {
-            var session = GameSession.Instance;
-            session.Save();
+            _session.Save();
+            
             var loader = FindObjectOfType<LevelLoader>();
             loader.LoadLevel(_nextSceneName);
         }

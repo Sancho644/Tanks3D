@@ -11,7 +11,7 @@ namespace Buffs
         {
             if (go.TryGetComponent<HealthArmorComponent>(out HealthArmorComponent health))
             {
-                health.ModifyHealth(_healthRegen);
+                health.ApplyHeal(_healthRegen);
             }
 
             base.OnTriggered(gameObject);

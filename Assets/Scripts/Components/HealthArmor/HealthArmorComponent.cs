@@ -6,7 +6,7 @@ namespace Components.HealthArmor
     public class HealthArmorComponent : MonoBehaviour
     {
         [SerializeField] private int _health = 1;
-        [SerializeField] private int _armor = 0;
+        [SerializeField] private int _armor;
 
         public event Action OnHpDamage;
         public event Action<int> OnArmorChange;
@@ -15,8 +15,6 @@ namespace Components.HealthArmor
 
         public void ModifyHealth(int value)
         {
-            Debug.Log($"armor {_armor}");
-            Debug.Log($"health {_health}");
             if (_armor > 0)
             {
                 ModifyArmor(value);
@@ -26,9 +24,6 @@ namespace Components.HealthArmor
                 _health += value;
 
                 _health = Mathf.Clamp(_health, 0, 3);
-                Debug.Log(value);
-                Debug.Log(_health);
-                Debug.Log("health");
                 OnHpChange?.Invoke(_health);
 
                 if (value < 0)
@@ -46,18 +41,15 @@ namespace Components.HealthArmor
         public void ModifyArmor(int value)
         {
             _armor += value;
-            Debug.Log(value);
-            Debug.Log(_armor);
-            Debug.Log("armor");
             _armor = Mathf.Clamp(_armor, 0, 3);
 
             OnArmorChange?.Invoke(_armor);
         }
 
-
-        public void ApplyArmor(int armorValue)
+        public void ApplyHeal(int value)
         {
-            _armor += armorValue;
+            _health += value;
+            _health = Mathf.Clamp(_armor, 0, 3);
         }
 
         public void DisableArmorBuff(int usualArmor)
@@ -68,6 +60,11 @@ namespace Components.HealthArmor
         public void SetHealth(int health)
         {
             _health = health;
+        }
+
+        public void SetArmor(int armor)
+        {
+            _armor = armor;
         }
     }
 }

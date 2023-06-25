@@ -1,5 +1,6 @@
 ﻿using System;
 using Components.LevelManagement;
+using UnityEngine;
 
 namespace Model.Data
 {
