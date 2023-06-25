@@ -6,7 +6,7 @@ using Utils.Disposables;
 
 namespace UI.Hud
 {
-    public class Counters : MonoBehaviour
+    public class EnemyCountController : MonoBehaviour
     {
         [SerializeField] private Text _health;
         [SerializeField] private Text _armor;
