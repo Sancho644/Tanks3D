@@ -8,6 +8,8 @@ namespace UI.Windows
     public class InGameMenuWindow : AnimatedWindow
     {
         private float _defaultTimeScale;
+        private const string MainMenu = "MainMenu";
+        private const string SettingsWindowPath = "UI/SettingsWindow";
 
         protected override void Start()
         {
@@ -19,13 +21,13 @@ namespace UI.Windows
 
         public void OnShowSettings()
         {
-            WindowUtils.CreateWindow("UI/SettingsWindow");
+            WindowUtils.CreateWindow(SettingsWindowPath);
             Close();
         }
 
         public void OnExit()
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene(MainMenu);
 
             var session = GameSession.Instance;
             Destroy(session.gameObject);

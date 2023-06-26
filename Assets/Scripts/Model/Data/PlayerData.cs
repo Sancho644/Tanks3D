@@ -10,6 +10,7 @@ namespace Model.Data
         public IntProperty Health = new IntProperty();
         public IntProperty Armor = new IntProperty();
         public IntProperty PlayerScore = new IntProperty();
+        public IntProperty EnemyesCount = new IntProperty();
         public StringProperty CurrentLevel = new StringProperty();
 
         public PlayerData Clone()

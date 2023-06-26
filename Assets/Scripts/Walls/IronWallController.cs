@@ -1,5 +1,4 @@
 ﻿using Components;
-using Scripts.Components;
 using UnityEngine;
 
 namespace Walls
@@ -9,7 +8,7 @@ namespace Walls
         [SerializeField] private GameObject _cube;
         [SerializeField] private Cooldown _cooldown; 
 
-        private bool _check = false;
+        private bool _check;
 
         private void Update()
         {
@@ -34,16 +33,16 @@ namespace Walls
 
             foreach (var objects in list.BrickWalls)
             {
-                if (objects.TryGetComponent<BoxCollider>(out BoxCollider collider))
+                if (objects.TryGetComponent<BoxCollider>(out BoxCollider coll))
                 {
-                    DeactivateCollider(collider);
+                    DeactivateCollider(coll);
                 }
             }
         }
 
-        private void DeactivateCollider(BoxCollider collider)
+        private void DeactivateCollider(BoxCollider coll)
         {
-            collider.enabled = !collider.enabled;
+            coll.enabled = !coll.enabled;
         }
 
         private void Deactivate()

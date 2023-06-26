@@ -27,10 +27,10 @@ namespace Creatures.Mobs
             _sounds.Play("Die");
             _explosion.Spawn();
             
-            CountOfEnemies.ModifyCount(-1);
             PlayerScoreController.ModifyScore(_scoreValue);
             _session.Data.PlayerScore.Value = PlayerScoreController.Score;
-            
+            CountOfEnemies.ModifyCount(-1);
+
             Destroy(gameObject);
         }
 

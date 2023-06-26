@@ -21,7 +21,8 @@ namespace UI.Windows
             SceneManager.LoadScene("MainMenu");
 
             var session = GameSession.Instance;
-            session.LoadLastSave();
+            Destroy(session.gameObject);
+            //session.LoadLastSave();
         }
         
         private void OnDestroy()

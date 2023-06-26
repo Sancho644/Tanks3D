@@ -1,6 +1,5 @@
 ﻿using System;
 using Components.LevelManagement;
-using UnityEngine;
 
 namespace Model.Data
 {
@@ -30,7 +29,8 @@ namespace Model.Data
 
         public static void SetTotalEnemies(int value)
         {
-            TotalEnemies = value;            
+            TotalEnemies = value;
+            OnModify?.Invoke();
         }
 
         public static void SetCount(int value)

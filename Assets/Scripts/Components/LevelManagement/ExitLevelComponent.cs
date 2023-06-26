@@ -15,8 +15,9 @@ namespace Components.LevelManagement
 
         private void Awake()
         {
-            _session = GameSession.Instance;
             var scene = SceneManager.GetActiveScene();
+
+            _session = GameSession.Instance;
             _session.Data.CurrentLevel.Value = scene.name;
             
             if (Instance == null)
@@ -31,7 +32,7 @@ namespace Components.LevelManagement
 
         public void Exit()
         {
-            _session.Save();
+            _session.SaveProgress();
             
             var loader = FindObjectOfType<LevelLoader>();
             loader.LoadLevel(_nextSceneName);

@@ -1,4 +1,5 @@
 using System.Collections;
+using Model;
 using Model.Data;
 using Model.Definitions.LevelsDefs;
 using UnityEngine;
@@ -16,18 +17,29 @@ namespace Components.GoBased
         [SerializeField] private Vector3 _volume;
         [SerializeField] private Vector3 _sizeCollider;
 
-        private int _countOfObjects = 0;
+        private int _countOfObjects;
         private Collider[] _colliders;
         private GameObject _obj;
         private Coroutine _coroutine;
+        private GameSession _session;
 
         public void Awake()
         {
+            _session = GameSession.Instance;
             _countOfObjects = _level.CountOfObjects;
 
             if (_isEnemiesSpawner)
             {
-                CountOfEnemies.SetTotalEnemies(_countOfObjects);
+                if (_session.Data.EnemyesCount.Value == 0)
+                {
+                    CountOfEnemies.SetTotalEnemies(_countOfObjects);
+                }
+                else
+                {
+                    CountOfEnemies.SetTotalEnemies(_session.Data.EnemyesCount.Value);
+                    _countOfObjects = _session.Data.EnemyesCount.Value;
+                }
+                
                 CountOfEnemies.OnModify += OnStartSpawn;
             }
 

@@ -11,13 +11,16 @@ namespace UI.Windows
     {
         [SerializeField] private GameObject _continueButton;
 
+        private const string SettingsWindowPath = "UI/SettingsWindow";
+        private const string LevelOne = "Level 1";
         private Action _closeAction;
         
         protected override void Start()
         {
             base.Start();
+            var sessionData = _session.PlayerData.Data;
             
-            if (_session.PlayerData.Data.PlayerScore.Value != 0 && _session.PlayerData.Data.CurrentLevel.Value != null)
+            if (sessionData.PlayerScore.Value != 0 && sessionData.CurrentLevel.Value != null && sessionData.Health.Value != 0)
             {
                 _continueButton.gameObject.SetActive(true);
             }
@@ -25,7 +28,7 @@ namespace UI.Windows
 
         public void OnShowSettings()
         {
-            WindowUtils.CreateWindow("UI/SettingsWindow");
+            WindowUtils.CreateWindow(SettingsWindowPath);
         }
 
         public void OnContinue()
@@ -57,9 +60,10 @@ namespace UI.Windows
                 };
                 
                 _session.SetPlayerData(data);
+                _session.SaveProgress();
 
                 var loader = FindObjectOfType<LevelLoader>();
-                loader.LoadLevel("Level 1");
+                loader.LoadLevel(LevelOne);
             };
 
             Close();

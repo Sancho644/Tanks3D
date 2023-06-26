@@ -23,10 +23,11 @@ namespace Model
         private void Awake()
         {
             _systemData = new SaveSystem<PlayerData>();
+            CountOfEnemies.OnModify += OnModifyCountOfEnemies;
             
             if (SceneManager.GetActiveScene().name != MainMenu)
             {
-                LoadHud();
+                SceneManager.LoadScene(HUD, LoadSceneMode.Additive);
             }
 
             if (IsSessionExit())
@@ -42,15 +43,14 @@ namespace Model
             }
         }
 
-        private void LoadHud()
+        private void OnModifyCountOfEnemies()
         {
-            SceneManager.LoadScene(HUD, LoadSceneMode.Additive);
+             _data.EnemyesCount.Value = CountOfEnemies.TotalEnemies;
         }
 
         public void SetPlayerData(PlayerData data)
         {
             _data = data;
-            _save = _data.Clone();
             PlayerScoreController.SetScore(_data.PlayerScore.Value);
 
             SavePlayerData();
@@ -73,10 +73,11 @@ namespace Model
         {
             _data = _playerData.Data;
             _save = _data.Clone();
+            
             PlayerScoreController.SetScore(_data.PlayerScore.Value);
         }
 
-        public void Save()
+        private void Save()
         {
             _playerData = _systemData.Load();
         }
@@ -84,7 +85,13 @@ namespace Model
         public void LoadLastSave()
         {
             _data = _save.Clone();
+            
             PlayerScoreController.SetScore(_data.PlayerScore.Value);
+        }
+
+        public void SaveProgress()
+        {
+            _save = _data.Clone();
         }
         
         private void SavePlayerData()
@@ -92,17 +99,12 @@ namespace Model
             _playerData.Data = _data;
             _systemData.Save(_playerData);
         }
-        
-        [ContextMenu("ClearSave")]
-        public void ClearSave()
-        {
-            _systemData.ClearSave();
-        }
 
         private void OnDestroy()
         {
             SavePlayerData();
-            
+            CountOfEnemies.OnModify -= OnModifyCountOfEnemies;
+
             if (Instance == null)
                 Instance = null;
         }
