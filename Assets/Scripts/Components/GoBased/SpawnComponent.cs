@@ -11,12 +11,23 @@ namespace Components.GoBased
 
         public void Spawn()
         {
-            SpawnUtils.Spawn(_prefab, _target.position, _target.rotation); 
+            SpawnUtils.Spawn(_prefab, _target.position, _target.rotation);
         }
 
         public void AlternativeSpawn()
         {
             SpawnUtils.Spawn(_alternativePrefab, _target.position, _target.rotation);
+        }
+
+        public void SetSpawnPrefab(GameObject prefab)
+        {
+            _prefab = prefab;
+        }
+
+        public void SpawnWithoutRotation()
+        {
+            _prefab.SetActive(true);
+            SpawnUtils.Spawn(_prefab, _target.position, Quaternion.identity);
         }
     }
 }

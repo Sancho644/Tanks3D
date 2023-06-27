@@ -471,6 +471,8 @@ MonoBehaviour:
       _value: 0
     PlayerScore:
       _value: 0
+    EnemyesCount:
+      _value: 0
     CurrentLevel:
       _value: 
 --- !u!4 &1322874569
