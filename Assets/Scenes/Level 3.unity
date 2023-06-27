@@ -8140,6 +8140,10 @@ PrefabInstance:
       propertyPath: _currentSceneName
       value: Level 3
       objectReference: {fileID: 0}
+    - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _nextLevelCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407489, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -8150,7 +8154,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407519, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407519, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -9533,8 +9537,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 338711276}
   - {fileID: 928063185}
+  - {fileID: 338711276}
   - {fileID: 832248213}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -12759,7 +12763,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2623833231501410890, guid: d53cb525b2ab95a49ba51d80341aa867, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2623833231501410890, guid: d53cb525b2ab95a49ba51d80341aa867, type: 3}
       propertyPath: m_LocalPosition.x

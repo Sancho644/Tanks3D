@@ -1,3 +1,4 @@
+using System.Collections;
 using Model;
 using UI.LevelsLoader;
 using UnityEngine;
@@ -8,6 +9,7 @@ namespace Components.LevelManagement
     public class ExitLevelComponent : MonoBehaviour
     {
         [SerializeField] private string _nextSceneName;
+        [SerializeField] private float _nextLevelCooldown;
 
         private GameSession _session;
         
@@ -33,6 +35,13 @@ namespace Components.LevelManagement
         public void Exit()
         {
             _session.SaveProgress();
+
+            StartCoroutine(StartNextLevel());
+        }
+
+        private IEnumerator StartNextLevel()
+        {
+            yield return new WaitForSeconds(_nextLevelCooldown);
             
             var loader = FindObjectOfType<LevelLoader>();
             loader.LoadLevel(_nextSceneName);

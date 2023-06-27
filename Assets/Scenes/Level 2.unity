@@ -7990,13 +7990,17 @@ PrefabInstance:
       propertyPath: _currentSceneName
       value: Level 2
       objectReference: {fileID: 0}
+    - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
+      propertyPath: _nextLevelCooldown
+      value: 1.5
+      objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407491, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_Name
       value: Ground
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407519, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2224683082290407519, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: m_LocalPosition.x
@@ -8640,7 +8644,7 @@ RectTransform:
   m_LocalScale: {x: 1920, y: 1080.0002, z: 1}
   m_Children: []
   m_Father: {fileID: 1109288226}
-  m_RootOrder: 0
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -9717,9 +9721,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 988750232}
-  - {fileID: 338711276}
   - {fileID: 928063185}
+  - {fileID: 338711276}
+  - {fileID: 988750232}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
