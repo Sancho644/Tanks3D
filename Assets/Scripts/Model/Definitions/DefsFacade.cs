@@ -1,14 +1,14 @@
-﻿using UnityEngine;
+﻿using Model.Definitions.LevelsDefs;
+using UnityEngine;
 
-//NOTE: скорее всего удалить
-namespace Scripts.Model.Definitions
+namespace Model.Definitions
 {
     [CreateAssetMenu(menuName = "Defs/DefsFacade", fileName = "DefsFacade")]
     public class DefsFacade : ScriptableObject
     {
-        /*[SerializeField] private LevelOneSettings _levelOne;
+        [SerializeField] private LevelSettings _buffsSettings;
 
-        public LevelOneSettings LevelOne => _levelOne;
+        public LevelSettings BuffsSettings => _buffsSettings;
 
         private static DefsFacade _instance;
         public static DefsFacade I => _instance == null ? LoadDefs() : _instance;
@@ -16,6 +16,6 @@ namespace Scripts.Model.Definitions
         private static DefsFacade LoadDefs()
         {
             return _instance = Resources.Load<DefsFacade>("DefsFacade");
-        }*/
+        }
     }
 }

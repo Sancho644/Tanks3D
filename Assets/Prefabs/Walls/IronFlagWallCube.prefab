@@ -110,4 +110,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cube: {fileID: 1474133597986172018}
   _cooldown:
-    _value: 5
+    Value: 1
+  _renderer: {fileID: 0}
+  _destroyDelay: 0

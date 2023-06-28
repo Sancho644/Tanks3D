@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49ae7eef826711345aa9cbbbd6253955, type: 3}
   m_Name: DefsFacade
   m_EditorClassIdentifier: 
-  _levelOne: {fileID: 11400000, guid: da026801435c1134d90427040a344320, type: 2}
+  _buffsSettings: {fileID: 11400000, guid: c63b4da810714e4498faa4389eb02b9b, type: 2}

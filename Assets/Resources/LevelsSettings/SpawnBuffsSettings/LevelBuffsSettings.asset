@@ -22,3 +22,4 @@ MonoBehaviour:
   _objectsInOneTime: 2
   _spawnDelay: 10
   _startSpawnDelay: 5
+  _destroyDelay: 20

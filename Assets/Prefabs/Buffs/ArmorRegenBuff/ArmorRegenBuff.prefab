@@ -177,8 +177,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: {fileID: 8690714742775332782}
   _scoreValue: 100
+  _destroyDelay: 5
   _spawnPoints: {fileID: 4964649947141919791}
   _pointsPrefab: {fileID: 6721502161985701582}
+  _renderer: {fileID: 8690714742775332780}
   _armorRegen: 1
 --- !u!114 &7670361990187208076
 MonoBehaviour:

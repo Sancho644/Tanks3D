@@ -17,7 +17,7 @@ namespace Creatures.Player
 
         private GameSession _session;
         private bool _damageBuff;
-
+        
         private void Start()
         {
             _session = GameSession.Instance;
@@ -69,16 +69,16 @@ namespace Creatures.Player
                 _attack.AlternativeSpawn();
                 _sounds.Play("Fire");
             }
-            else if(_buffDamageCooldown.IsReady)
+            else if (_buffDamageCooldown.IsReady)
             {
                 base.Fire();
             }
         }
-
+        
         private IEnumerator DeathWindow()
         {
             yield return new WaitForSeconds(_deathWindowCooldown);
-            
+
             WindowUtils.CreateWindow("UI/PlayerDeathWindow");
             Destroy(gameObject);
 

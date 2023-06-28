@@ -167,6 +167,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4534574611292340505}
   - component: {fileID: 4535150497945480357}
+  - component: {fileID: 976163052088249791}
   m_Layer: 0
   m_Name: PointsEffect
   m_TagString: Untagged
@@ -202,3 +203,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _points: {fileID: 8757935352043798207}
+--- !u!114 &976163052088249791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8549566511325512024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ac8855500f86804fa5b642b3601e5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _object: {fileID: 8549566511325512024}
+  _cooldownTime: 5

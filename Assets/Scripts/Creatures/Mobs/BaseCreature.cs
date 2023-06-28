@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using Components;
 using Components.Audio;
 using Components.GoBased;
@@ -10,6 +12,7 @@ namespace Creatures.Mobs
     {
         [SerializeField] private float _speed = 30f;
         [SerializeField] private float _rotationSpeed = 20f;
+        [SerializeField] private List<MeshRenderer> _tanksRenderersList;
 
         [SerializeField] protected Cooldown _attackCooldown;
         [SerializeField] protected HealthArmorComponent _healthArmor;
@@ -20,11 +23,19 @@ namespace Creatures.Mobs
         protected PlaySoundsComponent _sounds;
         
         private Rigidbody _rigidbody;
+        private Color _defaultColor;
+        private List<Material> _tanksMaterialsList = new List<Material>();
 
         protected virtual void Awake()
         {
             _rigidbody = GetComponent<Rigidbody>();
             _sounds = GetComponent<PlaySoundsComponent>();
+            _defaultColor = _tanksRenderersList[0].material.color;
+
+            foreach (var render in _tanksRenderersList)
+            {
+                _tanksMaterialsList.Add(render.material);
+            }
         }
 
         private void FixedUpdate()
@@ -52,10 +63,31 @@ namespace Creatures.Mobs
                 _sounds.Play("Fire");
             }
         }
-
+        
         protected void OnTakeHealthDamage()
         {
             _sounds.Play("HitDamage");
+            StartCoroutine(StartDamageAnimation());
+        }
+        
+        private IEnumerator StartDamageAnimation()
+        {
+            while (enabled)
+            {
+                foreach (var tankMaterial in _tanksMaterialsList)
+                {
+                    tankMaterial.color = Color.white;
+                }
+                
+                yield return new WaitForSeconds(0.1f);
+
+                foreach (var tankMaterial in _tanksMaterialsList)
+                {
+                    tankMaterial.color = _defaultColor;
+                }
+                
+                break;
+            }
         }
     }
 }

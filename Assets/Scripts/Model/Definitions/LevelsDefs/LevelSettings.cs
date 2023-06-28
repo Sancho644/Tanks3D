@@ -10,11 +10,13 @@ namespace Model.Definitions.LevelsDefs
         [SerializeField] private int _objectsInOneTime = 5;
         [SerializeField] private float _spawnDelay = 1f;
         [SerializeField] private float _startSpawnDelay = 1f;
+        [SerializeField] private float _destroyDelay = 15f;
 
         public GameObject[] ObjectsPrefabs => _objectsPrefabs;
         public int CountOfObjects => _countOfObjects;
         public int ObjectsInOneTime => _objectsInOneTime;
         public float SpawnDelay => _spawnDelay;
         public float StartSpawnDelay => _startSpawnDelay;
+        public float DestroyDelay => _destroyDelay;
     }
 }

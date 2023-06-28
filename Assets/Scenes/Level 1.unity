@@ -1604,6 +1604,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834288387}
     m_Modifications:
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 167765048}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown.Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown._value
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1474133597986172018, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
       propertyPath: m_Name
       value: IronFlagWallCube (3)
@@ -1658,6 +1674,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+--- !u!23 &167765048 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1993762281018333479, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+  m_PrefabInstance: {fileID: 167765047}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &170478447 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4182016969822563090, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
@@ -2507,6 +2528,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834288387}
     m_Modifications:
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 226916695}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown.Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown._value
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1474133597986172018, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
       propertyPath: m_Name
       value: IronFlagWallCube
@@ -2561,6 +2598,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+--- !u!23 &226916695 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1993762281018333479, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+  m_PrefabInstance: {fileID: 226916694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &234123534 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4182016969822563090, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
@@ -8865,6 +8907,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834288387}
     m_Modifications:
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 1078120567}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown.Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown._value
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1474133597986172018, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
       propertyPath: m_Name
       value: IronFlagWallCube (1)
@@ -8919,6 +8977,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+--- !u!23 &1078120567 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1993762281018333479, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+  m_PrefabInstance: {fileID: 1078120566}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1089039925
 GameObject:
   m_ObjectHideFlags: 0
@@ -11546,6 +11609,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834288387}
     m_Modifications:
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 1440509770}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown.Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown._value
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1474133597986172018, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
       propertyPath: m_Name
       value: IronFlagWallCube (4)
@@ -11600,6 +11679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+--- !u!23 &1440509770 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1993762281018333479, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+  m_PrefabInstance: {fileID: 1440509769}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1447197181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -13549,6 +13633,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 834288387}
     m_Modifications:
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _renderer
+      value: 
+      objectReference: {fileID: 1702261797}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _destroyDelay
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown.Value
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 975797336, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+      propertyPath: _cooldown._value
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 1474133597986172018, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
       propertyPath: m_Name
       value: IronFlagWallCube (2)
@@ -13603,6 +13703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+--- !u!23 &1702261797 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1993762281018333479, guid: 9009c8b285cb9f44da3f33a0469d0ccc, type: 3}
+  m_PrefabInstance: {fileID: 1702261796}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1704223283
 PrefabInstance:
   m_ObjectHideFlags: 0

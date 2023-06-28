@@ -10,7 +10,6 @@ namespace Components.GoBased
     public class RandomSpawnComponent : MonoBehaviour
     {
         [SerializeField] private LevelSettings _level;
-        [SerializeField] private float _destroyDelay = 2f;
         [SerializeField] private bool _destroyObject;
         [SerializeField] private bool _isEnemiesSpawner;
         [SerializeField] private Transform _spawnPoint;
@@ -65,10 +64,9 @@ namespace Components.GoBased
                     yield break;
                 }
 
-                var position = new Vector3(
-                    Random.Range(_spawnPoint.position.x - _volume.x, _spawnPoint.position.x + _volume.x),
-                    _spawnPoint.position.y,
-                    Random.Range(_spawnPoint.position.z - _volume.z, _spawnPoint.position.z + _volume.z));
+                var spawnPosition = _spawnPoint.position;
+                var position = new Vector3(Random.Range(spawnPosition.x - _volume.x, spawnPosition.x + _volume.x),
+                    spawnPosition.y, Random.Range(spawnPosition.z - _volume.z, spawnPosition.z + _volume.z));
 
                 if (CheckSpawnPoint(position))
                 {
@@ -93,7 +91,7 @@ namespace Components.GoBased
             _obj = SpawnUtils.Spawn(_level.ObjectsPrefabs[rand], position, rotation);
 
             if (_destroyObject)
-                Destroy(_obj, _destroyDelay);
+                Destroy(_obj, _level.DestroyDelay);
         }
 
         private bool CheckSpawnPoint(Vector3 position)

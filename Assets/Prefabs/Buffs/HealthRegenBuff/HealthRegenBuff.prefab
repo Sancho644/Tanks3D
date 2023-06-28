@@ -130,8 +130,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _trigger: {fileID: 8655935450903917816}
   _scoreValue: 100
+  _destroyDelay: 5
   _spawnPoints: {fileID: 2739218441099310374}
   _pointsPrefab: {fileID: 3845507885382346001}
+  _renderer: {fileID: 763948496111107322}
   _healthRegen: 1
 --- !u!114 &1167714653494261869
 MonoBehaviour:

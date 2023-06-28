@@ -258,13 +258,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _speed: 1800
   _rotationSpeed: 110
+  _tanksRenderersList:
+  - {fileID: 4493651254038442824}
+  - {fileID: 4162224410929251809}
+  - {fileID: 6704638294340667817}
+  - {fileID: 7311061320788620397}
   _attackCooldown:
-    _value: 1
+    Value: 2
   _healthArmor: {fileID: 1921992612132958462}
   _attack: {fileID: 688420955}
   _deathWindowCooldown: 1
   _buffDamageCooldown:
-    _value: 5
+    Value: 10
   _explosion: {fileID: 3261220100611116451}
   _tankModel: {fileID: 4305892449406906476}
 --- !u!114 &1921992612132958462
