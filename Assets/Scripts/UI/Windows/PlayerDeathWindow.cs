@@ -1,5 +1,4 @@
-﻿using Model;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace UI.Windows
@@ -20,9 +19,7 @@ namespace UI.Windows
         {
             SceneManager.LoadScene("MainMenu");
 
-            var session = GameSession.Instance;
-            Destroy(session.gameObject);
-            //session.LoadLastSave();
+            Destroy(_session.gameObject);
         }
         
         private void OnDestroy()

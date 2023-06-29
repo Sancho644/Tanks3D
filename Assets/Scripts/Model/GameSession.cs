@@ -11,6 +11,8 @@ namespace Model
 
         private const string HUD = "Hud";
         private const string MainMenu = "MainMenu";
+        private const string FinalScreen = "FinalScreen";
+        
         private PlayerData _save;
         
         private SaveSystem<PlayerData> _systemData;
@@ -25,7 +27,7 @@ namespace Model
             _systemData = new SaveSystem<PlayerData>();
             CountOfEnemies.OnModify += OnModifyCountOfEnemies;
             
-            if (SceneManager.GetActiveScene().name != MainMenu)
+            if (SceneManager.GetActiveScene().name != MainMenu && SceneManager.GetActiveScene().name != FinalScreen)
             {
                 SceneManager.LoadScene(HUD, LoadSceneMode.Additive);
             }
