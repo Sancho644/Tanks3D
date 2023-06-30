@@ -35,7 +35,6 @@
         protected abstract void Write(TPropertyType value);
         protected abstract TPropertyType Read(TPropertyType defaultValue);
 
-
         public void Validate()
         {
             if (!_stored.Equals(_value))

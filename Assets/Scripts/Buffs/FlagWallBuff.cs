@@ -7,9 +7,9 @@ namespace Buffs
     {
         protected override void OnTriggered(GameObject go)
         {
-            var list = FlagWalls.Instance;
+            var brickWalls = FlagWallsSpawner.BrickWallsList;
 
-            foreach (var objects in list.BrickWalls)
+            foreach (var objects in brickWalls)
             {
                 objects.SetActive(true);
             }

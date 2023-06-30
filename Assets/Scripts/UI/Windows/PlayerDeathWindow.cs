@@ -14,14 +14,14 @@ namespace UI.Windows
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;
         }
-        
+
         public void OnExit()
         {
             SceneManager.LoadScene("MainMenu");
 
             Destroy(_session.gameObject);
         }
-        
+
         private void OnDestroy()
         {
             Time.timeScale = _defaultTimeScale;

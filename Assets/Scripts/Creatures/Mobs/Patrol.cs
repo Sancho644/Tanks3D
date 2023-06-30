@@ -1,6 +1,6 @@
 using System.Collections;
 using Components.ColliderBased;
-using Scripts.Components.GoBased;
+using Components.GoBased;
 using UnityEngine;
 
 namespace Creatures.Mobs
@@ -24,10 +24,8 @@ namespace Creatures.Mobs
                 {
                     break;
                 }
-                else
-                {
-                    _creature.VerticalMovement(_direction);
-                }
+
+                _creature.VerticalMovement(_direction);
 
                 yield return null;
             }
@@ -42,7 +40,7 @@ namespace Creatures.Mobs
 
             if (_current != null)
                 StopCoroutine(_current);
-            
+
             _current = null;
         }
 
@@ -51,7 +49,7 @@ namespace Creatures.Mobs
             var randomTime = Random.Range(0.1f, 1.5f);
             var time = Time.time + randomTime;
             var randValue = RandomNumbers.RandomWithTwoNumber(-1f, 1f);
-            
+
             _isTurning = true;
 
             while (enabled)

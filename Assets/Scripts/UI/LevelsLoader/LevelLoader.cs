@@ -10,7 +10,7 @@ namespace UI.LevelsLoader
         [SerializeField] private float _transitionTime;
 
         private static readonly int Enabled = Animator.StringToHash("Enabled");
-        
+
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void OnAfterSceneLoad()
         {
@@ -35,9 +35,9 @@ namespace UI.LevelsLoader
         private IEnumerator StartAnimation(string sceneName)
         {
             _animator.SetBool(Enabled, true);
-            
+
             yield return new WaitForSeconds(_transitionTime);
-            
+
             SceneManager.LoadScene(sceneName);
             _animator.SetBool(Enabled, false);
         }

@@ -18,7 +18,7 @@ namespace Walls
         private IEnumerator ReduceCollision()
         {
             var time = 0f;
-            
+
             while (time < _time)
             {
                 if (_size <= 0) break;

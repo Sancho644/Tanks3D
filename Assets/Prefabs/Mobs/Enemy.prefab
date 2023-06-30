@@ -280,7 +280,7 @@ MonoBehaviour:
   _leftTrigger: {fileID: 3427677679173719945}
   _rightTrigger: {fileID: 3427677678638401611}
   _attackCooldown: 5
-  _missHeroCooldown: 0.5
+  _missHeroCooldown: 0
 --- !u!114 &3427677678494261340
 MonoBehaviour:
   m_ObjectHideFlags: 0

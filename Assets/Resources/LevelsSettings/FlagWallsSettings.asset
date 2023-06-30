@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2ce64dbfcc6f4f648674002fd3b3a221, type: 3}
+  m_Name: FlagWallsSettings
+  m_EditorClassIdentifier: 
+  _brickWalls:
+  - {fileID: 6499662845917038564, guid: d9712671ca5e9144aba7b5f6a2e222ef, type: 3}
+  - {fileID: 3609932123570220819, guid: b8c71b4beff7b824fa120a13786a2bd8, type: 3}
+  - {fileID: 1470814985934041358, guid: d2be0814d4a9f854a8aad434145f7c7f, type: 3}
+  - {fileID: 2170381872785914063, guid: bb0c57be0c2c7804f92415f3dd51dd80, type: 3}
+  - {fileID: 7023114402065896000, guid: 248c565da30c0664995353088ec3b26f, type: 3}
+  _ironWalls:
+  - {fileID: 4008142937546016733, guid: f24e66cfac1eecb49a51999395632b76, type: 3}
+  - {fileID: 8005896265795758496, guid: fcc73be088de139469b80a258b11a32a, type: 3}
+  - {fileID: 7264608721807155262, guid: 6455058e2398aba48bc30bf341edf9e1, type: 3}
+  - {fileID: 8694528768798536012, guid: 489ea430fb0978e44bf260a90baade08, type: 3}
+  - {fileID: 3782274702055533939, guid: abbcadb3c47e55844acf0af86f074e56, type: 3}

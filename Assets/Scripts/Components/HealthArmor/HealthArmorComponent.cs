@@ -8,16 +8,21 @@ namespace Components.HealthArmor
         [SerializeField] private int _health;
         [SerializeField] private int _armor;
 
-        private int _maxHealthArmor = 3;
-        private int _minHealthArmor = 0;
-        
-        public event Action OnHpDamage;
+        private const int MaxHealthArmor = 3;
+        private const int MinHealthArmor = 0;
+
+        public event Action OnDamage;
         public event Action<int> OnArmorChange;
         public event Action OnDie;
         public event Action<int> OnHpChange;
 
         public void ModifyHealth(int value)
         {
+            if (value < 0)
+            {
+                OnDamage?.Invoke();
+            }
+
             if (_armor > 0)
             {
                 ModifyArmor(value);
@@ -26,13 +31,8 @@ namespace Components.HealthArmor
             {
                 _health += value;
 
-                _health = Mathf.Clamp(_health, _minHealthArmor, _maxHealthArmor);
+                _health = Mathf.Clamp(_health, MinHealthArmor, MaxHealthArmor);
                 OnHpChange?.Invoke(_health);
-
-                if (value < 0)
-                {
-                    OnHpDamage?.Invoke();
-                }
             }
 
             if (_health <= 0)
@@ -44,7 +44,7 @@ namespace Components.HealthArmor
         public void ModifyArmor(int value)
         {
             _armor += value;
-            _armor = Mathf.Clamp(_armor, _minHealthArmor, _maxHealthArmor);
+            _armor = Mathf.Clamp(_armor, MinHealthArmor, MaxHealthArmor);
 
             OnArmorChange?.Invoke(_armor);
         }
@@ -52,8 +52,8 @@ namespace Components.HealthArmor
         public void ApplyHeal(int value)
         {
             _health += value;
-            _health = Mathf.Clamp(_health, _minHealthArmor, _maxHealthArmor);
-            
+            _health = Mathf.Clamp(_health, MinHealthArmor, MaxHealthArmor);
+
             OnHpChange?.Invoke(_health);
         }
 

@@ -14,7 +14,7 @@ namespace UI.Windows
             base.Start();
 
             _music.SetModel(GameSettings.I.Music);
-            _sfx.SetModel(GameSettings.I.Sfx);            
+            _sfx.SetModel(GameSettings.I.Sfx);
         }
     }
 }

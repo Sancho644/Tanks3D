@@ -17,9 +17,9 @@ namespace Components.Audio
         {
             _source = GetComponent<AudioSource>();
             _model = FindProperty();
-            
+
             _model.OnChanged += OnSoundSettingsChanged;
-            
+
             OnSoundSettingsChanged(_model.Value, _model.Value);
         }
 

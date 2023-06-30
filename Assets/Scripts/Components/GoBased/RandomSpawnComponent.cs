@@ -38,7 +38,7 @@ namespace Components.GoBased
                     CountOfEnemies.SetTotalEnemies(_session.Data.EnemyesCount.Value);
                     _countOfObjects = _session.Data.EnemyesCount.Value;
                 }
-                
+
                 CountOfEnemies.OnModify += OnStartSpawn;
             }
 

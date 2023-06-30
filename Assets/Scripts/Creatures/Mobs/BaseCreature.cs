@@ -21,7 +21,7 @@ namespace Creatures.Mobs
         protected float _horizontal;
         protected float _vertical;
         protected PlaySoundsComponent _sounds;
-        
+
         private Rigidbody _rigidbody;
         private Color _defaultColor;
         private List<Material> _tanksMaterialsList = new List<Material>();
@@ -63,13 +63,13 @@ namespace Creatures.Mobs
                 _sounds.Play("Fire");
             }
         }
-        
+
         protected void OnTakeHealthDamage()
         {
             _sounds.Play("HitDamage");
             StartCoroutine(StartDamageAnimation());
         }
-        
+
         private IEnumerator StartDamageAnimation()
         {
             while (enabled)
@@ -78,14 +78,14 @@ namespace Creatures.Mobs
                 {
                     tankMaterial.color = Color.white;
                 }
-                
+
                 yield return new WaitForSeconds(0.1f);
 
                 foreach (var tankMaterial in _tanksMaterialsList)
                 {
                     tankMaterial.color = _defaultColor;
                 }
-                
+
                 break;
             }
         }

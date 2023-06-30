@@ -6,11 +6,11 @@ namespace UI.Windows
     public class AnimatedWindow : MonoBehaviour
     {
         private Animator _animator;
-        private static readonly int Show = Animator.StringToHash("Show");
-        private static readonly int Hide = Animator.StringToHash("Hide");
+        private readonly int Show = Animator.StringToHash("Show");
+        private readonly int Hide = Animator.StringToHash("Hide");
 
         protected GameSession _session;
-        
+
         protected virtual void Start()
         {
             _session = GameSession.Instance;

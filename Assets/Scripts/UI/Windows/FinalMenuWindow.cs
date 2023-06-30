@@ -9,7 +9,7 @@ namespace UI.Windows
     public class FinalMenuWindow : AnimatedWindow
     {
         private const string MainMenu = "MainMenu";
-        
+
         private Action _closeAction;
 
         public void OnMainMenu()
@@ -21,13 +21,13 @@ namespace UI.Windows
                     Value = 3
                 }
             };
-                
+
             _session.SetPlayerData(data);
             _session.SaveProgress();
-            
+
             SceneManager.LoadScene(MainMenu);
         }
-        
+
         public void OnExit()
         {
             _closeAction = () =>
@@ -41,7 +41,7 @@ namespace UI.Windows
 
             Close();
         }
-        
+
         protected override void OnCloseAnimationComplete()
         {
             _closeAction?.Invoke();

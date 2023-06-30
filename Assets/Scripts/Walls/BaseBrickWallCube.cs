@@ -30,7 +30,7 @@ namespace Walls
         protected virtual void Action()
         {
             Destroy(_wall);
-            
+
             _play.Play("Die");
             _spawn.Spawn();
             _reducer.Reduce();

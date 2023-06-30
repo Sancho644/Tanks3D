@@ -12,6 +12,7 @@ namespace Walls
         [SerializeField] private float _destroyDelay;
 
         private bool _check;
+        private readonly Color _defaultColor = Color.white;
 
         private void Update()
         {
@@ -26,27 +27,10 @@ namespace Walls
             _cube.SetActive(true);
             _cooldown.Reset();
             _check = true;
+            _renderer.material.color = _defaultColor;
 
             StartCoroutine(StartAnimation());
-            TakeColliders();
-        }
-
-        private void TakeColliders()
-        {
-            var list = FlagWalls.Instance;
-
-            foreach (var objects in list.BrickWalls)
-            {
-                if (objects.TryGetComponent<BoxCollider>(out BoxCollider coll))
-                {
-                    DeactivateCollider(coll);
-                }
-            }
-        }
-
-        private void DeactivateCollider(BoxCollider coll)
-        {
-            coll.enabled = !coll.enabled;
+            FlagWallsSpawner.SetActiveObject(false);
         }
 
         private void Deactivate()
@@ -54,27 +38,28 @@ namespace Walls
             if (_cooldown.IsReady)
             {
                 _cube.SetActive(false);
-                TakeColliders();
                 _check = false;
+
+                FlagWallsSpawner.SetActiveObject(true);
+                StopCoroutine(StartAnimation());
             }
         }
 
         private IEnumerator StartAnimation()
         {
             var lifeTime = _cooldown.Value;
-            var material = _renderer.material;
-            var defaultColor = material.color;
 
             while (enabled)
             {
                 lifeTime -= Time.deltaTime;
+                var material = _renderer.material;
 
                 if (_destroyDelay > lifeTime)
                 {
                     material.color = Color.red;
                     yield return new WaitForSeconds(0.5f);
 
-                    material.color = defaultColor;
+                    material.color = _defaultColor;
                     yield return new WaitForSeconds(0.5f);
                 }
 

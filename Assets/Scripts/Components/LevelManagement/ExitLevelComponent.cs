@@ -1,5 +1,6 @@
 using System.Collections;
 using Model;
+using Model.Data;
 using UI.LevelsLoader;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,27 +13,22 @@ namespace Components.LevelManagement
         [SerializeField] private float _nextLevelCooldown;
 
         private GameSession _session;
-        
-        public static ExitLevelComponent Instance { get; private set; }
 
         private void Awake()
         {
             var scene = SceneManager.GetActiveScene();
 
+            CountOfEnemies.OnEnemyEnds += OnModifyCountOfEnemies;
             _session = GameSession.Instance;
             _session.Data.CurrentLevel.Value = scene.name;
-            
-            if (Instance == null)
-            {
-                Instance = this;
-            }
-            else
-            {
-                Destroy(gameObject);
-            }
         }
 
-        public void Exit()
+        private void OnModifyCountOfEnemies()
+        {
+            Exit();
+        }
+
+        private void Exit()
         {
             _session.SaveProgress();
 
@@ -42,9 +38,14 @@ namespace Components.LevelManagement
         private IEnumerator StartNextLevel()
         {
             yield return new WaitForSeconds(_nextLevelCooldown);
-            
+
             var loader = FindObjectOfType<LevelLoader>();
             loader.LoadLevel(_nextSceneName);
+        }
+
+        private void OnDestroy()
+        {
+            CountOfEnemies.OnEnemyEnds -= OnModifyCountOfEnemies;
         }
     }
 }

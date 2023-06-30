@@ -17,7 +17,7 @@ namespace Creatures.Player
 
         private GameSession _session;
         private bool _damageBuff;
-        
+
         private void Start()
         {
             _session = GameSession.Instance;
@@ -27,7 +27,7 @@ namespace Creatures.Player
 
             _healthArmor.OnDie += OnPlayerDie;
             _healthArmor.OnArmorChange += OnTakeArmorDamage;
-            _healthArmor.OnHpDamage += OnTakeHealthDamage;
+            _healthArmor.OnDamage += OnTakeHealthDamage;
             _healthArmor.OnHpChange += OnHealthChanged;
         }
 
@@ -74,7 +74,7 @@ namespace Creatures.Player
                 base.Fire();
             }
         }
-        
+
         private IEnumerator DeathWindow()
         {
             yield return new WaitForSeconds(_deathWindowCooldown);
@@ -105,7 +105,7 @@ namespace Creatures.Player
         {
             _healthArmor.OnDie -= OnPlayerDie;
             _healthArmor.OnArmorChange -= OnTakeArmorDamage;
-            _healthArmor.OnHpDamage -= OnTakeHealthDamage;
+            _healthArmor.OnDamage -= OnTakeHealthDamage;
             _healthArmor.OnHpChange -= OnHealthChanged;
         }
     }

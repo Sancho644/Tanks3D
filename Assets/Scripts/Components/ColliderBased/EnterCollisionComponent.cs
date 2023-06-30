@@ -15,7 +15,7 @@ namespace Components.ColliderBased
                 {
                     _isTouchingLayer = true;
                     OnAction?.Invoke(stage.Tag, other.gameObject);
-                    
+
                     return;
                 }
             }

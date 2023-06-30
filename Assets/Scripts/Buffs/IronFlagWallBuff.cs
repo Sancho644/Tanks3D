@@ -7,9 +7,9 @@ namespace Buffs
     {
         protected override void OnTriggered(GameObject go)
         {
-            var ironWallsList = FlagWalls.Instance;
+            var ironWallsList = FlagWallsSpawner.IronWallsList;
 
-            foreach (var objects in ironWallsList.IronWalls)
+            foreach (var objects in ironWallsList)
             {
                 if (objects.TryGetComponent<IronWallController>(out IronWallController active))
                 {

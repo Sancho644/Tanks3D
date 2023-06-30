@@ -28,7 +28,7 @@ namespace Buffs
             _sounds = GetComponent<PlaySoundsComponent>();
             _session = GameSession.Instance;
 
-            if (_pointsPrefab.TryGetComponent<Points>(out Points points))
+            if (_pointsPrefab.TryGetComponent<PointsEffectController>(out PointsEffectController points))
             {
                 points.SetPoints(_scoreValue);
             }
@@ -46,7 +46,7 @@ namespace Buffs
             while (enabled)
             {
                 lifeTime -= Time.deltaTime;
-                
+
                 if (_destroyDelay > lifeTime)
                 {
                     material.color = Color.white;
@@ -63,6 +63,7 @@ namespace Buffs
         protected virtual void OnTriggered(GameObject go)
         {
             PlayerScoreController.ModifyScore(_scoreValue);
+
             _session.Data.PlayerScore.Value = PlayerScoreController.Score;
             _sounds.Play("Up");
             _spawnPoints.SpawnWithoutRotation();

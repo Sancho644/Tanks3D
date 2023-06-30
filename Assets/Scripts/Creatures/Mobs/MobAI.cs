@@ -1,6 +1,6 @@
 using System.Collections;
 using Components.ColliderBased;
-using Scripts.Components.GoBased;
+using Components.GoBased;
 using UnityEngine;
 
 namespace Creatures.Mobs
@@ -11,8 +11,6 @@ namespace Creatures.Mobs
         [SerializeField] private Checker _canAttack;
         [SerializeField] private Checker _leftTrigger;
         [SerializeField] private Checker _rightTrigger;
-
-        [SerializeField] private float _attackCooldown = 1f;
         [SerializeField] private float _missHeroCooldown = 1f;
 
         private IEnumerator _current;
@@ -38,7 +36,7 @@ namespace Creatures.Mobs
 
             StartState(SetDirectionToTarget());
         }
-        
+
         private IEnumerator SetDirectionToTarget()
         {
             var rand = RandomNumbers.RandomWithTwoNumber(-1, 1);
@@ -79,7 +77,7 @@ namespace Creatures.Mobs
             {
                 _creature.Fire();
 
-                yield return new WaitForSeconds(_attackCooldown);
+                yield return null;
             }
 
             StartState(SetDirectionToTarget());

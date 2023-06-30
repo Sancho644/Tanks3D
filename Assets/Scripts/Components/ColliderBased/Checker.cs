@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using Utils;
 
@@ -6,8 +5,6 @@ namespace Components.ColliderBased
 {
     public class Checker : BaseColliderCheck
     {
-        public event Action<GameObject> OnEnterCheck;
-
         private void OnTriggerStay(Collider other)
         {
             foreach (var stage in _stages)
@@ -15,7 +12,6 @@ namespace Components.ColliderBased
                 if (other.gameObject.IsInLayer(stage.Layer))
                 {
                     _isTouchingLayer = true;
-                    OnEnterCheck?.Invoke(other.gameObject);
                 }
             }
         }

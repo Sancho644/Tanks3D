@@ -23,7 +23,7 @@ namespace UI.Hud
 
             _enemies.text = CountOfEnemies.TotalEnemies.ToString();
             CountOfEnemies.OnModify += OnCountOfEnemiesChanged;
-            
+
             _trash.Retain(_session.Data.PlayerScore.SubscribeAndInvoke(OnPlayerScoreController));
             _trash.Retain(_session.Data.Health.SubscribeAndInvoke(OnHealthChanged));
             _trash.Retain(_session.Data.Armor.SubscribeAndInvoke(OnArmorChanged));

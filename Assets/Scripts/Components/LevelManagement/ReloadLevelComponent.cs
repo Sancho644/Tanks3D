@@ -11,7 +11,7 @@ namespace Components.LevelManagement
         {
             var session = GameSession.Instance;
             var scene = SceneManager.GetActiveScene();
-            
+
             SceneManager.LoadScene(scene.name);
             session.LoadLastSave();
 

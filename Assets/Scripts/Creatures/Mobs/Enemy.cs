@@ -19,13 +19,14 @@ namespace Creatures.Mobs
         private void Start()
         {
             _healthArmor.OnDie += OnCreatureDie;
-            _healthArmor.OnHpDamage += OnTakeHealthDamage;
+            _healthArmor.OnDamage += OnTakeHealthDamage;
             _session = GameSession.Instance;
-            
-            if (_pointsPrefab.TryGetComponent<Points>(out Points points))
+
+            if (_pointsPrefab.TryGetComponent<PointsEffectController>(out PointsEffectController points))
             {
                 points.SetPoints(_scoreValue);
             }
+
             _spawnPoints.SetSpawnPrefab(_pointsPrefab);
 
             CountOfEnemies.ModifyCount(1);
@@ -36,7 +37,7 @@ namespace Creatures.Mobs
             _sounds.Play("Die");
             _explosion.Spawn();
             _spawnPoints.SpawnWithoutRotation();
-            
+
             PlayerScoreController.ModifyScore(_scoreValue);
             _session.Data.PlayerScore.Value = PlayerScoreController.Score;
             CountOfEnemies.ModifyCount(-1);
@@ -47,7 +48,7 @@ namespace Creatures.Mobs
         private void OnDestroy()
         {
             _healthArmor.OnDie -= OnCreatureDie;
-            _healthArmor.OnHpDamage -= OnTakeHealthDamage;
+            _healthArmor.OnDamage -= OnTakeHealthDamage;
         }
     }
 }

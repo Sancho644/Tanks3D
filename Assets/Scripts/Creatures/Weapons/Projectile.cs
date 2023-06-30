@@ -26,22 +26,22 @@ namespace Creatures.Weapons
 
         private void OnCollisionAction(string tag, GameObject go)
         {
-            if (tag == "Player" || tag == "Flag")
-                AddDamage(go);
-
-            if (tag == "Obstacle" || tag == "Bullet")
-                Destroy(gameObject);
-
-            if (tag == "Enemy")
+            switch (tag)
             {
-                if (_isEnemyBullet)
-                {
+                case "Player":
+                case "Flag":
+                    AddDamage(go);
+                    break;
+                case "Obstacle":
+                case "Bullet":
                     Destroy(gameObject);
-
+                    break;
+                case "Enemy" when _isEnemyBullet:
+                    Destroy(gameObject);
                     return;
-                }
-
-                AddDamage(go);
+                case "Enemy":
+                    AddDamage(go);
+                    break;
             }
         }
 

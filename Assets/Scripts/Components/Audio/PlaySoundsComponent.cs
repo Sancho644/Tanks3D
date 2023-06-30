@@ -6,8 +6,6 @@ namespace Components.Audio
 {
     public class PlaySoundsComponent : MonoBehaviour
     {
-        public const string SfxSourceTag = "SfxAudioSource";
-
         [SerializeField] private AudioData[] _sounds;
 
         private AudioSource _source;
@@ -22,7 +20,7 @@ namespace Components.Audio
                     _source = AudioUtils.FindSfxSource();
 
                 _source.PlayOneShot(audioData.Clip);
-                
+
                 break;
             }
         }

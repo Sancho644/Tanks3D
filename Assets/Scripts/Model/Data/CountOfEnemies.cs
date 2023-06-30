@@ -1,5 +1,4 @@
 ﻿using System;
-using Components.LevelManagement;
 
 namespace Model.Data
 {
@@ -7,8 +6,8 @@ namespace Model.Data
     {
         public static int Count { get; private set; }
         public static int TotalEnemies { get; private set; }
-
         public static event Action OnModify;
+        public static event Action OnEnemyEnds;
 
         public static void ModifyCount(int value)
         {
@@ -22,8 +21,7 @@ namespace Model.Data
 
             if (Count == 0)
             {
-                var exitLevel = ExitLevelComponent.Instance;
-                exitLevel.Exit();
+                OnEnemyEnds?.Invoke();
             }
         }
 
