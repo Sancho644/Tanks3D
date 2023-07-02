@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace UI.LevelsLoader
@@ -14,6 +15,7 @@ namespace UI.LevelsLoader
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void OnAfterSceneLoad()
         {
+            AnalyticsEvent.debugMode = true;
             InitLoader();
         }
 

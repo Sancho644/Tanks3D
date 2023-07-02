@@ -45,20 +45,35 @@ namespace Creatures.Player
             _session.Data.Health.Value = currentHealth;
         }
 
+        public void SetVerticalDirection(float value)
+        {
+            _vertical = value;
+        }
+
+        public void SetHorizontalDirection(float value)
+        {
+            _horizontal = value;
+        }
+
+        public void FireAction()
+        {
+            Fire();
+        }
+
         private void Update()
         {
-            _vertical = Input.GetAxis("Vertical");
-            _horizontal = Input.GetAxis("Horizontal");
+            //_vertical = Input.GetAxis("Vertical");
+            //_horizontal = Input.GetAxis("Horizontal");
 
             if (_damageBuff && _buffDamageCooldown.IsReady)
             {
                 DisableDamageBuff();
             }
 
-            if (Input.GetButtonDown("FireProjectilePlayerOne"))
+            /*if (Input.GetButtonDown("FireProjectilePlayerOne"))
             {
                 Fire();
-            }
+            }*/
         }
 
         public override void Fire()

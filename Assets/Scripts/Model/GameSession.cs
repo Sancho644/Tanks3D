@@ -10,6 +10,7 @@ namespace Model
         [SerializeField] private PlayerData _data;
 
         private const string HUD = "Hud";
+        private const string Controls = "Controls";
         private const string MainMenu = "MainMenu";
         private const string FinalScreen = "FinalScreen";
         
@@ -30,6 +31,7 @@ namespace Model
             if (SceneManager.GetActiveScene().name != MainMenu && SceneManager.GetActiveScene().name != FinalScreen)
             {
                 SceneManager.LoadScene(HUD, LoadSceneMode.Additive);
+                SceneManager.LoadScene(Controls, LoadSceneMode.Additive);
             }
 
             if (IsSessionExit())
