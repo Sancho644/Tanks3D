@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 3316262537480670731}
   - component: {fileID: 3316262537480670732}
   - component: {fileID: 3316262537480670734}
-  - component: {fileID: 6620969612044214795}
   - component: {fileID: 7161739303000295921}
   - component: {fileID: 1561255534410270168}
+  - component: {fileID: 5346989545964481123}
+  - component: {fileID: 126445550262085645}
   m_Layer: 7
   m_Name: BrickWallCube
   m_TagString: Obstacle
@@ -33,7 +34,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3847487758015353623}
-  - {fileID: 2633676190032160992}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -68,22 +68,6 @@ MonoBehaviour:
       serializedVersion: 2
       m_Bits: 2048
   _isTouchingLayer: 0
---- !u!114 &6620969612044214795
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3316262537480670723}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d7cca8bf48ed354f94023b1d225dd85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _time: 2
-  _size: 1
-  _deltaSize: 0.0065
-  _box: {fileID: 3316262537480670732}
 --- !u!114 &7161739303000295921
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,8 +81,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collision: {fileID: 3316262537480670734}
-  _reducer: {fileID: 6620969612044214795}
-  _wall: {fileID: 3781504313987720327}
+  _wall: {fileID: 3316262537480670723}
   _play: {fileID: 1561255534410270168}
   _spawn: {fileID: 725122941367314519}
 --- !u!114 &1561255534410270168
@@ -116,45 +99,13 @@ MonoBehaviour:
   _sounds:
   - _id: Die
     _clip: {fileID: 8300000, guid: 2829bd76d8ddad043a1e634beb6169ec, type: 3}
---- !u!1 &3781504313987720327
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2633676190032160992}
-  - component: {fileID: 909885537274182518}
-  - component: {fileID: 327139208854932843}
-  m_Layer: 7
-  m_Name: Wall
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &2633676190032160992
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3781504313987720327}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 3316262537480670731}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &909885537274182518
+--- !u!23 &5346989545964481123
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3781504313987720327}
+  m_GameObject: {fileID: 3316262537480670723}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -189,13 +140,13 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &327139208854932843
+--- !u!33 &126445550262085645
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3781504313987720327}
+  m_GameObject: {fileID: 3316262537480670723}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1 &5097422009629474310
 GameObject:

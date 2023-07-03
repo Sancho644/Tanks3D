@@ -1,5 +1,6 @@
 ﻿using Model;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 using Utils;
 
@@ -28,6 +29,7 @@ namespace UI.Windows
         public void OnExit()
         {
             SceneManager.LoadScene(MainMenu);
+            AnalyticsEvent.LevelQuit(SceneManager.GetActiveScene().name);
 
             var session = GameSession.Instance;
             Destroy(session.gameObject);

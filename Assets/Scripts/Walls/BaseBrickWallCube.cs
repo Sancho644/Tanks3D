@@ -8,7 +8,6 @@ namespace Walls
     public class BaseBrickWallCube : MonoBehaviour
     {
         [SerializeField] private EnterCollisionComponent _collision;
-        [SerializeField] private WallColliderReducer _reducer;
         [SerializeField] private GameObject _wall;
 
         [SerializeField] protected PlaySoundsComponent _play;
@@ -19,7 +18,7 @@ namespace Walls
             _collision.OnAction += OnCollisionAction;
         }
 
-        protected virtual void OnCollisionAction(string tag, GameObject go)
+        private void OnCollisionAction(string tag, GameObject go)
         {
             if (tag == "Bullet")
             {
@@ -29,11 +28,10 @@ namespace Walls
 
         protected virtual void Action()
         {
-            Destroy(_wall);
-
             _play.Play("Die");
             _spawn.Spawn();
-            _reducer.Reduce();
+            
+            Destroy(_wall);
         }
 
         private void OnDestroy()

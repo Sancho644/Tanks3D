@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace UI.Windows
@@ -10,6 +11,7 @@ namespace UI.Windows
         protected override void Start()
         {
             base.Start();
+            AnalyticsEvent.GameOver(SceneManager.GetActiveScene().name);
 
             _defaultTimeScale = Time.timeScale;
             Time.timeScale = 0;

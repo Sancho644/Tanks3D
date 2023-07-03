@@ -15,6 +15,7 @@ namespace UI.Windows
         protected virtual void Start()
         {
             AnalyticsEvent.ScreenVisit(gameObject.name);
+            
             _session = GameSession.Instance;
             _animator = GetComponent<Animator>();
 

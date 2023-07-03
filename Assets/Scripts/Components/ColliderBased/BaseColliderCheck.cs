@@ -10,6 +10,11 @@ namespace Components.ColliderBased
 
         public bool IsTouchingLayer => _isTouchingLayer;
 
+        public void SetTouchingLayer(bool value)
+        {
+            _isTouchingLayer = value;
+        }
+
         [Serializable]
         public class CollisionStages
         {

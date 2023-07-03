@@ -3,6 +3,7 @@ using Model;
 using Model.Data;
 using UI.LevelsLoader;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
 namespace Components.LevelManagement
@@ -11,6 +12,7 @@ namespace Components.LevelManagement
     {
         [SerializeField] private string _nextSceneName;
         [SerializeField] private float _nextLevelCooldown;
+        [SerializeField] private UnityEvent _onNextLevel;
 
         private GameSession _session;
 
@@ -31,6 +33,7 @@ namespace Components.LevelManagement
         private void Exit()
         {
             _session.SaveProgress();
+            _onNextLevel?.Invoke();
 
             StartCoroutine(StartNextLevel());
         }

@@ -2,6 +2,7 @@
 using Model.Data;
 using Model.Data.Properties;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace UI.Windows
@@ -12,6 +13,13 @@ namespace UI.Windows
 
         private Action _closeAction;
 
+        protected override void Start()
+        {
+            base.Start();
+            
+            AnalyticsEvent.Custom("game_finished");
+        }
+        
         public void OnMainMenu()
         {
             var data = new PlayerData

@@ -1,12 +1,15 @@
+using System.Collections.Generic;
 using Model.Data;
 using UI.Hud;
 using UnityEngine;
+using UnityEngine.Analytics;
 using UnityEngine.SceneManagement;
 
 namespace Model
 {
     public class GameSession : MonoBehaviour
     {
+        [SerializeField] private int _levelIndex;
         [SerializeField] private PlayerData _data;
 
         private const string HUD = "Hud";
@@ -37,14 +40,25 @@ namespace Model
             if (IsSessionExit())
             {
                 DestroyImmediate(gameObject);
+                TrackSessionStart(_levelIndex);
             }
             else
             {
                 Save();
                 Init();
                 DontDestroyOnLoad(this);
+                TrackSessionStart(_levelIndex);
                 Instance = this;
             }
+        }
+        
+        private void TrackSessionStart(int levelIndex)
+        {
+            var eventParams = new Dictionary<string, object>
+            {
+                {"level_index", levelIndex}
+            };
+            AnalyticsEvent.Custom("start_level", eventParams);
         }
 
         private void OnModifyCountOfEnemies()

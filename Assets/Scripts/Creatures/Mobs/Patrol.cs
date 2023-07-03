@@ -46,6 +46,8 @@ namespace Creatures.Mobs
 
         private IEnumerator RandomRotate()
         {
+            _obstacleCheck.SetTouchingLayer(false);
+            
             var randomTime = Random.Range(0.1f, 1.5f);
             var time = Time.time + randomTime;
             var randValue = RandomNumbers.RandomWithTwoNumber(-1f, 1f);
