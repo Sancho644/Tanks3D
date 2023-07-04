@@ -11,7 +11,7 @@ namespace UI.Windows
     {
         [SerializeField] private GameObject _continueButton;
 
-        private const string SettingsWindowPath = "UI/SettingsWindow";
+        private const string SettingsWindowPath = "UI/Windows/SettingsWindow";
         private const string LevelOne = "Level 1";
         private Action _closeAction;
 

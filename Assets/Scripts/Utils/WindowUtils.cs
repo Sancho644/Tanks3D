@@ -10,6 +10,6 @@ namespace Utils
             var canvas = GameObject.FindWithTag("MainUICanvas").GetComponent<Canvas>();
             
             Object.Instantiate(window, canvas.transform);
-        }
+        }   
     }
 }

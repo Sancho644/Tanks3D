@@ -20,7 +20,7 @@ namespace UI.Hud
 
         public void OnSettings()
         {
-            WindowUtils.CreateWindow("UI/InGameMenuWindow");
+            WindowUtils.CreateWindow("UI/Windows/InGameMenuWindow");
         }
     }
 }

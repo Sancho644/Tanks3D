@@ -10,7 +10,7 @@ namespace UI.Windows
     {
         private float _defaultTimeScale;
         private const string MainMenu = "MainMenu";
-        private const string SettingsWindowPath = "UI/SettingsWindow";
+        private const string SettingsWindowPath = "UI/Windows/SettingsWindow";
 
         protected override void Start()
         {
