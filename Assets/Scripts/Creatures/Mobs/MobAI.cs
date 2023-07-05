@@ -45,17 +45,17 @@ namespace Creatures.Mobs
             {
                 if (!_leftTrigger.IsTouchingLayer && !_rightTrigger.IsTouchingLayer)
                 {
-                    _creature.HorizontalMovement(rand);
+                    _creature.SetHorizontalDirection(rand);
                 }
 
                 if (_leftTrigger.IsTouchingLayer)
                 {
-                    _creature.HorizontalMovement(-1f);
+                    _creature.SetHorizontalDirection(-1f);
                 }
 
                 if (_rightTrigger.IsTouchingLayer)
                 {
-                    _creature.HorizontalMovement(1f);
+                    _creature.SetHorizontalDirection(1f);
                 }
 
                 if (_canAttack.IsTouchingLayer)
@@ -85,8 +85,8 @@ namespace Creatures.Mobs
 
         private void StartState(IEnumerator coroutine)
         {
-            _creature.VerticalMovement(0f);
-            _creature.HorizontalMovement(0f);
+            _creature.SetVerticalDirection(0f);
+            _creature.SetHorizontalDirection(0f);
 
             if (_current != null)
                 StopCoroutine(_current);

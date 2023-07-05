@@ -45,16 +45,6 @@ namespace Creatures.Player
             _session.Data.Health.Value = currentHealth;
         }
 
-        public void SetVerticalDirection(float value)
-        {
-            _vertical = value;
-        }
-
-        public void SetHorizontalDirection(float value)
-        {
-            _horizontal = value;
-        }
-
         public void FireAction()
         {
             Fire();
@@ -62,18 +52,10 @@ namespace Creatures.Player
 
         private void Update()
         {
-            //_vertical = Input.GetAxis("Vertical");
-            //_horizontal = Input.GetAxis("Horizontal");
-
             if (_damageBuff && _buffDamageCooldown.IsReady)
             {
                 DisableDamageBuff();
             }
-
-            /*if (Input.GetButtonDown("FireProjectilePlayerOne"))
-            {
-                Fire();
-            }*/
         }
 
         public override void Fire()
@@ -94,7 +76,7 @@ namespace Creatures.Player
         {
             yield return new WaitForSeconds(_deathWindowCooldown);
 
-            WindowUtils.CreateWindow("UI/PlayerDeathWindow");
+            WindowUtils.CreateWindow("UI/Windows/PlayerDeathWindow");
             Destroy(gameObject);
 
             yield return null;

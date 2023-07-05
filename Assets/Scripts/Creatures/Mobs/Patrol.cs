@@ -25,7 +25,7 @@ namespace Creatures.Mobs
                     break;
                 }
 
-                _creature.VerticalMovement(_direction);
+                _creature.SetVerticalDirection(_direction);
 
                 yield return null;
             }
@@ -35,8 +35,8 @@ namespace Creatures.Mobs
 
         public void TryStop()
         {
-            _creature.VerticalMovement(0f);
-            _creature.HorizontalMovement(0f);
+            _creature.SetVerticalDirection(0f);
+            _creature.SetHorizontalDirection(0f);
 
             if (_current != null)
                 StopCoroutine(_current);
@@ -57,7 +57,7 @@ namespace Creatures.Mobs
             while (enabled)
             {
                 if (time >= Time.time)
-                    _creature.HorizontalMovement(randValue);
+                    _creature.SetHorizontalDirection(randValue);
                 else
                     break;
 
@@ -71,8 +71,8 @@ namespace Creatures.Mobs
 
         private void StartState(IEnumerator coroutine)
         {
-            _creature.VerticalMovement(0f);
-            _creature.HorizontalMovement(0f);
+            _creature.SetVerticalDirection(0f);
+            _creature.SetHorizontalDirection(0f);
 
             if (_current != null)
                 StopCoroutine(_current);

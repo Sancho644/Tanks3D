@@ -18,8 +18,8 @@ namespace Creatures.Mobs
         [SerializeField] protected HealthArmorComponent _healthArmor;
         [SerializeField] protected SpawnComponent _attack;
 
-        protected float _horizontal;
-        protected float _vertical;
+        private float _horizontal;
+        private float _vertical;
         protected PlaySoundsComponent _sounds;
 
         private Rigidbody _rigidbody;
@@ -44,14 +44,24 @@ namespace Creatures.Mobs
             HorizontalMovement(_horizontal);
         }
 
-        public void VerticalMovement(float vertical)
+        private void VerticalMovement(float vertical)
         {
-            _rigidbody.AddForce(vertical * _speed * Time.deltaTime * transform.forward);
+            _rigidbody.AddForce(vertical * _speed * transform.forward);
+        }
+        
+        private void HorizontalMovement(float horizontal)
+        {
+            _rigidbody.transform.Rotate(0, horizontal * _rotationSpeed, 0);
+        }
+        
+        public void SetVerticalDirection(float value)
+        {
+            _vertical = value;
         }
 
-        public void HorizontalMovement(float horizontal)
+        public void SetHorizontalDirection(float value)
         {
-            _rigidbody.transform.Rotate(0, horizontal * Time.deltaTime * _rotationSpeed, 0);
+            _horizontal = value;
         }
 
         public virtual void Fire()

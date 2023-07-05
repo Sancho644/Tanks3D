@@ -234,8 +234,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7120d6f475eaeee40a895b089d04b81d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 1800
-  _rotationSpeed: 110
+  _speed: 39
+  _rotationSpeed: 2.5
   _tanksRenderersList:
   - {fileID: 3427677679633040607}
   - {fileID: 3427677678274328174}
@@ -279,7 +279,6 @@ MonoBehaviour:
   _canAttack: {fileID: 1248197167}
   _leftTrigger: {fileID: 3427677679173719945}
   _rightTrigger: {fileID: 3427677678638401611}
-  _attackCooldown: 5
   _missHeroCooldown: 0
 --- !u!114 &3427677678494261340
 MonoBehaviour:
@@ -310,7 +309,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _sounds:
   - _id: Fire
-    _clip: {fileID: 8300000, guid: adfaed7ddadabb747a48cb0c8c20f918, type: 3}
+    _clip: {fileID: 8300000, guid: 52c2c9ecd1b103741ba29d313c8b49c9, type: 3}
   - _id: Die
     _clip: {fileID: 8300000, guid: efbbdcb472e2f1d4ea918b93d4095c70, type: 3}
 --- !u!1 &3427677678638401609
