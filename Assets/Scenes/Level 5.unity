@@ -3082,7 +3082,7 @@ PrefabInstance:
       objectReference: {fileID: 11400000, guid: f5dacfbb71269eb4883e056e29bc1045, type: 2}
     - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _nextSceneName
-      value: FinalScreen
+      value: Level 6
       objectReference: {fileID: 0}
     - target: {fileID: 85983363, guid: c83dae34552d29f48ac52d0f3fc6944f, type: 3}
       propertyPath: _currentSceneName
@@ -3198,7 +3198,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Trigger:
     m_IsTriggerExpanded: 1
-    m_Type: 1
+    m_Type: 0
     m_LifecycleEvent: 7
     m_ApplyRules: 0
     m_Rules:

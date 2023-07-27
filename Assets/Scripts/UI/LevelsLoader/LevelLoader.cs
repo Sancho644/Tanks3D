@@ -15,7 +15,6 @@ namespace UI.LevelsLoader
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
         private static void OnAfterSceneLoad()
         {
-            AnalyticsEvent.debugMode = true;
             InitLoader();
         }
 
