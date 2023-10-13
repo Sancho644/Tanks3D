@@ -15,7 +15,7 @@ MonoBehaviour:
   _objectsPrefabs:
   - {fileID: 3427677678494261332, guid: 6e8af801169cad842ada9a286a968dc7, type: 3}
   - {fileID: 3427677678494261332, guid: fa861f4113818c741bf269979c3cfeef, type: 3}
-  _countOfObjects: 40
+  _countOfObjects: 38
   _objectsInOneTime: 5
   _spawnDelay: 1
   _startSpawnDelay: 1
